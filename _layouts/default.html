@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+    {% seo %}
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner">
+
+        <a href="/"><h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1></a>
+        <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+
+        <a href="https://github.com/boxed">on github</a>
+
+    </header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+        <h1>{{ page.title }}</h1>
+        {{ page.date | date:"%Y-%m-%d" }}
+
+        {{ content }}
+    </section>
+
+    <div id="post-nav">
+        <span>
+            {% if page.previous.url %}
+            <a href="{{page.previous.url}}">&laquo;&nbsp;{{page.previous.title}}</a>
+            {% endif %}
+        </span>
+        <span class="post-nav-next">
+            {% if page.next.url %}
+            <a href="{{page.next.url}}">{{page.next.title}}&nbsp;&raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+</div>
+
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
+
+    </footer>
+</div>
+</body>
+</html>
