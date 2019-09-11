@@ -1,11 +1,9 @@
 ---
 
 title:	"RefinableObject — Object Orientation Refined"
+subtitle: OOP with deep customization but optional inheritance
 date:	2018-06-25
 ---
-
-  
-## OOP with deep customization but optional inheritance.
  
  I think Object Oriented Programming is over used but I have to admit it is unrivaled for certain tasks, the most significant to my line of work being GUIs. But OOP as normally practiced in languages like Python, Java, and C++ have some clear drawbacks even for this use case. One problem for GUIs is that you need to create lots of classes even for trivial things: when you have an object that contains another object you must often create two new classes just to customize the nested object. Often there is also an asymmetry between customizing methods (you must subclass) and member variables (pass a value in the constructor).
 

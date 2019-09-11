@@ -9,11 +9,15 @@ date:	2017-05-09
 There's a lot of confusion among Python programmers on what exactly "keyword arguments" are. Let's go through some confusions. This is a statement I've come across:
 
 
-> If you somehow are writing for a Python 3 only codebase, I highly recommend making all your keyword arguments keyword only, especially keyword arguments that represent "options".There are many problems with this sentence. The first is that this is mixing up "arguments" (i.e. things at the call site) and "parameters" (i.e. things you declare when defining a function). So:
+> If you somehow are writing for a Python 3 only codebase, I highly recommend making all your keyword arguments keyword only, especially keyword arguments that represent "options".
+
+There are many problems with this sentence. The first is that this is mixing up "arguments" (i.e. things at the call site) and "parameters" (i.e. things you declare when defining a function). So:
 
 ```python
 def foo(a, b): # <- a and b are "parameters" or "formal arguments"  
-    passfoo(1, 2) # <- 1 and 2 are arguments to foo, that match a and b
+    pass
+
+foo(1, 2) # <- 1 and 2 are arguments to foo, that match a and b
 ```
 
 This confusion is common among programmers. I also use the word "argument" when I mean "parameter", because normally in conversation we can tell the difference in context. Even the documentation in the Python standard library uses these as synonyms.

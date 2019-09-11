@@ -7,20 +7,101 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen"
           href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <style media="screen">
+        @media screen and (min-width: 768px) {
+            h1, h2, h3, h4, body {
+                font-size: 40px;
+            }
 
+
+            #project_title {
+                font-size: 70px;
+            }
+
+            body {
+                font-size: 19px;
+            }
+        }
+
+        #footer_wrap {
+            color: gray;
+        }
+
+        h1, h2, h3, h4, body {
+            font-family: "Book Antiqua";
+            color: black;
+        }
+
+        blockquote {
+            color: black;
+            font-style: italic;
+        }
+
+        body {
+            color: black;
+        }
+
+        .outer {
+        }
+
+
+        .inner {
+            max-width: 700px;
+        }
+
+        #post_time {
+            font-size: 80%;
+            color: gray;
+        }
+
+        #post-nav {
+            text-align: center;
+            min-height: 30px;
+            max-width: 700px;
+            padding-top: 30px;
+        }
+
+
+        .post-nav-prev {
+            float: left ;
+        }
+
+        .post-nav-next {
+            float: right;
+        }
+
+        #archive {
+            padding-top: 40px;
+        }
+
+        #other_links {
+            float: right;
+        }
+
+        #main_content_wrap {
+            background: white;
+        }
+
+        .highlight {
+            background-color: white;
+        }
+    </style>
     {% seo %}
 </head>
 
 <body>
 
 <!-- HEADER -->
-<div id="header_wrap" class="outer">
+<div id="header-thingie" class="outer">
     <header class="inner">
 
-        <a href="/"><h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1></a>
-        <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+        <div id="other_links">
+            <a href="https://github.com/boxed">@ GitHub</a><br>
+            <a href="https://twitter.com/andershovmoller">@ twitter</a><br>
+            <a href="mailto:boxed@killingar.net">@ email</a><br>
+        </div>
 
-        <a href="https://github.com/boxed">on github</a>
+        <a href="/"><h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1></a>
 
     </header>
 </div>
@@ -29,23 +110,29 @@
 <div id="main_content_wrap" class="outer">
     <section id="main_content" class="inner">
         <h1>{{ page.title }}</h1>
-        {{ page.date | date:"%Y-%m-%d" }}
+
+        {% if page.subtitle %}
+            <h2>{{ page.subtitle }}</h2>
+        {% endif %}
+
+        <div id="post_time">{{ page.date | date:"%Y-%m-%d" }}</div>
 
         {{ content }}
-    </section>
 
-    <div id="post-nav">
-        <span>
-            {% if page.previous.url %}
-            <a href="{{page.previous.url}}">&laquo;&nbsp;{{page.previous.title}}</a>
-            {% endif %}
-        </span>
-        <span class="post-nav-next">
-            {% if page.next.url %}
-            <a href="{{page.next.url}}">{{page.next.title}}&nbsp;&raquo;</a>
-            {% endif %}
-        </span>
-    </div>
+        <div id="post-nav">
+            <span class="post-nav-prev">
+                {% if page.previous.url %}
+                <a href="{{page.previous.url}}">&laquo;&nbsp;{{page.previous.title}}</a>
+                {% endif %}
+            </span>
+            <span class="post-nav-next">
+                {% if page.next.url %}
+                <a href="{{page.next.url}}">{{page.next.title}}&nbsp;&raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+    </section>
 
 </div>
 
@@ -53,7 +140,7 @@
 <!-- FOOTER  -->
 <div id="footer_wrap" class="outer">
     <footer class="inner">
-
+        Copyright Anders Hovmöller
     </footer>
 </div>
 </body>
