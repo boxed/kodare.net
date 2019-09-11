@@ -21,11 +21,12 @@ This confusion is common among programmers. I also use the word "argument" when 
 The code above is the basic case with normal parameters and positional arguments. But we were talking about keyword arguments so let's talk about those too:
 
 ```python
-def bar(a, # <- this parameter is a normal python parameter  
-        b=1, # <- this is a parameter with a default value  
-        *, # <- all parameters after this are keyword only  
-        c=2, # <- keyword only argument with default value  
-        d): # <- keyword only argument without default value  
+def bar(
+        a,    # <- this parameter is a normal python parameter
+        b=1,  # <- this is a parameter with a default value
+        *,    # <- all parameters after this are keyword only
+        c=2,  # <- keyword only argument with default value
+        d):   # <- keyword only argument without default value
     pass
 ```
 So far so good. Now, let's think about the statement we started with:
@@ -34,28 +35,30 @@ So far so good. Now, let's think about the statement we started with:
 > I highly recommend making all your keyword arguments keyword onlyThat implies there are keyword arguments that are not keyword *only* arguments. That's sort of correct, but also very wrong. Let's have some examples of usages of bar :
 
 ```python
-bar(1) # one positional argument  
-bar(1, 2) # two positional arguments  
-bar(a=1) # one keyword argument  
-bar(a=1, b=2) # two keyword arguments  
-bar(1, d=2) # one positional and one keyword argument
+bar(1)         # one positional argument
+bar(1, 2)      # two positional arguments
+bar(a=1)       # one keyword argument
+bar(a=1, b=2)  # two keyword arguments
+bar(1, d=2)    # one positional and one keyword argument
 ```
 The trick here is to realize that a "keyword argument" is a concept of the call site*, not* the declaration. But a "keyword only argument" is a concept of the declaration, not the call site. Super confusing!
 
-There are also parameters that are positional only. The function sum in the standard library is like this: according to the documentation it looks like this:sum(iterable[, start]) But there's a catch!
+There are also parameters that are positional only. The function sum in the standard library is like this: according to the documentation it looks like this: `sum(iterable[, start])` But there's a catch!
 
 ```
 >>> sum(iterable=[1, 2])  
 Traceback (most recent call last):  
 File "<stdin>", line 1, in <module>  
-TypeError: sum() takes no keyword argumentsAnd the start parameter can't be used as a keyword argument either, even though it's optional!
+TypeError: sum() takes no keyword arguments
 ```
+
+And the start parameter can't be used as a keyword argument either, even though it's optional!
 
 ### Recap
 
 (I'm using "argument" here even though "parameter" or "formal argument" would be more correct, but the Python standard library uses these all as synonyms so I will too, so my wording matches the documentation.)
 
-Python functions can have :
+Python functions can have:
 
 * Arguments that can be used both as positional and keyword arguments (this is the most common case)
 * Arguments that can be used both as positional and keyword arguments with default values (or just "arguments with default values")
@@ -64,12 +67,14 @@ Python functions can have :
 * Optional positional only arguments (2nd argument to sum, like above, only for C)
 * Keyword only arguments
 * Keyword only arguments with default values
-* Arbitrary positional arguments ( *args )
-* Arbitrary keyword arguments ( **kwargs )
+* Arbitrary positional arguments (`*args`)
+* Arbitrary keyword arguments (`**kwargs`)
+
 When calling Python functions you can have:
 
 * Positional arguments
 * Keyword arguments
+
 It's very simple at the call site, but a lot more complex at the function definition, and how call site arguments are mapped to the declaration is quite complex.
 
 ### Summary

@@ -52,17 +52,15 @@ runner = python -c "from src.mode import mode; assert mode([1, 2, 4, 4]) == 4"
 Let's start with the first mutant:
 
 ```diff
---- src/mode.py  
-+++ src/mode.py  
-@@ -3,7 +3,7 @@  
- count = {}  
- for x in l:  
-     if x not in count:  
-- count[x] = 0  
-+ count[x] = 1  
-  count[x] += 1  
- if not max or count[x] > count[max]:  
-     max = x
+@@ -3,7 +3,7 @@
+     count = {}
+     for x in l:
+         if x not in count:
+-            count[x] = 0
++            count[x] = 1
+         count[x] += 1
+         if not max or count[x] > count[max]:
+             max = x
 ```
 This mutant is a false positive, because we don't actually care that the counts are correct, just that they are correct *relative* to each other so we can start at any random integer and it'll work fine. But this is also a case of mutation testing telling us that this code isn't elegant. We can remove that entire line, and the if above it if we replace `count = {}` with `count = defaultdict(int)` This will remove the mutant *and* simplify the code. Win win.
 
@@ -70,31 +68,27 @@ Moving on to the next mutant:
 
 
 ```diff
---- src/mode.py  
-+++ src/mode.py  
-@@ -4,7 +4,7 @@  
- for x in l:  
-     if x not in count:  
-       count[x] = 0  
-- count[x] += 1  
-+ count[x] += 2  
- if not max or count[x] > count[max]:  
-    max = x  
- return max
+@@ -4,7 +4,7 @@
+     for x in l:
+         if x not in count:
+             count[x] = 0
+-        count[x] += 1
++        count[x] += 2
+         if not max or count[x] > count[max]:
+             max = x
+     return max
 ```
 That's also a false positive, same as above. Next mutation:
 
 ```diff
---- src/mode.py  
-+++ src/mode.py  
-@@ -5,7 +5,7 @@  
- if x not in count:  
-     count[x] = 0  
- count[x] += 1  
-- if not max or count[x] > count[max]:  
-+ if not max or count[x] >= count[max]:  
-     max = x  
- return max
+@@ -5,7 +5,7 @@
+         if x not in count:
+             count[x] = 0
+         count[x] += 1
+-        if not max or count[x] > count[max]:
++        if not max or count[x] >= count[max]:
+             max = x
+     return max
 ```
 Also a false positive. We don't really care if we return the first or last object in mode([1, 1, 1]).
 
@@ -103,33 +97,34 @@ Well this was a bust for mutmut! 😢 Turns out this shows a hole in mutmut. It'
 ```diff
 --- src/mode.py  
 +++ src/mode.py  
-@@ -1,5 +1,5 @@  
- def mode(l):  
-- max = None  
-+ max = ""  
- count = {}  
- for x in l:  
-     if x not in count:
+@@ -1,5 +1,5 @@
+ def mode(l):
+-    max = None
++    max = ""
+     count = {}
+     for x in l:
+         if x not in count:
 ```
 
 There's even a TODO note in the code to fix this from before the code was public. I forgot about it because it wasn't in the issue tracker. Oops! I fixed this so if you try mutmut 1.5.0 now it will find this bug.
 
 #### The advantage of mutation testing over property based testing
 
-The nice thing mutation testing has over property based testing is that it's an enumeration of a finite and fairly small problem domain. Property based testing is an exploration of an infinite problem space, which means you don't really know if you're done and you most likely need to white box it anyway. Let's take an extreme example of the above code where I've fixed the bug and introduced a pathological case (in bold):
+The nice thing mutation testing has over property based testing is that it's an enumeration of a finite and fairly small problem domain. Property based testing is an exploration of an infinite problem space, which means you don't really know if you're done and you most likely need to white box it anyway. Let's take an extreme example of the above code where I've fixed the bug and introduced a pathological case (highlightet):
 
 ```diff
-def mode(l):  
-   if l == list(range(100)):  
-       return -1** max = None  
-   count = {}  
-   for x in l:  
-       if x not in count:  
-           count[x] = 0  
-       count[x] += 1  
-       if max is None or count[x] > count[max]:  
-           max = x  
-   return max
+def mode(l):
++    if l == list(range(100)):
++        return -1
+    max = None
+    count = {}
+    for x in l:
+        if x not in count:
+            count[x] = 0
+        count[x] += 1
+        if max is None or count[x] > count[max]:
+            max = x
+    return max
 ```
 The property based test that found this before, now doesn't. We can tell hypothesis to try more examples:
 
@@ -146,36 +141,34 @@ The default is 500, so I've increased it by two orders of magnitude. Now the pro
 Now let's see what mutmut does. It's super not happy with this code! It will tell you it could produce these mutants:
 
 ```diff
-# mutant 2  
---- src/mode.py  
-+++ src/mode.py  
-@@ -1,5 +1,5 @@  
- def mode(l):  
-- if l == list(range(100)):  
-+ if l == list(range(101)):  
- return -1  
-   
- max = None# mutant 3  
---- src/mode.py  
-+++ src/mode.py  
-@@ -1,6 +1,6 @@  
- def mode(l):  
- if l == list(range(100)):  
-- return -1  
-+ return +1  
-   
- max = None  
- count = {}# mutant 4  
---- src/mode.py  
-+++ src/mode.py  
-@@ -1,6 +1,6 @@  
- def mode(l):  
- if l == list(range(100)):  
-- return -1  
-+ return -2  
-   
- max = None  
- count = {}
+# mutant 2
+@@ -1,5 +1,5 @@
+ def mode(l):
+-    if l == list(range(100)):
++    if l == list(range(101)):
+         return -1
+ 
+     max = None
+
+# mutant 3
+@@ -1,6 +1,6 @@
+ def mode(l):
+     if l == list(range(100)):
+-        return -1
++        return +1
+ 
+     max = None
+     count = {}
+
+# mutant 4
+@@ -1,6 +1,6 @@
+ def mode(l):
+     if l == list(range(100)):
+-        return -1
++        return -2
+ 
+     max = None
+     count = {}
 ```
 
 Now, obviously in this case a simple coverage report would also show you something was amiss, but if we change that if to:

@@ -8,7 +8,9 @@ date:	2016-12-14
 
 I should start with some background: the most important thing you need to know is that I am a recovered C++ True Believer. I am also a neophile (meaning I am always drawn to the new shiny thing). So I have this strong desire for Something Better while at the same time being very weary not to get stuck in the zealots trap. I see-saw between these extremes and I am constantly monitoring myself for these tendencies.
 
-I have not tried other Lisps than Clojure so I might be making broad conclusions about Lisps in general based on Clojure specifics. I apologize in advance and welcome corrections. UPDATE: I've since been told that at least Common Lisp has keyword arguments that are checked at compile time.
+I have not tried other Lisps than Clojure so I might be making broad conclusions about Lisps in general based on Clojure specifics. I apologize in advance and welcome corrections. 
+
+UPDATE: I've since been told that at least Common Lisp has keyword arguments that are checked at compile time.
 
 I made a fairly long dive into Clojure before I started to feel uneasy. It took me a long time to understand where this feeling came from. I've learned from my experience with C++ to spot the symptoms of disillusionment faster but the trap with Lisps is, I think, more subtle. With C++ it's the tendency to blame the user for the problems while glorifying oneself for managing to work with such an unforgiving and "clever" language. The draw of identifying oneself with being a "smart person" is strong. And working closer to the machine also sounds cool even if it's worthless in most cases.
 
@@ -34,10 +36,11 @@ You also often hear from Lisp proponents that Lisps are great because code and d
 2. Enabling tooling: if this hypothesis is correct, where are the tools? It should be that *everyone* could write them but somehow there is more and better tooling (like refactoring tools, IDEs) for e.g. Python, a language Lisp proponents are horrified by because of things like significant white space and syntax with lots of special rules.
 The lack of tooling for Clojure, I think, largely comes from the system of defining function signatures. It has some interesting properties, the first is that there are only positional arguments. To hack around this limitation you can use various tricks like:
 
-1. Just accepting one argument that is a dictionary/map and using map destructuring. E.g.: (foo {:params ‘(1 2), :else ‘(1, 2)})
-2. Interspersing keywords ("atoms" for erlang people, basically specially typed strings) into the argument list and creating structure from that. E.g.: (foo 1 2 :else 3 4)
-3. With macros: interspersing symbols into the argument list. E.g.: (foo 1 2 else 3 4)
-4. Applying structure to the flat list of arguments according to some pattern. E.g.: (foo 1 2 3 4)
+1. Just accepting one argument that is a dictionary/map and using map destructuring. E.g.: `(foo {:params '(1 2), :else '(1, 2)})`
+2. Interspersing keywords ("atoms" for erlang people, basically specially typed strings) into the argument list and creating structure from that. E.g.: `(foo 1 2 :else 3 4)`
+3. With macros: interspersing symbols into the argument list. E.g.: `(foo 1 2 else 3 4)`
+4. Applying structure to the flat list of arguments according to some pattern. E.g.: `(foo 1 2 3 4)`
+
 (Point 1 is special in that it has the nasty downside that it only grabs things from the dictionary. It doesn't validate that it's empty at the end, leading to functions that silently ignores unexpected inputs like in JavaScript.)
 
 The common problems with all these solutions are: a) They are different. So to know which one this particular call site needs you need to know them by heart or look at the docs and b) they are all implemented *procedurally inside the body of the function/macro*. The first point is painful and annoying to deal with. The second is an absolute killer. This parsing of arguments is what makes tooling fundamentally hopeless. Turing complete definitions of function signatures that don't even output to some intermediate format that tooling can process! Of course the guys doing Clojure IDEs have a hard time. They will never be able to handle user written code or obscure libraries.

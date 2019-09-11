@@ -24,16 +24,18 @@ We solve this category of problems with a code generator (an old version [is ava
 * Generally json decoders become a big chunk of the code and it's almost all trivial and would be better if it was written by a computer.
 * I do miss some kind of compile time logic thing. Maybe not full macros, but it's annoying to not be able to assert at compile time that certain invariants are true, like list constants having the same length or case blocks having at least the same number of cases as a union type. These simple compile time assertions would make it a lot easier to not make mistakes when writing all that boilerplate.
 * Reusing GUI elements is not so nice. We haven't resorted to effect managers yet, but instead we've ended up with the model-update-msg triple (in some places) that we've been warned against many times (never with any good alternative proposed I think!). This isn't great, but I don't see much of an alternative at this point.
+
 #### Grab bad
 
 * evancz/url-parse UrlParser.elm doesn't expose parseParams and toKeyValuePair, trying to force you to use a very complex parser API even for simple things. These would be better as exported functions.
 * No support for trailing commas creates silly looking code with commas in front of lines. You still can't insert at the first position of a list/record/union without screwing up blame so this is just a straight loss as far as I can tell.
-* Dict.getWithDefault is missing. This means you get foo = withDefault ( Dict.get "foo" params) when foo = Dict.getWithDefault "foo" params "" would have been much nicer. (With optional keyword arguments in the language it could be improved further.)
+* Dict.getWithDefault is missing. This means you get `foo = withDefault ( Dict.get "foo" params)` when `foo = Dict.getWithDefault "foo" params ""` would have been much nicer. (With optional keyword arguments in the language it could be improved further.)
 * No constants in case expressions (only literals are accepted). This means you can't even use constants for something like character codes in case expressions. This seems silly to me and I hope this is an oversight that will be remedied.
 * I often go to <http://elm-lang.org/docs/syntax> to try to find something and can't find what I'm looking for. Some words that aren't on that page at all: switch, compare, equal, call, !=, etc. <http://elm-lang.org/docs/from-javascript> lacks all of these too. "++" as string concatenation is missing from the syntax page, but is on the from-javascript page but there you can't search for the word "concatenation" or even "concat".
-* I miss list/dict/set comprehensions. It's much nicer I think to be able to start thinking "I want a list here" instead of doing List.map or whatever. Especially pythons list comprehensions shine here with readable syntax and flexibility where you can do "[x.y for x in bar if x.z != 2]" which in elm becomes the not so nice "List.map .y (List.filter (x -> x.z /= 2) bar)".
-* Currying makes it impossible to overload on the arity of functions. This results in all those "[]" all over your views for empty attribute lists. It's a minor thing, but something ClojureScript/reagent does better.
+* I miss list/dict/set comprehensions. It's much nicer I think to be able to start thinking "I want a list here" instead of doing List.map or whatever. Especially pythons list comprehensions shine here with readable syntax and flexibility where you can do `[x.y for x in bar if x.z != 2]` which in elm becomes the not so nice `List.map .y (List.filter (x -> x.z /= 2) bar)`.
+* Currying makes it impossible to overload on the arity of functions. This results in all those `[]` all over your views for empty attribute lists. It's a minor thing, but something ClojureScript/reagent does better.
 * I miss a lot of small convenience string functions that I'm used to in Python: String.split (and rsplit) with a limit, String.partition (and rpartition), String.replace.. stuff like that.
+
 ### The good
 
 This is a short list, but every point in it is a huge deal.
@@ -44,6 +46,7 @@ This is a short list, but every point in it is a huge deal.
 * Elm code is quite readable and much nicer than ClojureScript which was our main contender. Elm-format is a part of this for sure.
 * The Elm Architecture is very nice, even if it's a bit awkward to scale up beyond trivial pages.
 * Knowing that all .elm files are 100% pure is fantastic.
+
 ### Summary
 
 So far I am optimistic. I feel a lot more confident about the Elm code than I've ever felt about ClojureScript code. Especially when writing front end code this is very important to us, because we spend most our time on the back end so we need a language where it's possible to make changes without mistakes even when we haven't used that language for weeks or even months. Having the compiler smack us on the fingers instead of having crashes in the customer browser is very nice. "If it compiles, it works" is pretty close to the truth.

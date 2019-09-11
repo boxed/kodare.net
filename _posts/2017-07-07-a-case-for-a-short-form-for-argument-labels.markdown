@@ -16,11 +16,19 @@ In Python you have this dichotomy in that you get both keyword arguments and pos
 
 The problem with labeling everything is verbosity. One tends to end up with a lot more characters than using positional arguments. In Python this creates a pressure to prefer positional because it's shorter to type and read. I've seen lots of code that looks like:
 
-foo(bar, baz)when it would be better if it was:
+```python
+foo(bar, baz)
+```
 
-foo(bar=bar, baz=baz)In Swift you don't get the choice but always have to write the latter (with = exchanged for : but otherwise it's the same).
+when it would be better if it was:
 
-At this point you might think "why is that better?" In Python it's important to avoid subtle bugs after refactoring for example, and it also makes it vastly easier to refactor when you are sure your call sites will crash if they are incorrect and not just pass variables into the wrong input of a function. In statically typed languages this is less of a problem because, but they only protect you fully from mistakes if all the argument types are unique, now and in the future.
+```python
+foo(bar=bar, baz=baz)
+```
+
+In Swift you don't get the choice but always have to write the latter (with = exchanged for : but otherwise it's the same).
+
+At this point you might think "why is that better?" In Python it's important to avoid subtle bugs after refactoring for example, and it also makes it vastly easier to refactor when you are sure your call sites will crash if they are incorrect and not just pass variables into the wrong input of a function. In statically typed languages this is less of a problem because of types, but they only protect you fully from mistakes if all the argument types are unique, now and in the future. Names are always unique.
 
 ### How big is the problem?
 
@@ -46,7 +54,7 @@ I was expecting libs to have more matching labels and arguments due to higher ab
 
 ### What to do?
 
-I really like the solution OCaml has: labeled arguments look like "~label: value" but there's a short form "~label_and_value". That syntax won't work for Python and Swift obviously but it's nice in that it shows that it's still labeled argument while removing redundancy. I'd like to see something like that in Swift and Python. Maybe "foo(:bar)" (as a short form for "foo(bar:bar)") for Swift and "foo(=bar)" (as a short form for "foo(bar=bar)") for Python.
+I really like the solution OCaml has: labeled arguments look like "~label: value" but there's a short form "~label_and_value". That syntax won't work for Python and Swift obviously but it's nice in that it shows that it's still labeled argument while removing redundancy. I'd like to see something like that in Swift and Python. Maybe `foo(:bar)` (as a short form for `foo(bar:bar)`) for Swift and `foo(=bar)` (as a short form for `foo(bar=bar)`) for Python.
 
 This seems rather feasible because both my suggested syntaxes are invalid or call site errors in Swift and Python today so they wouldn't break existing code.
 

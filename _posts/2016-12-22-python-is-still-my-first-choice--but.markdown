@@ -44,6 +44,7 @@ I miss a really good browser side story (it falls down in some areas, but it's s
 * Code that reads as English to a surprisingly large extent. Instead of C's "x? y : z" you get "y if x else z" which I find super nice. List comprehensions are also very readable compared to many other languages.
 * Python hits a sweet spot between restrictive and flexible for my taste. Lisps are too wild west and C isn't flexible enough.
 * Some languages don't have the full set of the primitive data structures dict, list, set. To me that's just crazy.
+
 Any or all of the above (except the size of the third party ecosystem) is enough to make me reject a language without much other consideration. Some languages have convinced me to overlook some of those points for other advantages (Clojure and Elm being good examples) and I'll consider them for specific use cases. JavaScript is the only language I will use that fails on ALL points, spectacularly, because you really don't have much choice in using it.
 
 ### Conclusion

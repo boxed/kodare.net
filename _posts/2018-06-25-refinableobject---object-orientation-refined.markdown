@@ -22,36 +22,36 @@ The basic philosophy is:
 Let's look at an example:
 
 ```python
-from tri_declarative import *  
+from tri.declarative import *
 
 
-class Bar(RefinableObject):  
-    c = Refinable()  
+class Bar(RefinableObject):
+    c = Refinable()
 
-class Foo(RefinableObject):  
-    a = Refinable()  
+class Foo(RefinableObject):
+    a = Refinable()
 
-    @staticmethod  
-    @refinable  
-    def b():  
-        return 'b'  
+    @staticmethod
+    @refinable
+    def b():
+        return 'b'
 
-    @dispatch(  
-        a=Bar,  
-        a__c=1,  
-    )  
-    def __init__(self, **kwargs):  
-        super().__init__(**kwargs)  
+    @dispatch(
+        a=Bar,
+        a__c=1,
+    )
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
 Foo.quux = Shortcut(call_target=Foo, a__c=7, b=lambda: 'z')
 
 
-print(Foo().a.c) # -> 1  
-print(Foo().b()) # -> b  
-print(Foo(a__c=4).a.c) # -> 4  
-print(Foo(b=**lambda**: **'q'**).b()) # -> 'q'  
-print(Foo.quux().a.c) # -> 7  
-print(Foo.quux().b()) # -> 'z'
+print(Foo().a.c)  # -> 1
+print(Foo().b())  # -> b
+print(Foo(a__c=4).a.c)  # -> 4
+print(Foo(b=lambda: 'q').b())  # -> 'q'
+print(Foo.quux().a.c)  # -> 7
+print(Foo.quux().b())  # -> 'z'
 ```
 
 This design enables tri.table to have exactly one Column class while comparable libraries like django_tables2 has 13 (with less flexibility and less built in functionality in our opinion).
@@ -59,9 +59,9 @@ This design enables tri.table to have exactly one Column class while comparable 
 Because we use this style in tri.table we are able to do things like:
 
 ```python
-table = Table(  
-    data=User.objects.all(),  
-    column__username__cell__attrs__class__foo=True,
+table = Table(
+   data=User.objects.all(),
+   column__username__cell__attrs__class__foo=True,
 )
 ```
 This creates a table of all users where the columns are derived automatically from the django model definition, and all the username cells have the CSS class "foo". In a traditional inheritance based system this kind of customization would have required at least two classes, maybe three and a template :P

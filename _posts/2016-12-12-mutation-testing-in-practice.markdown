@@ -60,7 +60,7 @@ In total 27 mutants survived. I'm going to go through some of them from the top.
 Ok, so that's not interesting! Obviously we don't care about this string and having a test for it is useless. There are two ways to fix this:
 
 1. mutmut treats triple-quoted strings as documentation and doesn't try to mutate them, so we could change it to that or
-2. mark this line as whitelisted with a pragma. This is what we went for. It's more explicit we think. So just add "# pragma: no mutate" to the end of the line.
+2. mark this line as whitelisted with a pragma. This is what we went for. It's more explicit we think. So just add `# pragma: no mutate` to the end of the line.
 Next mutant:
 
 ```
@@ -79,7 +79,7 @@ Next we have three mutants that look very much like this:
 - raise TypeError('Too many positional argument')  
 + raise TypeError('XXToo many positional argumentXX')
 ```
-Turns out our tests checked for these error messages not by comparing the message but by doing "x in y" so adding prefix and suffix didn't make the tests fail. Silly mistake, fixed.
+Turns out our tests checked for these error messages not by comparing the message but by doing `x in y` so adding prefix and suffix didn't make the tests fail. Silly mistake, fixed.
 
 The next 7 mutants show holes in our test suite. We added and expanded tests to fix these.
 
@@ -91,7 +91,7 @@ Now we come to an interesting type of mutant, namely performance optimizations. 
 - break  
 + continue
 ```
-We use ‘break' in sort_after() because when we find what we're looking for we can stop looking. Changing to ‘continue' will still work though, we're just going through the list a bit extra. We have three mutants like this that are performance optimizations. We mark all these with "# pragma: no mutate".
+We use `break` in `sort_after()` because when we find what we're looking for we can stop looking. Changing to `continue` will still work though, we're just going through the list a bit extra. We have three mutants like this that are performance optimizations. We mark all these with `# pragma: no mutate`.
 
 ### Conclusion
 

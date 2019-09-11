@@ -54,6 +54,7 @@ Dependencies were the hardest part for us. We had a lot of them so it took a lot
 
 * splunk-lib. We have a dependency to splunk and they are to this day ignoring all their [very angry customers who are begging/screaming/asking them to fix their client library for py3](https://github.com/splunk/splunk-sdk-python/issues/91). One person on our team finally [just did it himself](https://github.com/tltx/splunk-sdk-python/). Splunk has really handled this badly and even locked the issue for comments! This is unacceptable.
 * Cassandra. We use this database for a lot of things across the product, but we used an older driver which used an older API model. This was a huge part of the py3 migration for us because we had to basically rewrite all this code piece by piece.
+
 ### Tests
 
 We have ~65% code coverage on our tests: unit, integration, and UI combined. We did write more tests but the overall number didn't change much, not surprising when one considers moving coverage from 65% to 66% means writing tests that cover 2000 lines of code.

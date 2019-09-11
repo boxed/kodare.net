@@ -40,6 +40,7 @@ My battle plan was this:
 2. Make an import hook so that the file you want to mutate is mutated in memory on the way from disk. This will enable parallelization.
 3. Pytest plugin that sets up the import hook and enables you to specify what mutation you want.
 4. Make a small command line program that runs through the mutations and checks the output from tests. It should also be able to apply a specific mutation on disk, so when you find an interesting one you can see very easily what the mutant was.
+
 **Point 1** was fairly easy: basically I needed to make sure all AST node types were either not mutated (because it doesn't make sense) or mutated in the most nasty way I could think of. In this step I ran through the code of lots of big open source projects (e.g. django and numpy). I found some parse bugs in baron at this step, but nothing that impacted the code I wanted to run mutation testing on. I just reported the bugs and moved on.
 
 **Point 2** was nasty. It turns out the import hook system in python is pretty shit. The default behavior to load from the filesystem isn't in the list of hooks because it's in C code somewhere, so you can't base an importer on it. That would be ok if the design was ok, but unfortunately the import hook system works like this: Python asks one import hook at a time to import the module. That sounds simple and simple is often good, but importing actually contains these steps:
@@ -47,6 +48,7 @@ My battle plan was this:
 1. Find the source file
 2. Read the source file
 3. Convert the source file from text to a runnable module
+
 And all importers must do ALL of the steps. So the zip file importer must do the steps that are the same as the default and it can't just call into the default loader because it doesn't exist as python code. And it also means that if I want to intercept between step 2 and 3 on ALL importers I have to *reimplement all importers*.
 
 This obviously sucks (and might not even be possible, for systems with their own custom importers), but even worse is that implementing an import hook correctly at all is a lot of nontrivial code that is a bloody beast to get right. Supposedly this is somewhat better in python 3 with importlib, so I found a [backport of it to python 2](https://bitbucket.org/ericsnowcurrently/importlib2/) but it was broken. I managed to hack around the crashes but in the end I didn't get my import hook working with that either. I [asked for help on reddit](https://www.reddit.com/r/Python/comments/5e0yfn/import_hook_help_for_mutation_testing_lib/) too, to no avail.

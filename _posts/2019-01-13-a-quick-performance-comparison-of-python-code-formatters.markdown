@@ -23,7 +23,7 @@ Both yapf and autopep8 have some annoying behaviors:
 * they output to stdout by default
 * they don't do recursive processing by default when you give them a folder
 
-And the kicker is that Black has a --fast option that skips some internal checks that runs in 48 seconds on this test. That's pretty much check mate as far as I'm concerned.
+And the kicker is that Black has a `--fast` option that skips some internal checks that runs in 48 seconds on this test. That's pretty much check mate as far as I'm concerned.
 
 Update: I did some digging for another article and it turns out Black cheats a bit here: it runs in parallel. If I turn that off it takes 2.8m on the same benchmark. Still ok though I think.
 

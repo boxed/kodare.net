@@ -18,7 +18,7 @@ It's been pointed out that the use case I had is already supported in reagent by
 
 Another suggestion was to unroll it in place with splicing. This turns out to be exactly what I want. With a naming convention it should be very nice. Much nicer than the special handling of seqs in reagent I think because it's more explicit and doesn't rely on someone upstream implementing a feature so the solution is more broadly applicable. I was under the impression this feature was only available in macros, which turns out not to be the case. This is an example of how to use it:
 
-```
+```clojure
 user=> (defn foo [] ‘(1 2 3))  
 #'user/foo  
 user=> (foo)  
@@ -32,7 +32,7 @@ user=> (bar)
 
 People have pointed me to [defnk](https://github.com/plumatic/plumbing#bring-on-defnk) for keyword arguments. Still has issue with dropping arguments:
 
-```
+```clojure
 user=> (defnk simple-fnk [a b c] (+ a b c))  
 #'user/simple-fnk  
 user=> (simple-fnk {:a 1 :b 2 :c 3 :this-does-not-exist 4})  
@@ -51,7 +51,9 @@ so my critique still stands: positional arguments suck (especially in dynamic la
 I am going to paraphrase (heavily) here because I can't for the life of me find the exact quote (and thus who wrote it):
 
 
-> ~In theory Clojure is an untoolable mess, but in practice it's pretty nice~This is a good argument I think! Maybe (defn foo [& args]…) is in fact so uncommon outside the standard library that it doesn't matter much. And tooling can handle the standard lib with special rules or the upcoming clojure.spec (even if the latter requires some user input in their own code, that's probably something people will do to get the tooling to behave).
+> ~In theory Clojure is an untoolable mess, but in practice it's pretty nice~
+
+This is a good argument I think! Maybe `(defn foo [& args]…)` is in fact so uncommon outside the standard library that it doesn't matter much. And tooling can handle the standard lib with special rules or the upcoming clojure.spec (even if the latter requires some user input in their own code, that's probably something people will do to get the tooling to behave).
 
 Statistics and community collective behavior matters. C++ people all learn that operator overloading is Bad, but in Python I've found it to be fine almost always. It's more about how the statistics of the usage patterns turns out in practice than the concept itself.
 
@@ -59,5 +61,5 @@ I still feel that the standard lib contains too many of these, effectively creat
 
 ### Conclusion
 
-I need to check out Cursive again, or ask colleages that use Clojure to show it to me. I am more positive towards Clojure now than before publishing the article. I'll definitely try to reduce my exposure to reddit comments a bit :P
+I need to check out Cursive again, or ask colleagues that use Clojure to show it to me. I am more positive towards Clojure now than before publishing the article. I'll definitely try to reduce my exposure to reddit comments a bit :P
 

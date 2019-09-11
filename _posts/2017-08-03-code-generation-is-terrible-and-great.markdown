@@ -29,6 +29,7 @@ I'm arguing that if we go with Elm we must have a good code generation system in
 * It's based on Python which is our back end language where we spend most of our time. You want the generator to be easy to understand and modify.
 * Cog is the only code generation tool I've seen that generates *in place*. Some might find that icky but the cool thing about it is that you can sprinkle some code generation exactly where you need it instead of creating entirely new files. It also means you don't have big chunks of code that exists twice (once in the template and once in the generated file) which should reduce the risk of editing the wrong file.
 * Since our back end language and Cog are both Python, if we want to bridge our back end code with the front end code it's easy to generate pieces of Elm code and data structures directly from our existing code, making sure they're always in sync. This is a cool side effect of being forced into code generators. This might become a strength of the system as a whole even though it's a weakness of one of the parts.
+
 ### Introducing elm-cog
 
 I want to start a discussion about code generation tooling for Elm and I'm doing it by [creating a tool and open sourcing it](https://github.com/boxed/elm-cog). I think having open source tools would help in many ways:
@@ -38,29 +39,32 @@ I want to start a discussion about code generation tooling for Elm and I'm doing
 * Helping people write more DRY code.
 * Hopefully stop people from denying that code generation in Elm is something we need, at least as a stop gap solution :P
 * With elm-Cog I'm specifically helping people with Python code bases (or who can interface with Python) interop smoothly with their Elm front end, but the tool should be usable and nice to have for users of other back end languages too.
+
 ### Goals of [elm-cog](https://github.com/boxed/elm-cog)
 
 * Output generated code that can pass through elm-format unchanged.
 * Small, composable functions that can be reused to build more complex features.
 * Implement the two missing features I've already found that I needed.
 * An open organization: if you submit a good pull request for features or tests I'll give you commit rights straight away. This has worked fantastically for me with [instar](https://github.com/boxed/instar).
+
 ### Features so far
 
 * Output records, lists and union types. This isn't terribly useful by itself unless your back end is Python or if you use Cog to generate Elm and another language, but it's a good foundation to build other things on.
-* Enums. An enum is the trivial case of a union type (type Foo = A | B) with a generated accompanying list (foo_list = [ A, B ]).
+* Enums. An enum is the trivial case of a union type (`type Foo = A | B`) with a generated accompanying list (`foo_list = [ A, B ]`).
 * Enhanced enums. An enum with an extra associated record for every case. Useful to store extra data like display name, serialized name, etc.
+
 ### Example
 
 Here's an example of a generated enum. First you write this:
 
-```
+```elm
 --- [[[cog enum('Baz', 'D, E, F') ]]]  
 --- [[[end]]]
 ```
 
 Then after you've run elm-cog on your source code you'll get:
 
-```
+```elm
 -- [[[cog enum('Baz', 'D, E, F') ]]]  
   
   
