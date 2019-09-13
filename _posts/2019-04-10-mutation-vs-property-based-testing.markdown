@@ -52,7 +52,6 @@ runner = python -c "from src.mode import mode; assert mode([1, 2, 4, 4]) == 4"
 Let's start with the first mutant:
 
 ```diff
-@@ -3,7 +3,7 @@
      count = {}
      for x in l:
          if x not in count:
@@ -62,13 +61,12 @@ Let's start with the first mutant:
          if not max or count[x] > count[max]:
              max = x
 ```
-This mutant is a false positive, because we don't actually care that the counts are correct, just that they are correct *relative* to each other so we can start at any random integer and it'll work fine. But this is also a case of mutation testing telling us that this code isn't elegant. We can remove that entire line, and the if above it if we replace `count = {}` with `count = defaultdict(int)` This will remove the mutant *and* simplify the code. Win win.
+This mutant is a false positive, because we don't actually care that the counts are correct, just that they are correct *relative* to each other so we can start at any random integer and it'll work fine. But this is also a case of mutation testing telling us that this code isn't elegant. We can remove that entire line, and the `if` above it if we replace `count = {}` with `count = defaultdict(int)` This will remove the mutant *and* simplify the code. Win win.
 
 Moving on to the next mutant:
 
 
 ```diff
-@@ -4,7 +4,7 @@
      for x in l:
          if x not in count:
              count[x] = 0
@@ -81,7 +79,6 @@ Moving on to the next mutant:
 That's also a false positive, same as above. Next mutation:
 
 ```diff
-@@ -5,7 +5,7 @@
          if x not in count:
              count[x] = 0
          count[x] += 1
@@ -92,12 +89,9 @@ That's also a false positive, same as above. Next mutation:
 ```
 Also a false positive. We don't really care if we return the first or last object in mode([1, 1, 1]).
 
-Well this was a bust for mutmut! 😢 Turns out this shows a hole in mutmut. It's missing a mutation type, namely replacing None with some other falsy value, maybe "":
+Well this was a bust for mutmut! 😢 Turns out this shows a hole in mutmut. It's missing a mutation type, namely replacing None with some other falsy value, maybe `""`:
 
 ```diff
---- src/mode.py  
-+++ src/mode.py  
-@@ -1,5 +1,5 @@
  def mode(l):
 -    max = None
 +    max = ""
@@ -110,22 +104,23 @@ There's even a TODO note in the code to fix this from before the code was public
 
 #### The advantage of mutation testing over property based testing
 
-The nice thing mutation testing has over property based testing is that it's an enumeration of a finite and fairly small problem domain. Property based testing is an exploration of an infinite problem space, which means you don't really know if you're done and you most likely need to white box it anyway. Let's take an extreme example of the above code where I've fixed the bug and introduced a pathological case (highlightet):
+The nice thing mutation testing has over property based testing is that it's an enumeration of a finite and fairly small problem domain. Property based testing is an exploration of an infinite problem space, which means you don't really know if you're done and you most likely need to white box it anyway. Let's take an extreme example of the above code where I've fixed the bug and introduced a pathological case (highlighted):
 
 ```diff
-def mode(l):
+ def mode(l):
 +    if l == list(range(100)):
 +        return -1
-    max = None
-    count = {}
-    for x in l:
-        if x not in count:
-            count[x] = 0
-        count[x] += 1
-        if max is None or count[x] > count[max]:
-            max = x
-    return max
+     max = None
+     count = {}
+     for x in l:
+         if x not in count:
+             count[x] = 0
+         count[x] += 1
+         if max is None or count[x] > count[max]:
+             max = x
+     return max
 ```
+
 The property based test that found this before, now doesn't. We can tell hypothesis to try more examples:
 
 ```python
@@ -142,7 +137,6 @@ Now let's see what mutmut does. It's super not happy with this code! It will tel
 
 ```diff
 # mutant 2
-@@ -1,5 +1,5 @@
  def mode(l):
 -    if l == list(range(100)):
 +    if l == list(range(101)):
@@ -151,7 +145,6 @@ Now let's see what mutmut does. It's super not happy with this code! It will tel
      max = None
 
 # mutant 3
-@@ -1,6 +1,6 @@
  def mode(l):
      if l == list(range(100)):
 -        return -1
@@ -161,7 +154,6 @@ Now let's see what mutmut does. It's super not happy with this code! It will tel
      count = {}
 
 # mutant 4
-@@ -1,6 +1,6 @@
  def mode(l):
      if l == list(range(100)):
 -        return -1
