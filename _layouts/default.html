@@ -87,7 +87,7 @@
         }
 
         #header-thingie {
-            background-image: url('img/grass.jpg');
+            background-image: url('/img/grass.jpg');
             background-position: center;
             background-size: 100%;
         }
@@ -98,6 +98,57 @@
 
         #main_content_wrap {
             border-top: 1px solid rgb(214, 214, 214);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            #main_content_wrap {
+                background: #251f1f;
+            }
+
+            body, h1, h2, h3, h4, h5, p {
+                color: white;
+            }
+
+            a {
+                color: #45a4f2;
+            }
+
+            #footer_wrap {
+                background-color: black;
+            }
+
+            pre {
+                background-color: black;
+            }
+
+            code {
+                background: black;
+                color: white;
+            }
+
+            .highlight {
+                background-color: black;
+            }
+
+            .highlight .k,
+            .highlight .kr,
+            .highlight .o,
+            .highlight .ow
+            {
+                color: aquamarine;
+            }
+
+            .highlight .nd {
+                color: yellow;
+            }
+
+            /* diff */
+            .highlight .gd {
+                background-color: red;
+            }
+            .highlight .gi {
+                background-color: #00ee17;
+            }
         }
     </style>
     {% seo %}

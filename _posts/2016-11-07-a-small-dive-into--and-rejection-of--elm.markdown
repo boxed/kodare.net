@@ -34,9 +34,13 @@ Let's go over the problem. A select box contains a list of options that
 * have some internal ID
 Elm has what are called union types which models the first point super nicely:
 
-```elm
-type TimeRange = AllTime | OneWeek | OneDayTo create a user facing string from that is also pretty nice:
+```haskell
+type TimeRange = AllTime | OneWeek | OneDay
+```
 
+To create a user facing string from that is also pretty nice:
+
+```haskell
 timeRangeDisplayName : TimeRange -> StringtimeRangeDisplayName timeRange =  
  case timeRange of  
  AllTime -> "All time"  
@@ -50,32 +54,32 @@ Now the internal id. So I have to make a function like above again. That's right
 
 Now I have to create the DOM from this. Again: no way to enumerate the options at compile or runtime so copy paste it is:
 
-```elm
- , select [id "id_time_range", onSelect ChangeTimeRange]  
- [ option [] [text "24h"] — or should I use timeRangeDisplayName here? It's even worse!  
- , option [] [text "1 week"]  
- , option [] [text "All time"]  
- ]
+```haskell
+  , select [id "id_time_range", onSelect ChangeTimeRange]  
+  [ option [] [text "24h"] --— or should I use timeRangeDisplayName here? It's even worse!  
+  , option [] [text "1 week"]  
+  , option [] [text "All time"]  
+  ]
 ```
 
 Ugh. Ok, whatever. It's probably fine. Then when the user changes the selection I need to update my model. After a LOT of googling I find this:
 
-```elm
+```haskell
 onSelect : (String -> msg) -> Attribute msgonSelect msg =  
- on "change" (Json.map msg targetValue)
+   on "change" (Json.map msg targetValue)
 ```
 
 First of all, what is json doing here? Ok, fine. The type signature? I have no idea why it should look like that, doesn't make sense to me. Then I get a message with the target value. Ok cool, getting somewhere… now to convert back from a string to the union type.
 
 So I declare basically the reverse function above:
 
-```elm
+```haskell
 timeRangeFromString : String -> TimeRange  
 timeRangeFromString s =  
- case s of  
- "All time" -> AllTime  
- "One week" -> OneWeek  
- "24h" -> OneDay
+  case s of  
+  "All time" -> AllTime  
+  "One week" -> OneWeek  
+  "24h" -> OneDay
 ```
 
 Obviously that's a compile error because it's not exhaustive. So I add a default that will never be used. The entire function is basically copy paste. Fine. But here's the kicker: if I add an option to TimeRange this function will just go to the default. There is no way to have a case that must produce all valid _outputs_ but there is one to check you've handled all _inputs_. So now I have brittle code in addition to a lot of copy paste.
@@ -84,8 +88,9 @@ Ok, I'll just write a test! But I can't enumerate TimeRange. :(
 
 I asked around on Elm slack and the "solution" people have gone with seems to be to duplicate the union type in a list:
 
-```elm
-type TimeRange = AllTime | OneWeek | OneDay  
+```haskell
+type TimeRange = AllTime | OneWeek | OneDay
+  
 ranges = [AllTime, OneWeek, OneDay]
 ```
 
