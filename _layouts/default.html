@@ -8,6 +8,25 @@
     <link rel="stylesheet" type="text/css" media="screen"
           href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <style media="screen">
+        #face img {
+            width: 30px;
+            margin: 0;
+        }
+
+        #face {
+            top: 23px;
+            right: 5px;
+            position: absolute;
+            color: black;
+        }
+
+        #header-thingie {
+            background-image: url('/img/grass.jpg');
+            background-position: center;
+            background-size: 200%;
+        }
+
+        /* Desktop */
         @media screen and (min-width: 768px) {
             h1, h2, h3, h4, body {
                 font-size: 40px;
@@ -20,6 +39,24 @@
 
             body {
                 font-size: 19px;
+            }
+
+            #face img {
+                width: 90px;
+            }
+
+
+            #face {
+                top: 95px;
+                left: 30px;
+            }
+
+            #face a {
+                display: block;
+            }
+
+            #header-thingie {
+                background-size: 100%;
             }
         }
 
@@ -82,11 +119,6 @@
             background-color: white;
         }
 
-        #header-thingie {
-            background-image: url('/img/grass.jpg');
-            background-position: center;
-            background-size: 100%;
-        }
         #header-thingie a {
             color: white;
             text-shadow: black 1px 1px 1px;
@@ -95,13 +127,7 @@
         #main_content_wrap {
             border-top: 1px solid rgb(214, 214, 214);
         }
-        
-        #face {
-            position: absolute; 
-            top: 95px; 
-            left: 30px;
-        }
-        
+
         @media (prefers-color-scheme: dark) {
             #main_content_wrap {
                 background: #251f1f;
@@ -152,6 +178,13 @@
                 background-color: #00ee17;
             }
         }
+
+        /* Desktop AND dark mode */
+        @media screen and (min-width: 768px) and (prefers-color-scheme: dark) {
+            #face {
+                color: white;
+            }
+        }
     </style>
     {% seo %}
 </head>
@@ -172,9 +205,9 @@
      Anders Hovmöller
      
      <div>
-         <a href="https://github.com/boxed">GitHub</a><br>
-         <a href="https://twitter.com/andershovmoller">twitter</a><br>
-         <a href="mailto:boxed@killingar.net">email</a><br>
+         <a href="https://github.com/boxed">GitHub</a>
+         <a href="https://twitter.com/andershovmoller">twitter</a>
+         <a href="mailto:boxed@killingar.net">email</a>
      </div>
 </div>
 

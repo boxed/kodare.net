@@ -4,7 +4,7 @@ title:	"Flaky tests part 3: freeze the world"
 date:	2018-09-12
 ---
 
- I didn't set out to write a blog series on flaky tests, but [here](https://medium.com/@boxed/use-the-biggest-hammer-8425e4c71882) we [are](https://medium.com/@boxed/intermittent-tests-aligned-primary-keys-dcf14953d9af). Sometimes the topic chooses you.
+ I didn't set out to write a blog series on flaky tests, but [here](/2018/02/05/use-the-biggest-hammer.html) we [are](/2018/08/28/intermittent-tests-aligned-primary-keys.html). Sometimes the topic chooses you.
 
 Dealing with time in tests is a pain. Time is essentially a global variable that keeps changing constantly. I was recently reminded of this when I wrote a test that only passed after 02:00 and before 07:00. There were two problems with the test:
 
