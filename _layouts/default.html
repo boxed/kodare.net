@@ -269,7 +269,7 @@ function domain_part(s) {
 
 var referrer = null;
 if (domain_part(document.referrer) !== domain_part(document.location.href)) {
-    referer = document.referrer;
+    referrer = document.referrer;
 }
 
 document.domain = 'kodare.net';
@@ -278,7 +278,7 @@ document.domain = 'kodare.net';
 var request = new XMLHttpRequest();
 request.open('POST', 'http://analytics.kodare.net/report/', true);
 request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-request.send({referer: referer});
+request.send({referrer: referrer});
 
 </script>
 </body>
