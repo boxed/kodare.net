@@ -260,5 +260,26 @@
         Copyright Anders Hovmöller
     </footer>
 </div>
+
+<script>
+// My super simple analytics. I just store referrer, user agent and page counts. The code is at https://github.com/boxed/analytics
+function domain_part(s) {
+    return s.split('/', 3).join('/');
+}
+
+var referrer = null;
+if (domain_part(document.referrer) !== domain_part(document.location.href)) {
+    referer = document.referrer;
+}
+
+document.domain = 'kodare.net';
+
+// report page load
+var request = new XMLHttpRequest();
+request.open('POST', 'http://analytics.kodare.net/report/', true);
+request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+request.send({referer: referer});
+
+</script>
 </body>
 </html>
