@@ -5,6 +5,7 @@ Latest post:
 
 {{ site.posts[0].content }}
 
+<div id="archive">
 ## Archive
 
 <ul style="list-style: none; padding-left: 0">
@@ -14,3 +15,4 @@ Latest post:
     </li>
   {% endfor %}
 </ul>
+</div>
