@@ -6,7 +6,7 @@ Latest post:
 {{ site.posts[0].content }}
 
 <div id="archive">
-## Archive
+<h2>Archive</h2>
 
 <ul style="list-style: none; padding-left: 0">
   {% for post in site.posts %}
