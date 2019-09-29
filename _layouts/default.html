@@ -22,6 +22,18 @@
             order: 50;
         }
 
+        #claps {
+            height: 50px;
+            background-image: url('/img/clap-icon.svg');
+            background-repeat: no-repeat;
+        }
+
+        #claps_count {
+            left: 60px;
+            position: relative;
+            top: 15px;
+        }
+
         #face img {
             width: 30px;
             margin: 0;
@@ -159,6 +171,11 @@
 
             #footer_wrap {
                 background-color: black;
+            }
+
+            #claps img {
+                -webkit-filter: invert(.75); /* safari 6.0 - 9.0 */
+                filter: invert(.75);
             }
 
             pre {
