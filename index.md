@@ -11,5 +11,7 @@
 </div>
 
 <script>
-document.getElementById('claps').remove();
+document.ondomcontentready = function() {
+    document.getElementById('claps').remove();
+};
 </script>
