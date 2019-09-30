@@ -11,7 +11,7 @@
 </div>
 
 <script>
-document.ondomcontentready = function() {
+document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('claps').remove();
-};
+});
 </script>
