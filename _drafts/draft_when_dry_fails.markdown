@@ -4,21 +4,18 @@ title:	"When DRY fails"
 date:	201?????
 ---
 
-  
-#When DRY fails
-
 Don't Repeat Yourself, or DRY, is one of the core principles of programming. It's part of what makes software powerful: it's avoiding duplication of effort when writing the code, but it also makes sure that when a bug is found it's fixed everywhere. It also applies to data: if you need to change something, you want to be sure you've changed it, and not just one copy (this is sometimes called "single source of truth"). It's generally agreed to be A Good Thing (it can be misused, but let's leave that for now).
 
-But what if you can't be DRY?
+## But what if you can't be DRY?
 
 There are many situations where DRY just isn't feasible. Here are some:
 
-There are serious performance implications
-It makes the code more complex, not less
-You need to keep some data in many places for redundancy (backups or cloud storage for example) 
-You need the same data/code in different programming languages
-The data/code is spread over multiple companies
-Whatever the reason may be, it happens and it's not always avoidable.
+- There are serious performance implications
+- It makes the code more complex, not less
+- You need to keep some data in many places for redundancy (backups or cloud storage for example) 
+- You need the same data/code in different programming languages
+- The data/code is spread over multiple companies
+- Whatever the reason may be, it happens and it's not always possible to avoid repeating yourself.
 
 The problem with DRY as a principle is that it lacks an else clause. It's like:
 
@@ -38,7 +35,7 @@ if feasible:
     DRY!
 else:
     reconcile!
-```    
+```
 
 When DRY fails, you reconcile. The simplest form of a reconciliation is to just write a test that reads data A and data B and fails with a diff if they are out of sync. The data doesn't need to be identical (and probably can't be, otherwise it wouldn't be a DRY violation in the first place), so the test will need to transform A and B into some common format to be able to compare.
 
