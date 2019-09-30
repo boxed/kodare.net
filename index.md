@@ -9,3 +9,7 @@
   {% endfor %}
 </ul>
 </div>
+
+<script>
+document.getElementById('claps').remove();
+</script>
