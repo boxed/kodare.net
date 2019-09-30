@@ -1,10 +1,3 @@
-Latest post:
-
-<h1>{{ site.posts[0].title }}</h1>
-<div id="post_time">{{ site.posts[0].date | date:"%Y-%m-%d" }}</div>
-
-{{ site.posts[0].content }}
-
 <div id="archive">
 <h2>Archive</h2>
 
