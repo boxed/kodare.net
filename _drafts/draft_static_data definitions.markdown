@@ -13,7 +13,7 @@ Defining static data structures and business rules must follow these rules, or e
 	
 3. You must be able to add "rows" without pain.
 	1. If a row MUST have a value for a column, it MUST fail if you didn't supply one.
-	2. If there's a reasonable default, you must be able to set that up and not have to supply the default at each row. This is just DRY for the defaults.
+	2. If there's a reasonable default, you must be able to set that up and not have to supply the default at each row. This is just DRY for the defaults. A global "default_foo" that you use won't do because it creates noise that hides the valuable information. 
 	3. Values must be able to be of any type.
 	4. Code that must handle all rows must adapt automatically when changing the "table", or fail in some way (preferably import/compile time).
 	
@@ -35,6 +35,8 @@ DRY violations always results in code that is hard to change: making a change an
 
 If your data structures can't handle expanding what a row looks like you will quickly need extra lists/dicts/etc somewhere else to tack of this data later. This turns into the same mess you were trying to avoid in the first place. I'm looking at you enums.
 
+You can nest data if you want but in general flat is better than nested. 
+
 ## Violating 3.  You must be able to add "rows" without pain.
 
 ### Subrule a: If a row MUST have a value for a column, it MUST fail if you didn't supply one.
@@ -45,7 +47,7 @@ You shouldn't get "undefined" or "null" bombs all over your code when trying to 
 
 Defaults make it easier to define some piece of data that is only valid for one special case without making the rest of the code ugly. We should show what is special, not repeating what is the same so the special stuff is hidden in the noise.
 
-### Subrule c Values must be able to be of any type.
+### Subrule c: Values must be able to be of any type.
 
 Limiting the properties to certain types ahead of time and not being able to change it later inevitibly makes you angry when it turns out the limit was incorrect. Murphy will guarantee it was.
 
@@ -53,9 +55,13 @@ Limiting the properties to certain types ahead of time and not being able to cha
 
 If you break this rule you will have runtime errors.
 
-4. Without this you can't even write tests to make sure you've covered all cases. And you can't generate documentation based on your definitions.
+## Violating 4. You must be able to programmatically access all the data
 
-5. This is the old "there must always be a way out" rule. If you break it users will be frustrated with your lib and will be forced to write ugly and hacky instead of simple code.
+Without this you can't even write tests to make sure you've covered all cases. And you can't generate documentation based on your definitions.
+
+## Violating 5. If you have a library with a fixed row format you must supply a way for the user to tack on arbitrary data
+
+This is the old "there must always be a way out" rule. If you break it users will be frustrated with your lib and will be forced to write ugly and hacky instead of simple code by putting information in a different place than where it belongs. 
 
 ## Examples:
 
