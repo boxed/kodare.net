@@ -1,7 +1,7 @@
 ---
 
 title:	"When DRY fails"
-date:	201?????
+date:	2019-10-09
 ---
 
 Don't Repeat Yourself, or DRY, is one of the core principles of programming. It's part of what makes software powerful: it's avoiding duplication of effort when writing the code, but it also makes sure that when a bug is found it's fixed everywhere. It also applies to data: if you need to change something, you want to be sure you've changed it, and not just one copy (this is sometimes called "single source of truth"). It's generally agreed to be A Good Thing (it can be misused, but let's leave that for now).
@@ -15,7 +15,8 @@ There are many situations where DRY just isn't feasible. Here are some:
 - You need to keep some data in many places for redundancy (backups or cloud storage for example) 
 - You need the same data/code in different programming languages
 - The data/code is spread over multiple companies
-- Whatever the reason may be, it happens and it's not always possible to avoid repeating yourself.
+
+Whatever the reason may be, it happens and it's not always possible to avoid repeating yourself.
 
 The problem with DRY as a principle is that it lacks an else clause. It's like:
 
@@ -63,4 +64,3 @@ Reconciliation is:
 ## Blame the system, not the user
 
 Every time you make a code change and forgot to update some other place that needs to be updated in sync, don't think "oh silly me, I forgot" but instead "it's bad that the compilation/tests didn't fail". The same goes for data. This type of thinking takes practice, but I think it's generally a good idea to defaulting to blaming the system when the user screws up. This attitude makes for good systems without lots of sharp edges in the long run.
-
