@@ -59,7 +59,8 @@ Reconciliation is:
 * Checking it regularly 
 * Reporting all discrepancies
 * Reporting fine grained discrepancies
-* Partial reconciliations where you're missing one or more of the points above can still be hugely useful of course. Start small!
+
+Partial reconciliations where you're missing one or more of the points above can still be hugely useful of course. Start small!
 
 ## Blame the system, not the user
 
