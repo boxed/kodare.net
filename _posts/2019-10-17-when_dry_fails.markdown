@@ -40,7 +40,7 @@ else:
 
 When DRY fails, you reconcile. The simplest form of a reconciliation is to just write a test that reads data A and data B and fails with a diff if they are out of sync. The data doesn't need to be identical (and probably can't be, otherwise it wouldn't be a DRY violation in the first place), so the test will need to transform A and B into some common format to be able to compare.
 
-Notice how the last paragraph always talks about data, never code. It's because code is a pain to reconcile, but data is fairly easy. If your code isn't declarative when you have a DRY violation you might be in trouble. Reconciling code can be having a great test suite (100% coverage, 100% mutation tested ideally) that you can run on both pieces of code. 
+Notice how the last paragraph always talks about data, never code. It's because code is a pain to reconcile, but data is fairly easy. If your code isn't declarative when you have a DRY violation you might be in trouble. Reconciling code can be having a great test suite (100% coverage, 100% [mutation tested](https://mutmut.readthedocs.io) ideally) that you can run on both pieces of code. 
 
 ## These are not reconciliations
 
@@ -49,7 +49,7 @@ I'll start with some things that are not valid reconciliation methods.
 * Synchronization is not reconciliation. It never checks the full state of the data, instead monitoring for add/delete/change and propagating those. This isn't good enough because you will lose an event and now you're out of sync and you won't recover. Sync is good for fast change propagation but you need periodic full reconciliation too. 
 * Copying the entire dataset from A to B, overwriting Bs data is not reconciliation. It can work, but it can hide problems you probably should look at. Like why did B diverge when A was unchanged? It can also be a usability problem because someone changes B and at some point becomes surprised and frustrated because their changes are now gone. 
 * Being disciplined and always changing both places is not reconciliation. If it's not done by a computer it won't work or scale. Never send a man to do a machines job.
-* Comparing e.g. checksums on the entire dataset and sounding an alarm if they are different is not reconciliation. This might be a good start but reconciliation means saying what is wrong not just that it's wrong. 
+* Comparing e.g. checksums on the entire dataset and sounding an alarm if they are different is not reconciliation. This might be a good start but reconciliation means saying _what_ is wrong not just _that_ it's wrong. 
 
 ## What is reconciliation?
 
