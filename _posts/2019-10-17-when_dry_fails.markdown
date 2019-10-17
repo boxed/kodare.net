@@ -25,7 +25,7 @@ if feasible:
     DRY!
 ```
 
-This type of code should make you go WAT, but when it's taught in school in the form of English we often miss the glaring hole in the principle: what about the else clause? What do we do when the DRY principle can't be applied? 
+This type of code should make you go WAT, but when it's taught in school in the form of English we often miss the glaring hole in the principle: [what about the else clause](/2019/06/21/the-else-statement-smell.html)? What do we do when the DRY principle can't be applied? 
 
 ## DRYER (DRY Else Reconcile)!
 
