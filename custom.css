@@ -1,0 +1,214 @@
+
+body {
+    font-size: 18px;
+}
+
+h2 {
+    background: none;
+}
+
+ol ol {
+    list-style-type: lower-alpha;
+}
+
+#claps {
+    height: 50px;
+    width: 50px;
+    background-image: url('/img/clap-icon.svg');
+    background-repeat: no-repeat;
+    margin: 20px;
+}
+
+#claps_count {
+    left: 60px;
+    position: relative;
+    top: 15px;
+    white-space: nowrap;
+}
+
+#face img {
+    width: 30px;
+    margin: 0;
+}
+
+#face {
+    top: 14px;
+    right: 5px;
+    position: absolute;
+    color: black;
+    z-index: 10;
+    width: 150px;
+}
+
+#header-thingie {
+    background-image: url('/img/grass.jpg');
+    background-position: center;
+    background-size: 200%;
+}
+
+/* Desktop */
+@media screen and (min-width: 1080px) {
+    h1, h2, h3, h4, body {
+        font-size: 40px;
+    }
+
+
+    #project_title {
+        font-size: 70px;
+    }
+
+    body {
+        font-size: 19px;
+    }
+
+    #face img {
+        width: 90px;
+    }
+
+
+    #face {
+        top: 95px;
+        left: 30px;
+    }
+
+    #face a {
+        display: block;
+    }
+
+    #header-thingie {
+        background-size: 100%;
+    }
+}
+
+#footer_wrap {
+    color: gray;
+}
+
+h1, h2, h3, h4, body {
+    font-family: "Book Antiqua";
+    color: black;
+}
+
+blockquote {
+    color: black;
+    font-style: italic;
+}
+
+body {
+    color: black;
+}
+
+.outer {
+}
+
+
+.inner {
+    max-width: 700px;
+}
+
+#post_time {
+    font-size: 80%;
+    color: gray;
+}
+
+#post-nav {
+    text-align: center;
+    min-height: 30px;
+    max-width: 700px;
+    padding-top: 30px;
+}
+
+
+.post-nav-prev {
+    float: left ;
+}
+
+.post-nav-next {
+    float: right;
+}
+
+#main_content_wrap {
+    background: white;
+}
+
+.highlight {
+    background-color: white;
+}
+
+#header-thingie a {
+    color: white;
+    text-shadow: black 1px 1px 1px;
+}
+
+#main_content_wrap {
+    border-top: 1px solid rgb(214, 214, 214);
+}
+
+@media (prefers-color-scheme: dark) {
+    #main_content_wrap {
+        background: #251f1f;
+    }
+
+    body, h1, h2, h3, h4, h5, p {
+        color: white;
+    }
+
+    a {
+        color: #45a4f2;
+    }
+
+    #footer_wrap {
+        background-color: black;
+    }
+
+    #claps {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+        color: black;
+    }
+
+    pre {
+        background-color: black;
+    }
+
+    code {
+        background: black;
+        color: white;
+    }
+
+    .highlight {
+        background-color: black;
+    }
+
+    .highlight .kn
+    {
+        color: white;
+    }
+
+    .highlight .k,
+    .highlight .kr,
+    .highlight .o,
+    .highlight .ow
+    {
+        color: aquamarine;
+    }
+
+    .highlight .nd {
+        color: yellow;
+    }
+
+    /* diff */
+    .highlight .gd {
+        background-color: red;
+    }
+    .highlight .gi {
+        background-color: #00ee17;
+    }
+}
+
+/* Desktop AND dark mode */
+@media screen and (min-width: 1080px) and (prefers-color-scheme: dark) {
+    #face {
+        color: white;
+    }
+}
