@@ -11,6 +11,11 @@ ol ol {
     list-style-type: lower-alpha;
 }
 
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
 #claps {
     height: 50px;
     width: 50px;
