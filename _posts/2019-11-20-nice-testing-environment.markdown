@@ -9,6 +9,7 @@ At work we have a testing environment that is pretty nice. I'll describe it to h
 * Changes go through code review.
 * Changes are tested against our automated test suite.
 * Changes are either approved by a second person (4-eye approval) or manually tested.
+* Developers press merge on their own tickets when they feel ready
 
 So far so standard. The way our testing environment is built and we get feedback from it is the secret sauce. The high level view:
 
