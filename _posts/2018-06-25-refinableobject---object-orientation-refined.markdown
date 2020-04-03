@@ -44,12 +44,12 @@ class Foo(RefinableObject):
 Foo.quux = Shortcut(call_target=Foo, a__c=7, b=lambda: 'z')
 
 
-print(Foo().a.c)  # -> 1
-print(Foo().b())  # -> b
-print(Foo(a__c=4).a.c)  # -> 4
+print(Foo().a.c)               # -> 1
+print(Foo().b())               # -> b
+print(Foo(a__c=4).a.c)         # -> 4
 print(Foo(b=lambda: 'q').b())  # -> 'q'
-print(Foo.quux().a.c)  # -> 7
-print(Foo.quux().b())  # -> 'z'
+print(Foo.quux().a.c)          # -> 7
+print(Foo.quux().b())          # -> 'z'
 ```
 
 This design enables tri.table to have exactly one Column class while comparable libraries like django_tables2 has 13 (with less flexibility and less built in functionality in our opinion).
