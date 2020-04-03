@@ -1,6 +1,6 @@
 ---
 title: Static data definitions
-date: 
+date: 2020-01-01 
 ---
 
 

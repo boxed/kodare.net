@@ -1,6 +1,6 @@
 ---
 title: Looking for a new language
-date: 
+date: 2019-01-01 
 ---
 
 Python is my first choice language and has been for a decade or so. But there are obviously issues. Not being able to run Python in the browser is really bad. The GUI story for desktop, iOS and Android isn’t very compelling either to say the least. So I’m looking for a new language to learn. 
