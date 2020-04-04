@@ -352,4 +352,13 @@ with a url definition like this:
 path('', IndexPage().as_view()),
 ```
 
-`html` is a little fragment builder. 
+`html` is a little fragment builder to make it easier and faster to build
+small html parts. `html.div('foo')` is just a more convenient way to write
+`Fragment(tag='div', children__text='foo')`. `Fragment`s are used internally
+throughout iommi, because they allow you to define a small bit of html that
+can be customized later.
+
+A `Page` can contain any `Part` (like `Fragment`, `Table`, `Form`, `Menu`, 
+etc), or plain strings. Escaping is handled like you'd expect from Django
+where strings are escaped, and you can use `mark_safe` to send your raw
+html straight through. 
