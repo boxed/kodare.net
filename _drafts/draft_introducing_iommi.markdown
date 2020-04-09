@@ -357,11 +357,153 @@ path('', IndexPage().as_view()),
 
 `html` is a little fragment builder to make it easier and faster to build
 small html parts. `html.div('foo')` is just a more convenient way to write
-`Fragment(tag='div', children__text='foo')`. `Fragment`s are used internally
+`Fragment(tag='div', children__text='foo')`. Fragments are used internally
 throughout iommi, because they allow you to define a small bit of html that
-can be customized later.
+can be customized later. Let's look at an example:
+
+```python
+>>> class MyPage(Page):
+...    title = html.h1('Supernaut')
+
+>>> MyPage().bind().__html__()
+'<h1>Supernaut</h1>'
+
+>>> MyPage(parts__title__attrs__class__foo=True).bind().__html__()
+'<h1 class="foo">Supernaut</h1>'
+```
+
+This is used throughout iommi to provide good defaults that can be customized
+easily when needed.
 
 A `Page` can contain any `Part` (like `Fragment`, `Table`, `Form`, `Menu`, 
 etc), or plain strings. Escaping is handled like you'd expect from Django
 where strings are escaped, and you can use `mark_safe` to send your raw
 html straight through. 
+
+For our demo we'll also introduce a page for an artist:
+
+```python
+def artist_page(request, artist):
+    artist = get_object_or_404(Artist, name=artist)
+
+    class ArtistPage(Page):
+        title = html.h1(artist.name)
+
+        albums = Table(auto__rows=Album.objects.filter(artist=artist))
+        tracks = Table(auto__rows=Track.objects.filter(album__artist=artist))
+
+    return ArtistPage()
+
+urlpatterns = [
+    # [...snip...]
+    path('artist/<artist>/', artist_page),
+]
+```
+
+Note here how we specify `auto__rows` to supply a `QuerySet` instead of a
+model. This is very convenient in many cases, but is otherwise the same as
+specifying `auto__model` and `rows`.
+
+
+## cell__format
+
+In iommi you can customize the rendering on many different levels, depending
+on what the situation requires. The last layer of customization is
+`format` which is used to convert the value of a cell to a string that
+is inserted into the html (or CSV or whatever output format you are targeting):
+
+```python
+class IndexPage(Page):
+    # [...snip...]
+    albums = Table(
+        # [...snip...]
+        columns__artist__cell__format=lambda value, **_: 
+            format_html('<a href="/artist/{}/">{}</a>', value, value)
+    )
+    # [...snip...]
+```
+
+`columns__artist__cell__format` should be read as something similar to
+`columns.artist.cell.format`. This way of jumping namespace with `__` instead
+of `.` (because `.` is syntactically invalid!) is something Django started 
+doing for query sets and we really like it so we've taken this concept further
+and it is now everywhere in iommmi.
+
+The other levels of customization are `value` which is how the value is 
+extracted from the row, `attr` which is the attribute that is read (if
+you don't customize `value`), and lastly `template` which you use to override
+the entire rendering of the cell (including the `td` tag!). 
+
+You can also override `template` on the row to customize the row rendering.
+Again this includes the `tr` tag.
+
+
+## cell__url
+
+A very common case of tables is to show a link in the cell. You can do that
+with `cell_format` and `cell__template` like above, but it's such a common
+case that we supply a special convenience method `cell__url` for this. Let's
+make the artist column link to the artist page in our table. First we add
+a `get_absolute_url` on the model, then replace the 
+`columns__artist__cell__format` we had above with:
+
+```python
+class IndexPage(Page):
+    # [...snip...]
+    albums = Table(
+        # [...snip...]
+        columns__artist__cell__url=lambda value, **_: value.get_absolute_url(),
+    )
+    # [...snip...]
+```
+
+Much better!
+
+But actually, this is such a common case that we do this by default for you
+for `ForeignKey` columns if the target model has `get_absolute_url`. So we
+can just remove the `columns__artist__cell__url` specification entirely. But 
+we do want the *name* column to link to the album page so the total definition
+becomes:
+
+```python
+    albums = Table(
+        auto__model=Album,
+        page_size=5,
+        columns__name__cell__url=lambda row, **_: row.get_absolute_url(),
+    )
+``` 
+
+
+## Table filters
+
+It's very often we want the ability to filter lists, which is why iommi also
+provides this. To enable a filter make sure `include` is `True` for the `filter`
+of a column. We enable filtering for `name`, `year`, and `artist`:
+
+```python
+    albums = Table(
+        # [...snip...]
+        columns__name__filter__include=True,
+        columns__year__filter__include=True,
+        columns__year__filter__field__include=False,
+        columns__artist__filter__include=True,
+    )
+```
+
+`columns__year__filter__field__include=False` means we turn off the `Field` in
+the form that is created, but we can still search for the year in the
+advanced search language. 
+
+To handle selecting from a choice field that is backed by a `QuerySet` that
+can contain thousands or millions of rows, iommi by default uses a select2
+filter control with an automatic ajax endpoint. You can read more about this 
+in the full documentation. An advantage to this approach is that we only need
+to be sure our view has the correct permission checks and then we also know
+the select box (or ajax endpoint) has the same checks. This makes it easy to
+reason about the security of the product. 
+
+
+## Forms
+
+iommi also comes with a library for forms. This can look very much like the
+forms library built into Django, but is different in some crucial ways. 

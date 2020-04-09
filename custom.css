@@ -161,8 +161,15 @@ pre {
 }
 
 code {
+    border: 1px solid #80808080;
+    color: black;
+    padding: 2px;
+}
+
+pre code {
     padding: 10px 0;
     color: white;
+    border: 0;
 }
 
 #header-thingie a {
@@ -268,6 +275,10 @@ code {
         -webkit-filter: invert(100%);
         filter: invert(100%);
         color: black;
+    }
+
+    code {
+        color: white;
     }
 
 
