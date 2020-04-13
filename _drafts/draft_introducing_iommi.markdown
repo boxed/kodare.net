@@ -427,7 +427,7 @@ class IndexPage(Page):
 `columns.artist.cell.format`. This way of jumping namespace with `__` instead
 of `.` (because `.` is syntactically invalid!) is something Django started 
 doing for query sets and we really like it so we've taken this concept further
-and it is now everywhere in iommmi.
+and it is now everywhere in iommi.
 
 The other levels of customization are `value` which is how the value is 
 extracted from the row, `attr` which is the attribute that is read (if
