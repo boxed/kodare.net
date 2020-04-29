@@ -11,7 +11,8 @@ is a high level framework built on top of [Django](https://djangoproject.com).
 This library is a union of our previous libraries tri.form, tri.query and
 tri.table but we've collected all our grievances and architectural problems
 and dealt with them the way you can only do if you are free to let go of
-backwards compatibility, plus new features built on this new foundation.
+backwards compatibility. We've also added some new features built on this
+new foundation that we've been thinking about for a few years.
 
 This is primarily a library for developing traditional web apps, but we believe
 it's also a solid foundation to build SPAs and APIs going forward. Watch this
@@ -29,8 +30,12 @@ This is where we will end up at the end of this blog series:
 4 pages (plus the admin), with custom table, row, cell rendering, filtering,
 pagination, the advanced query language, and a menu.
 
+TODO: links to the other parts in the series
+
+Contents of this episode:
+
 * Do not remove this line (it will not be displayed)
-{:toc}     
+{:toc}
 
 ## Django setup
 
@@ -506,4 +511,137 @@ reason about the security of the product.
 ## Forms
 
 iommi also comes with a library for forms. This can look very much like the
-forms library built into Django, but is different in some crucial ways. 
+forms library built into Django, but is different in some crucial ways. Let's
+look at the most basic example from the Django documentation:
+
+```python
+from django import forms
+
+class NameForm(forms.Form):
+    your_name = forms.CharField(label='Your name')
+``` 
+
+```html
+{% raw %}<form action="/your-name/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>{% endraw %}
+```
+
+In iommi the same is written as:
+
+```python
+from iommi import Form, Field
+
+class NameForm(Form):
+    your_name = Field.text()
+```
+
+```html
+{{ form }}
+```
+
+In iommi you always get a form encoding specified on the form, so they all work
+with file uploads. This is a very common stumbling block for beginners. You also
+get a submit action by default which you can configure via `actions__submit`:
+
+
+```python
+from iommi import Form, Field
+
+class NameForm(Form):
+    your_name = Field.text()
+
+    class Meta:
+        actions__submit__display_name = 'Save'
+```
+
+In iommi we use `class Meta` a lot, similar to Django, but in iommi it's not
+just a bucket of values that someone might or might not read, it has a precise
+definition: values in `Meta` are passed into the constructor. So the example
+above is roughly the same as:
+
+```python
+NameForm(actions__submit__display_name='Save')
+```
+
+Worth pointing out is that values of `Meta` are defaults, so you can still
+override at the constructor call.
+
+An advantage to this strict definition is that we don't have silent failures
+in iommi. If you make a spelling mistake in a value in `Meta`, you will get
+an error message.
+
+
+## Automatic forms
+
+iommi can also derive forms from Django model definitions: 
+`Form(auto__model=Artist)`. You can specify which fields to include or exclude
+via `auto__include` or `auto__exclude`. The fields can still be customized
+fully. An example of this could be to insert a CSS class `foo` on the label
+tag of a field `name`: 
+
+```python
+form = Form(
+    auto__model=Artist,
+    fields__name__label__attrs__class__foo=True,
+)
+```
+
+There are many many more customizations options available, you can find more
+in the [HOWTO](https://docs.iommi.rocks/en/latest/howto.html) and the docs
+for [`Field`](https://docs.iommi.rocks/en/latest/Field.html).
+
+
+## Automatic views
+
+iommi goes a step further than this though, by supplying full views that can
+be used from either a declarative form or an auto generated form. An example
+is to have a create view for an `Artist`:
+
+```python
+urlpatterns = [
+    path('create/', Form.create(auto__model=Artist).as_view()),
+] 
+``` 
+
+There are three built in forms/views like this: `create`, `edit`, and `delete`.
+The `delete` view is a read only form with some styling for the submit button
+and a submit handler that delete the object. We find this to be really nice as
+a confirmation page because you can see what you are about to delete.
+
+
+# Admin
+
+With these high level abstractions we've seen so far (pages, tables, queries, 
+forms, fragments) we can easily build more powerful components. Which is what
+we've done with the administration interface built into iommi. Installing it
+is as simple as:
+
+```python
+class MyAdmin(Admin):
+    class Meta:
+        pass
+
+
+urlpatterns = [
+    path('iommi-admin/', include(MyAdmin.urls())),
+]
+```
+
+
+Customization is easy with `IOMMI_DEBUG` on (default on if `DEBUG` is on), 
+here's how to use the pick tool:
+
+<video controls><source src="/img/iommi-admin-customization.mp4"></video>
+
+
+You can override an entire field rendering with `template`, the template 
+of the label with `label__template`, the name of a field with `display_name`,
+add a CSS class to the label tag with `label__attrs__class__foo=True`, and 
+much more. Customization is at all levels, and in all these cases you can
+supply a callable for even more flexibility.
+
+
+More about the [admin in the iommi docs](https://docs.iommi.rocks/en/latest/admin.html).
