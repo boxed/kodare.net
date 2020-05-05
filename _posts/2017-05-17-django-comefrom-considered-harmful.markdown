@@ -26,3 +26,4 @@ class MyForm(Form):
 
 The risk of breaking things by having your stringly typed stuff not line up is gone (and we get rid of a lot of boilerplate as a bonus).
 
+Update: the next generation of tri.form is now a part of [iommi](http://iommi.rocks). Don't use tri.form, it's end of life. iommi is where new development happens. 
