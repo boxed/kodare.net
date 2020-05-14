@@ -11,7 +11,7 @@ Continuing from [part 1](/2020/04/02/draft_introducing_iommi_1.html):
 
 ## Pages
 
-So for we've just created a table, but often you want something a little more
+So far we've just created a table, but often you want something a little more
 complex, especially for your index page. iommi has a concept of a `Page` that
 is used to build up a bigger page from smaller building blocks. Let's build
 out our simple web app to have separate pages for albums, artists and tracks:
@@ -86,7 +86,7 @@ urlpatterns = [
 ```
 
 Note here how we specify `auto__rows` to supply a `QuerySet` instead of a
-model. This is very convenient in many cases, but is otherwise the same as
+model. This is very convenient in many cases, and is otherwise the same as
 specifying `auto__model` and `rows`.
 
 
@@ -182,7 +182,8 @@ advanced search language.
 To handle selecting from a choice field that is backed by a `QuerySet` that
 can contain thousands or millions of rows, iommi by default uses a select2
 filter control with an automatic ajax endpoint. You can read more about this 
-in the full documentation. An advantage to this approach is that we only need
+in the full documentation. The automatic endpoint is handled by iommi on the
+same url as the view. An advantage to this approach is that we only need
 to be sure our view has the correct permission checks and then we also know
 the select box (or ajax endpoint) has the same checks. This makes it easy to
 reason about the security of the product. 
@@ -230,8 +231,9 @@ And in the template:
 ```
 
 In iommi you always get a form encoding specified on the form, so they all work
-with file uploads. This is a very common stumbling block for beginners. You also
-get a submit action by default which you can configure via `actions__submit`:
+with file uploads. Missing form encoding on the form tag is a very common 
+stumbling block for beginners. You also get a submit action by default which
+you can configure via `actions__submit`:
 
 
 ```python
@@ -312,7 +314,7 @@ class AdminTable(Table):
         # [...snip...]
         actions__create_album = Action(
             attrs__href='/albums/create/', 
-            include=lambda table, **_: table.get_request().user.is_staff,
+            include=lambda request, **_: request.user.is_staff,
         )
 ```
 
@@ -324,7 +326,9 @@ up with album covers. This is what it looks right now:
 
 ![](/img/introducing-iommi-plain-index-page.png) 
 
-A custom cell template might be a good start. The 
+We'll start by removing the artists section. 
+
+A custom cell template might be a good start to make it look nicer. The 
 [demo app](https://github.com/boxed/supernaut) ships with images, we just need
 to link to them:
 
@@ -333,7 +337,13 @@ to link to them:
     auto__model=Album,
     columns__album_art=Column(
         attr=None,
-        cell__template=Template('<td><img height="30" src="/static/album_art/{{ row.artist }}/{{ row.name }}.jpg"></td>'),
+        cell__template=Template('''
+            <td>
+                <img 
+                    height="30"
+                    src="/static/album_art/{{ row.artist }}/{{ row.name }}.jpg">
+            </td>
+        '''),
     ),
 ){% endraw %}
 ```

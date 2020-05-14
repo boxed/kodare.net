@@ -23,12 +23,11 @@ commits for each stage of the apps evolution). To make this simpler for demo
 purposes I will put all my views inside `urls.py` so we don't need to jump
 around between different files too much.
 
-This is where we will end up at the end of this 2 part blog series:
+At the end of this 2 part blog series we'll end up with 4 pages (plus the iommi
+admin), with custom table, row, cell rendering, filtering, pagination, the
+advanced query language, and a menu. The index page will look like this:
 
 ![](/img/introducing_iommi_1.png)
-
-4 pages (plus the admin), with custom table, row, cell rendering, filtering,
-pagination, the advanced query language, and a menu.
 
 
 * Do not remove this line (it will not be displayed)
