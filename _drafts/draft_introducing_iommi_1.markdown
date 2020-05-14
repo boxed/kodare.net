@@ -8,12 +8,6 @@ I am very excited to reveal something me and my colleague Johan Lübcke have
 been working on for quite some time now: [iommi](http://iommi.rocks). This
 is a high level framework built on top of [Django](https://djangoproject.com).
 
-This library is a union of our previous libraries tri.form, tri.query and
-tri.table but we've collected all our grievances and architectural problems
-and dealt with them the way you can only do if you are free to let go of
-backwards compatibility. We've also added some new features built on this
-new foundation that we've been thinking about for a few years.
-
 This is primarily a library for developing traditional web apps, but we believe
 it's also a solid foundation to build SPAs and APIs going forward. Watch this
 space. But for now, let's get started!
@@ -29,6 +23,11 @@ advanced query language, and a menu. The index page will look like this:
 
 ![](/img/introducing_iommi_1.png)
 
+This library is a union of our previous libraries tri.form, tri.query and
+tri.table but we've collected all our grievances and architectural problems
+and dealt with them the way you can only do if you are free to let go of
+backwards compatibility. We've also added some new features built on this
+new foundation that we've been thinking about for a few years.
 
 * Do not remove this line (it will not be displayed)
 {:toc}
@@ -255,9 +254,11 @@ def index(request):
 ``` 
 
 ### What is bind()?
-`Table()` creates a table definition, and `bind()` couples it to the request,
- this is when it can do the sorting defined by http parameters for example.
- `bind()` returns a new `Table` that is "bound" and can be rendered.
+
+`Table()` creates a table definition, and `bind()` couples it to the request.
+In this step all things unique to this rendering is calculated. This is when it 
+can do the sorting defined by http parameters for example. `bind()` returns a
+new `Table` that is "bound" and can be rendered.
 
 
 ## Simplify!
@@ -328,7 +329,7 @@ The code above gives you this view:
 (The only cheat is that I've passed `page_size=10` to make the screenshot smaller.) 
 
 The title of this table is the plural verbose name of the `Album` model. Again
-as stated above, these are all defaults, not hard values, so you can pass 
+as stated above, these are all defaults, not hard coded values, so you can pass 
 `title` to the `Table` constructor here to override the title for example. 
 
 
