@@ -4,7 +4,7 @@ date: 2020-05-14
 render_with_liquid: false
 ---
 
-Continuing from [part 1](/2020/04/02/draft_introducing_iommi_1.html):
+Continuing from [part 1](/2020/05/13/draft_introducing_iommi_1.html):
 
 [The code on github](https://github.com/boxed/Supernaut)
 
