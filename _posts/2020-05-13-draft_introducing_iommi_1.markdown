@@ -12,10 +12,11 @@ This is primarily a library for developing traditional web apps, but we believe
 it's also a solid foundation to build SPAs and APIs going forward. Watch this
 space. But for now, let's get started!
 
-I will build a discography app (you can find the code on [github](https://github.com/boxed/Supernaut) with separate 
-commits for each stage of the apps evolution). To make this simpler for demo
-purposes I will put all my views inside `urls.py` so we don't need to jump
-around between different files too much.
+I will build a discography app (you can find 
+[the code on github](https://github.com/boxed/Supernaut) with separate commits
+for each stage of the apps evolution). To make this simpler for demo purposes
+I will put all my views inside `urls.py`
+so we don't need to jump around between different files too much.
 
 At the end of this 2 part blog series we'll end up with 4 pages (plus the iommi
 admin), with custom table, row, cell rendering, filtering, pagination, the
@@ -334,4 +335,4 @@ as stated above, these are all defaults, not hard coded values, so you can pass
 
 
 
-Continue to [part 2](/2020/04/02/draft_introducing_iommi_2.html) for more!
+Continue to [part 2](/2020/05/14/introducing_iommi_2.html) for more!

@@ -6,6 +6,8 @@ render_with_liquid: false
 
 Continuing from [part 1](/2020/04/02/draft_introducing_iommi_1.html):
 
+[The code on github](https://github.com/boxed/Supernaut)
+
 * Do not remove this line (it will not be displayed)
 {:toc}
 
@@ -457,4 +459,5 @@ I've touched on all the major parts in some way, and there is a lot of
 material to cover. I hope you want to give iommi a try. 
 
 The full documentation is at [iommi.rocks](https://docs.iommi.rocks), and we
-are on github at [TriOptima/iommi](https://github.com/TriOptima/iommi/)
+are on github at [TriOptima/iommi](https://github.com/TriOptima/iommi/). This
+example project is at [boxed/Supernaut](https://github.com/boxed/Supernaut).
