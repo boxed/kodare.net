@@ -12,7 +12,7 @@ But it's slow.
 
 It's a common theme on forums like reddit where people say you can't use python because it's slow. Yes, we all know python is slow. But we also know that the thing that normally makes things slow isn't the language, but the algorithm. 
 
-Yes, the language python is very slow compared to C, but that's *not* 99% of why python is slow in practice. Python is slow because many, if not most, python programmers don't care or understand the big picture performance implications of what they are doing. This is mostly ok when writing a web app, but it's very bad if you're writing a library used by a thousand or a hundred thousand or even a million people. 
+Yes, the language python is very slow compared to C, but that's *not* 99% of why python is slow in practice. Python is slow because many, if not most, python programmers don't care or understand the big picture performance implications of what they are doing. This is mostly ok when writing a web app, but it can have big performance implications if you're writing a library used by a thousand or a hundred thousand or even a million people. 
 
 Let's look at some practical examples of python being slow:
 
