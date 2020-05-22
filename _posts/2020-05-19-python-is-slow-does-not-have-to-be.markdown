@@ -92,3 +92,8 @@ Some places to start:
 * pip: at least cache some results! I should be able to run "pip install -r requirements.txt" before every command I execute and not notice it
 * virtualenv: I haven't looked into this, but it seems like writing 1218 files totalling 11.6MB should be possible to speed up, or avoid doing some of that work
 * Write benchmarks: this is maybe the simplest. You can benchmark tools against comparable tools for other languages for example. We should at least know if we are a hundred times slower than for example java.
+
+
+## UPDATE:
+
+Turns out the virtualenv guys were already on top of this! Version 20 now takes 0.8s to do the same thing as before took 6.4. The virtualenv team deserves high praise for this!
