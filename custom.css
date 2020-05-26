@@ -179,6 +179,10 @@ pre code {
     border: 0;
 }
 
+video {
+    width: 100%
+}
+
 #header-thingie a {
     color: white;
     text-shadow: black 1px 1px 1px;
