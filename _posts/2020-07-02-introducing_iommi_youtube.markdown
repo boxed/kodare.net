@@ -5,6 +5,6 @@ render_with_liquid: false
 ---
 
 
-My presentation is [Introducing iommi part 1](/2020/05/14/draft_introducing_iommi_1.html), [part 2](/2020/05/14/introducing_iommi_2.html)
+My presentation is [Introducing iommi part 1](/2020/05/13/draft_introducing_iommi_1.html), [part 2](/2020/05/14/introducing_iommi_2.html)
 is now [also available on YouTube](https://www.youtube.com/watch?v=8IwAlM9lVZc) if you prefer to watch it.
 
