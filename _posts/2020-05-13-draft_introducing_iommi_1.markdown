@@ -30,6 +30,8 @@ and dealt with them the way you can only do if you are free to let go of
 backwards compatibility. We've also added some new features built on this
 new foundation that we've been thinking about for a few years.
 
+This presentation is [also available on YouTube](https://www.youtube.com/watch?v=8IwAlM9lVZc).
+
 * Do not remove this line (it will not be displayed)
 {:toc}
 
