@@ -60,6 +60,7 @@ img {
     background-image: url('/img/grass.jpg');
     background-position: center;
     background-size: 200%;
+    height: 90px;
 }
 
 /* Desktop */
@@ -93,7 +94,7 @@ img {
 
     #header-thingie {
         background-size: 100%;
-        height: 90px;
+        height: 150px;
     }
 }
 
