@@ -36,28 +36,26 @@ sup {
 }
 
 img {
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-box-shadow: 0 0 0 0 transparent;
+    -webkit-box-shadow: 0 0 0 #000;
+    border: 0;
 }
 
 #face img {
-    width: 30px;
+    width: 86px;
     margin: 0;
-    box-shadow: 0 0 5px #ebebeb;
-    -webkit-box-shadow: 0 0 5px #ebebeb;
 }
 
 #face {
-    top: 14px;
+    top: 15px;
     right: 5px;
     position: absolute;
-    color: black;
     z-index: 10;
     width: 150px;
+    text-align: right;
 }
 
 #header-thingie {
-    background-image: url('/img/grass.jpg');
+    background-image: url('/img/header.jpg');
     background-position: center;
     background-size: 200%;
     height: 90px;
@@ -79,13 +77,14 @@ img {
     }
 
     #face img {
-        width: 90px;
+        width: 150px;
     }
 
 
     #face {
-        top: 95px;
+        top: 22px;
         left: 30px;
+        text-align: left;
     }
 
     #face a {
@@ -122,6 +121,7 @@ body {
 
 .inner {
     max-width: 700px;
+    padding: 40px 10px;
 }
 
 #post_time {
@@ -187,11 +187,9 @@ video {
 
 #header-thingie a {
     color: white;
-    text-shadow: black 1px 1px 1px;
 }
 
 #main_content_wrap {
-    border-top: 1px solid rgb(214, 214, 214);
 }
 
 .highlight span {
