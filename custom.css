@@ -1,6 +1,6 @@
 
 body {
-    font-size: 18px;
+    font-size: 14px;
 }
 
 h2 {
@@ -73,7 +73,7 @@ img {
     }
 
     body {
-        font-size: 19px;
+        font-size: 16px;
     }
 
     #face img {
@@ -102,8 +102,17 @@ img {
 }
 
 h1, h2, h3, h4, body {
-    font-family: "Book Antiqua";
     color: black;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: "Book Antiqua", serif;
+    color: black;
+}
+
+body {
+    font-family: 'Verdana', sans-serif;
 }
 
 blockquote {
@@ -157,12 +166,12 @@ body {
 
 .highlight {
     padding: 0;
-    background-color: #363a40;
+    background-color: #262424;
 }
 
 
 pre {
-    background-color: #363a40;
+    background-color: #262424;
     border-top: 3px solid #464646;
     border-bottom: 3px solid #464646;
     padding-top: 15px;
@@ -267,7 +276,7 @@ video {
 
 @media (prefers-color-scheme: dark) {
     #main_content_wrap {
-        background: #363a40;
+        background: #262424;
     }
 
     body, h1, h2, h3, h4, h5, p {
