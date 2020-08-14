@@ -1,5 +1,16 @@
+Hi, my name is Anders. I'm a prolific coder and the author of:
+
+* <a href="https://github.com/boxed/mutmut">mutmut</a> - the premier mutation testing tool for python
+* <a href="https://github.com/TriOptima/iommi">iommi</a>, with <a href="https://github.com/jlubcke">Johan Lübcke</a> - build webapps in Django faster, and better
+* <a href="https://github.com/boxed/instar">instar</a> - powerful advanced transformations of Clojure data structures
+* <a href="https://github.com/boxed/hammett">hammett</a> - the fastest test runner for python, and pytest compatible!
+* ...and <a href="https://github.com/boxed?tab=repositories&q=&type=source&language=">many many more</a>
+
+Currently working at <a href="https://trioptima.com/">TriOptima</a>, where we stabilize the global financial system.
+
+
 <div id="archive">
-<h2>Archive</h2>
+<h2>Blog archive</h2>
 
 <ul style="list-style: none; padding-left: 0">
   {% for post in site.posts %}
