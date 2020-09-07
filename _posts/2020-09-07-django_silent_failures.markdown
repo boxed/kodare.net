@@ -14,7 +14,7 @@ Let's look at an example (this is from the official documentation with some very
 
 
 ```html
-<h1>Articles</h1>
+{% raw %}<h1>Articles</h1>
 
 {{ now }}
 
@@ -24,8 +24,7 @@ Let's look at an example (this is from the official documentation with some very
 {% empty %}
     <li>No articles yet.</li>
 {% endfor %}
-</ul>
-
+</ul>{% endraw %}
 ```
 
 The first problem here is `{{ now }}`. If you don't have a variable `foo` in the context Django ignores this error silently. This is a bad design decision. If you follow any support forum for Django you see this tripping up beginners endlessly with many saying they've wasted hours on such easy typos. (Install django-fastdev to fix this.)
