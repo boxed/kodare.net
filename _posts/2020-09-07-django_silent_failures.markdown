@@ -27,7 +27,7 @@ Let's look at an example (this is from the official documentation with some very
 </ul>
 ```
 
-The first problem here is `{{ now }}`. If you don't have a variable `foo` in the context Django ignores this error silently. This is a bad design decision. If you follow any support forum for Django you see this tripping up beginners endlessly with many saying they've wasted hours on such easy typos. (Install django-fastdev to fix this.)
+The first problem here is `{{ now }}`. If you don't have a variable with the name given in the context Django ignores this error silently. This is a bad design decision. If you follow any support forum for Django you see this tripping up beginners endlessly with many saying they've wasted hours on such easy typos. (Install [django-fastdev](https://github.com/boxed/django-fastdev) to fix this.)
 
 ## Class Based Views
 
@@ -53,7 +53,7 @@ Let's look at how many places we can make a one character spelling error and not
 
 So on these 7 lines we have 3 (arguably 4) ways you can have errors that are silently ignored by Django. We can do better! In iommi the equivalent code is this:
 
-```
+```python
 Table.div(
     auto__model=Article,
     page_size=100, 
@@ -65,7 +65,7 @@ If you have django-fastdev installed then there is zero places in this code wher
 
 Let's look at the hook points for CBVs to see how many places we can get silent failures (there are a few more hook points actually, but I think this is enough), method bodies skipped:
 
-```
+```python
 class ArticleListView(ListView):
 
     model = Article
@@ -91,11 +91,14 @@ class ArticleListView(ListView):
     def get_queryset(self):
     def get_context_object_name(self, object_list):
     def get(self, request, *args, **kwargs):
-    def render_to_response(self, context,     def options(self, request, *args, **kwargs):
+    def render_to_response(self, context, *args, **kwargs):
+    def options(self, request, *args, **kwargs):
     def get_ordering(self):
 ```
 
-There are 25 hook points here. If you make a spelling error on any of them except `model`, `template_name` or `context_object_name` you get no error message. The `template_name` parameter is a bit fuzzier, since if you do have a template at `myapp/article_list.html` you will have a silently passing failure, but if you don't then you will get an error. Let's call this one half an error. 
+There are 25 hook points here. If you make a spelling error on any of them except `model`, `template_name` or `context_object_name` you get no error message. 
+
+The `template_name` parameter is a bit of a fuzzy case, since if you do have a template at `myapp/article_list.html` you will have a silently passing failure (using the wrong template), but if you don't then you will get an error. Let's call this one half an error. 
 
 `context_object_name` is interesting because if you declare it you actually get another name *in addition* to the default. I would argue the docs are rather unclear on this point. At least this reduces errors because if you supply this option and forget to change one place in the template to use the new name it will still work. If you think this is good or bad is pretty subjective, as it can definitely introduce a lot of confusion later.
 
@@ -104,8 +107,6 @@ With Function Based Views pretty much all of these pit falls just don't exist. T
 ## Forms
 
 In my opinion forms are slightly better than CBVs, because they take quite a few configuration options as constructor arguments, like `data`, `files`, `auto_id`, `prefix`, `initial`, etc. If you make a spelling error here you will get an error from python because the keyword arguments don't match (assuming you don't use positional arguments, then you have more hard to debug errors but at least you get errors probably!). But let's move on to the problems:
-
-(If you use CBVs with forms you have a new failure point on `form_valid`, same as normal for CBVs.)
 
 A common failure point for new users is that they want a textarea so they do:
 
