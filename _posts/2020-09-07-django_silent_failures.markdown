@@ -4,7 +4,6 @@ date: 2020-09-07
 render_with_liquid: false
 ---
 
-
 I'm a big fan of Django but it has too many silent failure modes. This is very bad for beginners, and it's not good for veterans either. I make these types of mistakes on an almost daily basis. 
 
 First:
@@ -135,3 +134,6 @@ If you rename the `name` field here you also need to rename the `clean_name` met
 ## Summary
 
 You might have noticed that many of the problems here are common to any standard OOP style code base written in Python: there's no `overrides` and no `final` qualifiers to avoid these pit falls. This is all fine in normal casual usage, but you don't have to settle for this type of brittle behavior in your own library. Python is very flexible and we can make libraries robust against user error if we spend the time and effort to do so. 
+
+
+(When publishing this blog post I accidentally named the file `2020-08-07_django_silent_failures.markdown` instead of the correct `2020-08-07-...`. This was a silent failure and the blog post never appeared. Ironic!)
