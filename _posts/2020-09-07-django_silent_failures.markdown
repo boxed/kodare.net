@@ -3,7 +3,7 @@ title: Django silent failures
 date: 2020-09-07
 render_with_liquid: false
 ---
-
+{% raw %}
 I'm a big fan of Django but it has too many silent failure modes. This is very bad for beginners, and it's not good for veterans either. I make these types of mistakes on an almost daily basis. 
 
 First:
@@ -14,7 +14,7 @@ Let's look at an example (this is from the official documentation with some very
 
 
 ```html
-{% raw %}<h1>Articles</h1>
+<h1>Articles</h1>
 
 {{ now }}
 
@@ -24,7 +24,7 @@ Let's look at an example (this is from the official documentation with some very
 {% empty %}
     <li>No articles yet.</li>
 {% endfor %}
-</ul>{% endraw %}
+</ul>
 ```
 
 The first problem here is `{{ now }}`. If you don't have a variable `foo` in the context Django ignores this error silently. This is a bad design decision. If you follow any support forum for Django you see this tripping up beginners endlessly with many saying they've wasted hours on such easy typos. (Install django-fastdev to fix this.)
@@ -136,3 +136,5 @@ You might have noticed that many of the problems here are common to any standard
 
 
 (When publishing this blog post I accidentally named the file `2020-08-07_django_silent_failures.markdown` instead of the correct `2020-08-07-...`. This was a silent failure and the blog post never appeared. Ironic!)
+
+{% endraw %}
