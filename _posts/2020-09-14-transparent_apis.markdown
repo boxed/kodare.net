@@ -106,7 +106,7 @@ def get_feed(url, fetch, decode):
 ```
 
 
-This is an implementation of `get_feed` with a transparent API. You'll first notice that the body of the function is the same trivial code we started with plus a call to `decode()`. The `@dispatch` decorator is where the magic happens. You can think of it as setting up a partial application for `requests.request`, but the function being called and the arguments are just defaults, not hard coded. So the first argument to `@dispatch` is `fetch__call_target=requests.request` meaning requests.request is the function to call. The second argument is `fetch__method='get'` which means that the keyword argument `method` is set to the value `'get'`. Then the last argument is just a callback with a default value.
+This is an implementation of `get_feed` with a transparent API. You'll first notice that the body of the function is the same trivial code we started with plus a call to `decode()`. The `@dispatch` decorator is where the action is. You can think of it as setting up a partial application for `requests.request`, but the function being called and the arguments are just defaults, not hard coded. So the first argument to `@dispatch` is `fetch__call_target=requests.request` meaning requests.request is the function to call, and `fetch` is the name of the partial. The second argument is `fetch__method='get'` which means that the keyword argument `method` of the `fetch` partial is set to the value `'get'`. Then the last argument is just a callback with a default value.
 
 Now if we look at some calls of `get_feed`:
 
