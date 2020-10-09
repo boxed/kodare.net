@@ -61,46 +61,6 @@ img {
     height: 90px;
 }
 
-/* Desktop */
-@media screen and (min-width: 1080px) {
-    h1, h2, h3, h4, body {
-        font-size: 40px;
-    }
-    h2, h3, h4, h5, h6 {
-        font-family: verdana, sans-serif;
-        font-size: 25px;
-        font-weight: normal;
-    }
-
-
-    #project_title {
-        font-size: 70px;
-    }
-
-    body {
-        font-size: 16px;
-    }
-
-    #face img {
-        width: 150px;
-    }
-
-
-    #face {
-        top: 22px;
-        left: 30px;
-        text-align: left;
-    }
-
-    #face a {
-        display: block;
-    }
-
-    #header-thingie {
-        background-size: 100%;
-        height: 150px;
-    }
-}
 
 #footer_wrap {
     color: gray;
@@ -279,6 +239,47 @@ video {
 .highlight .il { color: #f99157 } /* Literal.Number.Integer.Long */
 
 
+/* Desktop */
+@media screen and (min-width: 1080px) {
+    h1, h2, h3, h4, body {
+        font-size: 40px;
+    }
+    h2, h3, h4, h5, h6 {
+        font-family: verdana, sans-serif;
+        font-size: 25px;
+        font-weight: normal;
+    }
+
+
+    #project_title {
+        font-size: 70px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    #face img {
+        width: 150px;
+    }
+
+
+    #face {
+        top: 22px;
+        left: 30px;
+        text-align: left;
+    }
+
+    #face a {
+        display: block;
+    }
+
+    #header-thingie {
+        background-size: 100%;
+        height: 150px;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     #main_content_wrap {
         background: #262424;
@@ -322,3 +323,4 @@ video {
         color: white;
     }
 }
+
