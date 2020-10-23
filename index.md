@@ -14,9 +14,11 @@ Currently working at <a href="https://trioptima.com/">TriOptima</a>, where we st
 
 <ul style="list-style: none; padding-left: 0">
   {% for post in site.posts %}
-    <li>      
-      {{ post.date | date: "%Y-%m-%d" }} - <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
+    {% unless post.draft %}
+      <li>      
+        {{ post.date | date: "%Y-%m-%d" }} - <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endunless %}
   {% endfor %}
 </ul>
 </div>
