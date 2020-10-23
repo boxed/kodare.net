@@ -5,7 +5,7 @@ render_with_liquid: false
 ---
 {% raw %}
 
-The last few months I've been writing a lot of documentation for iommi. This is a library that is a big compatibility break and cleanup of three previous libraries (tri.form, tri.query and tri.table), so a big part of fixing the docs have consisted in updating really old code examples to correspond to the new APIs.
+The last few months I've been writing a lot of documentation for [iommi](https://docs.iommi.rocks). This is a library that is a big compatibility break and cleanup of three previous libraries (tri.form, tri.query and tri.table), so a big part of fixing the docs have consisted in updating really old code examples to correspond to the new APIs.
 
 It became clear to me that code examples that aren't even executed can be very wrong, so I came to the idea of running all the code in tests. I had done something very similar twice before with [pytest-readme](https://github.com/boxed/pytest-readme) and [midje-readme](https://github.com/boxed/midje-readme) but that was just for the readme, now I needed something much more ambitious. 
 
