@@ -10,7 +10,7 @@ The last few months I've been writing a lot of documentation for iommi. This is 
 
 It became clear to me that code examples that aren't even executed can be very wrong, so I came to the idea of running all the code in tests. I had done something very similar twice before with [pytest-readme](https://github.com/boxed/pytest-readme) and [midje-readme](https://github.com/boxed/midje-readme) but that was just for the readme, now I needed something much more ambitious. 
 
-The basic idea is pretty simple: for every rST document in `docs/`, generate a pytest test file that contains all the code examples, and then execute that. But as always the devil is in the details. 
+The basic idea is pretty simple: for every [reST](https://www.writethedocs.org/guide/writing/reStructuredText/) document in `docs/`, generate a pytest test file that contains all the code examples, and then execute that. But as always the devil is in the details. 
 
 ## Sections -> tests
 
@@ -18,7 +18,7 @@ I took the decision to make every subsection of the docs into a separate test. T
 
 ## Imports and other setup
 
-The first thing I had to do was to have a way to insert imports at the top of the generated test files. Luckily for me rST treats unknown blocks as comments (although I have been very frustrated by this in other situations!), so I could just make up my own block type. This would look like this:
+The first thing I had to do was to have a way to insert imports at the top of the generated test files. Luckily for me reST treats unknown blocks as comments (although I have been very frustrated by this in other situations!), so I could just make up my own block type. This would look like this:
 
 ```rst
 .. imports
@@ -37,7 +37,7 @@ As the generated tests were a standard pytest suite I could use pytest-coverage,
 
 ## Test specific code
 
-Some code samples could be adjusted to be executed or could be updated to contain asserts, but for the vast majority of the samples that would make the documentation worse as you got irrelevant asserts on top of the things you wanted. To deal with this I introduced a new rST block type which the generator program output unchanged into the test files, but Sphinx ignored. This would look like this:
+Some code samples could be adjusted to be executed or could be updated to contain asserts, but for the vast majority of the samples that would make the documentation worse as you got irrelevant asserts on top of the things you wanted. To deal with this I introduced a new reST block type which the generator program output unchanged into the test files, but Sphinx ignored. This would look like this:
 
 ```rst
 .. code:: python
@@ -76,7 +76,7 @@ The first hard part was to find that the correct code type for these blocks was 
 
 Something I learned from my previous projects was the importance of making the line numbers in the generated test files match the line numbers of the examples in the original documentation. This makes it much easier to work with as you don't need to look at the generated test files anymore and you don't need to figure out where that failing test comes from in the docs. 
 
-The approach is to enumerate the lines of the rST files and then store the line number in addition to the transformed line. When writing the test file I can just do:
+The approach is to enumerate the lines of the reST files and then store the line number in addition to the transformed line. When writing the test file I can just do:
 
 ```python
 while line_number > current_line:
