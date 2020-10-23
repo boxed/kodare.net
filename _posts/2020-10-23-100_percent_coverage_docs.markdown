@@ -2,7 +2,6 @@
 title: 100% coverage, of documentation!
 date: 2020-10-23
 render_with_liquid: false
-draft: true
 ---
 {% raw %}
 
