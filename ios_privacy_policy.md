@@ -1,0 +1,1 @@
+My apps store no data. Not on the iPhone/iPad and not in the cloud.
