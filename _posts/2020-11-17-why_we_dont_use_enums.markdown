@@ -88,7 +88,7 @@ class Fields(TokenContainer):
     party_group_name = Field(total_download_name, dw_name="rec_party")
 ````
 
-(`total_download_name` here is a special sentinel value so we can shorten `total_download_name=default` to just `total_download_name`.)
+`total_download_name` here is a special sentinel value so we can shorten `total_download_name=default` to just `total_download_name`.
 
 This problem grows with each case of the enum. As of this writing the `Fields` container from this example has 486 cases, making the sparse data issue much worse. 
 
