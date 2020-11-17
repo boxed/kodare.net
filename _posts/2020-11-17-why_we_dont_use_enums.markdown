@@ -74,7 +74,7 @@ Another common solution to the problem above is to have the data for mass and ra
 
 ## Problem 3: scales badly for sparse data
 
-We have many cases where there is very sparse data. This is what it would look with enums:
+We have many cases with sparse data. This is what it would look with enums:
 
 ```python
 class Fields(Enum):
