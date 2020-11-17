@@ -30,7 +30,7 @@ The only problem here is that the word `apple` still has no name associated with
 
 ## Problem 2: Hard to add data
 
-With python enums it's difficult to add additional data for the cases. You an use tuples but it has the problem of no semantics but worse. This is an example from the official documentation:
+With python enums it's difficult to add additional data for the cases. You an use tuples but it has the same problem of no semantics but it gets worse the bigger the tuple is. This is an example from the official documentation:
 
 
 ```python
