@@ -6,7 +6,7 @@ Hi, my name is Anders. I'm a prolific coder and the author of:
 * <a href="https://github.com/boxed/hammett">hammett</a> - the fastest test runner for python, and pytest compatible!
 * ...and <a href="https://github.com/boxed?tab=repositories&q=&type=source&language=">many many more</a>
 
-Currently working at <a href="https://trioptima.com/">TriOptima</a>, where we stabilize the global financial system.
+Currently working at <a href="https://dryft.se/">Dryft</a>, where we are making the construction business better for customers and workers.
 
 
 <div id="archive">
