@@ -23,7 +23,7 @@ The algorithm we use to find the separator is:
 
 ## 2 - Find header
 
-We have a very simple hueristic for this: 
+We have a very simple heuristic for this: 
 
 - Look only at the first 80 rows.
 - For each row calculate a "header-like" score:
