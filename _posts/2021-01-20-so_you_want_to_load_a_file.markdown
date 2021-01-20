@@ -1,6 +1,6 @@
 ---
 title: So you want to load a file?
-date: 2020-01-20 
+date: 2021-01-20 
 ---
 
 A guide for reading Excel, CSV, XML and JSON in a batch process.
