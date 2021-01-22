@@ -37,7 +37,7 @@ For each cell in the header, normalize it:
 
 ```python
 cell = re.sub(r'[-:;/\\,. \(\)#\[\]{}\$\^\n\r\xa0*><&!"\'+=%]', '_', cell)
-cell = cell.replace(UNICODE_BOM_MARKER, '')
+cell = cell.replace(codecs.BOM_UTF8, '')
 cell = re.sub('__+', '_', cell)
 cell = header.strip('_')
 cell = cell.upper()
