@@ -6,20 +6,20 @@ date: 2021-01-20
 A guide for reading Excel, CSV, XML and JSON in a batch process.
 
 
-## 1 - File -> Dataset
+## 1 - File -> dataset
 
 The first step is to abstract away the file format. This abstract view of files is what we call a "dataset". You want a system that produces a flat structure. If you get a CSV as input this transformation is almost non-existant: you just have to abstract away the specific delimiter used, quotation marks and other details. Other file formats can be more complex, here are some examples:
 
 - a zip file with CSVs in it produces one dataset per CSV
 - an Excel file produces one dataset per sheet
-- Structured data like XML and JSON is flattened so that 
+- structured data like XML and JSON is flattened so that 
 
-For CSVs you have to try to figure out what the separator is. The C in CSV is for "comma", but that's not what customers actually have all the time. Popular alternatives include semicolon, tab, and colon. You'll get very far with just these.
+For CSVs you have to try to figure out what the delimiter is. The C in CSV is for "comma", but that's not what customers actually have all the time. Popular alternatives include semicolon, tab, and colon. You'll get very far with just these.
 
-The algorithm we use to find the separator is:
+The algorithm we use to find the delimiter is:
 
-- grab the first 60 lines and count how many of each of these separator characters we have on each line (we needed to go fast so we didn't bother parsing quotation correctly, it didn't matter in practice)
-- Now grab the separator that is most stable across these rows. Zero and one doesn't count!
+- First grab the first 60 lines and count how many of each of these delimiter characters we have on each line (we needed to go fast so we didn't bother parsing quotation correctly, it didn't matter in practice)
+- Now grab the delimiter that is most stable across these rows. Zero and one doesn't count, you don't want to end up with a delimiter that means the entire file always have one column! You don't want to guess a delimiter where you end up with 12 columns on one row and 34 on another, you are aiming for one where it's always the same number of columns.
 
 ## 2 - Find header
 
