@@ -58,15 +58,16 @@ becomes
 
 There is an obvious limitation to this approach in that if they reorder columns with non-unique headers we can't detect that, but we've found in practice that this hasn't been a problem.
 
-## Rule sets
+## 5 - Rule sets
 
-From this point forward you might need one set of rules per customer, or even multiple rule sets per customer depending on how the data looks. In triResolve we have heavily optimized code to match the header row against requirements in the rule set to know which rule sets are applicable for a specific dataset. We don't allow more than one rule set to match at a time, but that might be different for your application. The reason this must be very fast is that we have many active rule sets per customer and we need to give feedback quickly to our internal users if a dataset has an applicable rule set or not.
+From this point forward you might need one set of rules per customer, or even multiple rule sets per customer depending on how the data looks. In our product we have heavily optimized code to match the header row against requirements in the rule set to know which rule sets are applicable for a specific dataset. We don't allow more than one rule set to match at a time, but that might be different for your application. 
 
-## 5 - Map customer headers to your headers
+This matching has to be very fast. The reason is that we have many active rule sets per customer and we need to give feedback quickly to our internal users which rule sets will apply. We show an error if more than one matches, and a warning of no rule set matches.
+
+## 6 - Map customer headers to your headers
 
 You must have a canonical set of headers that are valid for your system. Step one of the mapping is to map the customers normalized headers to your internal headers.
 
-## 6 - Map customer data
+## 7 - Map customer data
 
-This is the messiest part. We do some smart things like autodetect date formats by looking at the data, but ultimately this step largely depends on humans looking at the data and applying simple transformation rules to get to your own internal canonical data format. Scaling this step largely comes down to how efficiently you can reuse this type of data between dataset and customers to not do the same work over and over.
-
+This is the messiest part. We do some smart things like autodetect date formats by looking at the data, but ultimately this step largely depends on humans looking at the data and applying simple transformation rules to get to your own internal canonical data format. Scaling this step is largely dependent on how effectively you can reuse the mapping between dataset and customer. Or in other words: if the data is similar the same mappings could work for multiple datasets, thereby reducing the amount of work required on each dataset.
