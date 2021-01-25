@@ -37,7 +37,6 @@ For each cell in the header, normalize it:
 
 ```python
 cell = re.sub(r'[-:;/\\,. \(\)#\[\]{}\$\^\n\r\xa0*><&!"\'+=%]', '_', cell)
-cell = cell.replace(codecs.BOM_UTF8, '')
 cell = re.sub('__+', '_', cell)
 cell = cell.strip('_')
 cell = cell.upper()
@@ -62,7 +61,7 @@ There is an obvious limitation to this approach in that if they reorder columns 
 
 From this point forward you might need one set of rules per customer, or even multiple rule sets per customer depending on how the data looks. In our product we have heavily optimized code to match the header row against requirements in the rule set to know which rule sets are applicable for a specific dataset. We don't allow more than one rule set to match at a time, but that might be different for your application. 
 
-This matching has to be very fast. The reason is that we have many active rule sets per customer and we need to give feedback quickly to our internal users which rule sets will apply. We show an error if more than one matches, and a warning of no rule set matches.
+This matching has to be very fast. The reason is that we have many active rule sets per customer and we need to give feedback quickly to our internal users regarding which rule sets will apply. We show an error if more than one matches, and a warning of no rule set matches.
 
 ## 6 - Map customer headers to your headers
 
