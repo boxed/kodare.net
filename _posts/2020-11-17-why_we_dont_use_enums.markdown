@@ -48,7 +48,7 @@ class Planet(Enum):
         self.radius = radius   # in meters
 ```
 
-It's impossible to understand the definition of the data without reading the constructor (and the constructor is a bit weird too as `self` here are the cases, not the `Planet` class!). The constructor then changes this positional chaos to the named members `mass` and `radius`. In tri.token this would be:
+It's impossible to understand the definition of the data without reading the constructor (and the constructor is a bit weird too as `self` here are the cases, not the `Planet` class!). The constructor then changes this positional chaos to the named members `mass` and `radius`. In [tri.token](https://tritoken.readthedocs.io/en/latest/) this would be:
 
 
 ```python
