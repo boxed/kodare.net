@@ -19,4 +19,4 @@ The Origin is the place where you got the HTML from. If you get your HTML from t
 
 Serve the initial HTML from Django. That's it. 
 
-You can load the compiled JavaScript React code from a different source without triggering CORS! Or you can compile your React code directly into your static files directory. I prefer this second method because that's the same in production as in development, and I like that.
+You can load the compiled JavaScript React code from a different source without triggering CORS! Or you can compile your React code directly into your static files directory and serve everything via Django. I prefer this second method because that's the same in production as in development, and I like that.
