@@ -26,7 +26,7 @@ The basic problem is that number formatting is far from agreed upon. These are e
 The parser we used handled most of these cases with these simple rules:
 - A configuration option to select comma or period as decimal separator
 - Throw away comma if period is the decimal separator, and throw away period if comma is the thousands separator
-- Throw away space and `'`
+- Throw away space (and non-breaking space) and `'`
 
 ## The incident
 
