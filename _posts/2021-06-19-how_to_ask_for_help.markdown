@@ -4,7 +4,6 @@ date: 2021-05-19
 ---
 
 - Ask something specific
-
 - Before asking for help, try to make the smallest example you can of the problem. Don't just show us your entire code base.
 - If you don't understand the advice given, *say so!*. Don't just ignore it. 
 - Don't tell us error messages in your own words. Copy paste them. In full.
