@@ -12,4 +12,6 @@ your_code_here()
 
 \```
 
+Note that its three backticks, not strsight ticks. So `\`` and not `'`.
+
 For more formatting commands go to [The Markdown Guide](https://www.markdownguide.org/basic-syntax/)
