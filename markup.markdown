@@ -5,13 +5,12 @@ permalink: /markup/
 ---
 
 To post code samples do this:
-```
+
 \```py
 
 your_code_here()
 
 \```
-```
 
 Note that it's three backticks, not straight single quotes.
 
