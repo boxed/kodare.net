@@ -13,6 +13,6 @@ your_code_here()
 \```
 ```
 
-Note that it's three backticks, not straight single quotes. So `` and not `'`.
+Note that it's three backticks, not straight single quotes.
 
 For more formatting commands go to [The Markdown Guide](https://www.markdownguide.org/basic-syntax/)
