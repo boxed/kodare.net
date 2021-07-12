@@ -5,7 +5,7 @@ date: 2021-04-04
 
 `12.34` is *not* `1234`. I don't care if your thousand separator is `.`
 
-At my previous job we had an incident once with too loose number parsing. This is my advice on how to parse numbers when it matters. First I'm going to describe how our existing number parsing failed (after running successfully in production for 14 years!), then how we solved it. 
+At a previous job we had an incident once with too loose number parsing. This is my advice on how to parse numbers when it matters. First I'm going to describe how our existing number parsing failed (after running successfully in production for 14 years!), then how we solved it. 
 
 ## Almost good parsing == bad parsing
 
