@@ -16,7 +16,7 @@ This code is obviously broken. We don't even need to know what programming langu
 
 Names are too important to be a source of lies. If the name clearly communicates something about its type to any human reading it, the machine should be told the same information.
 
-For experts with years of experience this isn't a big problem. We've learned this lesson and internalized it. But spend some time in a help chat for beginners and you'll see this all the time. Just as I write this line someone showed me code like `user = Client()`. Either it should be `client = Client()` or `user = User()`. 
+For experts with years of experience this isn't a big problem. We've learned this lesson and internalized it. But spend some time in a help chat for beginners and you'll see this all the time. 
 
 Another common problem for beginners is mixing up singular and plural on variable names: `cars` when it should be `car`, or vice versa. This causes endless confusion and "solutions" like writing `car[0]` everywhere. Naming dicts is also very hard for beginners. A strong naming convention like `value_by_key` or `key_to_value` makes dicts much easier to use.
 
