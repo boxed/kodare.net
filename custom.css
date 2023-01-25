@@ -1,6 +1,8 @@
 
 body {
     font-size: 14px;
+    background: #06131B url('/img/blog_bg3.jpg') no-repeat top;
+    background-size: contain;
 }
 
 h2 {
@@ -40,12 +42,7 @@ img {
     border: 0;
 }
 
-#face img {
-    width: 86px;
-    margin: 0;
-}
-
-#face {
+#about {
     top: 15px;
     right: 5px;
     position: absolute;
@@ -54,8 +51,11 @@ img {
     text-align: right;
 }
 
+#about, #about a {
+    text-shadow: #000000 0 0 4px, #000000 0 0 10px, #000000 0 0 15px;
+}
+
 #header-thingie {
-    background-image: url('/img/header.jpg');
     background-position: center;
     background-size: 200%;
     height: 90px;
@@ -120,7 +120,12 @@ body {
 }
 
 #main_content_wrap {
-    background: white;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 7px;
 }
 
 .highlight, code {
@@ -131,7 +136,6 @@ body {
 
 .highlight {
     padding: 0;
-    background-color: #262424;
 }
 
 
@@ -259,21 +263,6 @@ video {
         font-size: 16px;
     }
 
-    #face img {
-        width: 150px;
-    }
-
-
-    #face {
-        top: 22px;
-        left: 30px;
-        text-align: left;
-    }
-
-    #face a {
-        display: block;
-    }
-
     #header-thingie {
         background-size: 100%;
         height: 150px;
@@ -281,20 +270,12 @@ video {
 }
 
 @media (prefers-color-scheme: dark) {
-    #main_content_wrap {
-        background: #262424;
-    }
-
     body, h1, h2, h3, h4, h5, p {
         color: white;
     }
 
     a {
         color: #45a4f2;
-    }
-
-    #footer_wrap {
-        background-color: black;
     }
 
     #claps {
