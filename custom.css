@@ -2,7 +2,8 @@
 body {
     font-size: 14px;
     background: #06131B url('/img/blog_bg3.jpg') no-repeat top;
-    background-size: contain;
+    background-size: 100%;
+    background-position-y: top;
 }
 
 h2 {
