@@ -270,39 +270,29 @@ video {
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    body, h1, h2, h3, h4, h5, p {
-        color: white;
-    }
-
-    a {
-        color: #45a4f2;
-    }
-
-    #claps {
-        -webkit-filter: invert(100%);
-        filter: invert(100%);
-        color: black;
-    }
-
-    code {
-        color: white;
-    }
-
-
-    /* diff */
-    .highlight .gd {
-        background-color: red;
-    }
-    .highlight .gi {
-        background-color: #00ee17;
-    }
+body, h1, h2, h3, h4, h5, p {
+    color: white;
 }
 
-/* Desktop AND dark mode */
-@media screen and (min-width: 1080px) and (prefers-color-scheme: dark) {
-    #face {
-        color: white;
-    }
+a {
+    color: #45a4f2;
 }
 
+#claps {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    color: black;
+}
+
+code {
+    color: white;
+}
+
+
+/* diff */
+.highlight .gd {
+    background-color: red;
+}
+.highlight .gi {
+    background-color: #00ee17;
+}
