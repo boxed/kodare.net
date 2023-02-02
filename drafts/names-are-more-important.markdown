@@ -4,7 +4,7 @@ title:	"Names are important. No, more than you think."
 date:	2023-02-02
 ---
 
-We programmers say names (of variables, functions, classes, etc.) are extremely important. The debate over how much code should be self-documenting is largely a debate about how good names can be. I think this all misses a bigger problem: names are for humans only, but they dont have to be.
+We programmers say names (of variables, functions, classes, etc.) are extremely important. The debate over how much code should be self-documenting is largely a debate about how good names can be. I think this all misses a bigger problem: names are for humans only, but they don't have to be.
 
 Let's look at an example:
 
