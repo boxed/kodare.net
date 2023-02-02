@@ -1,6 +1,6 @@
 ---
 
-title:	"Names are important. No, more than you think."
+title:	"Names can be so much more"
 date:	2023-02-02
 ---
 
