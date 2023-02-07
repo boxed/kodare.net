@@ -18,4 +18,26 @@ for i, row in enumerate(cursor.fetchall()):
     cursor.execute(f'ALTER TABLE `{row[0]}` AUTO_INCREMENT = {(i + 1) * 1000}')
 ```
 
+For PostgreSQL:
+
+```python
+cursor.execute("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'")
+for i, (table,) in enumerate(cursor.fetchall()):
+    cursor.execute(f'ALTER SEQUENCE IF EXISTS {table}_id_seq RESTART WITH {(i + 1) * 1000}')
+```
+
+A full implementation for pytest:
+
+```python
+@pytest.fixture(autouse=True)
+def reset_sequences(request, django_db_blocker):
+    if request.node.get_closest_marker('django_db'):
+        with django_db_blocker.unblock():
+            cursor = connection.cursor()
+
+            cursor.execute("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'")
+            for i, (table,) in enumerate(cursor.fetchall()):
+                cursor.execute(f'ALTER SEQUENCE IF EXISTS {table}_id_seq RESTART WITH {(i + 1) * 1000}')
+```
+
 No more intermittent tests 🎉
