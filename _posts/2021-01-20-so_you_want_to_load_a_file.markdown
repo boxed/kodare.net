@@ -1,6 +1,6 @@
 ---
 title: So you want to load a file?
-date: 2021-01-20 
+date: 2021-01-20
 ---
 
 A guide for reading Excel, CSV, XML and JSON in a batch process.
@@ -12,7 +12,7 @@ The first step is to abstract away the file format. This abstract view of files 
 
 - a zip file with CSVs in it produces one dataset per CSV
 - an Excel file produces one dataset per sheet
-- structured data like XML and JSON is flattened so that 
+- structured data like XML and JSON is flattened so that you remove all the nesting
 
 For CSVs you have to try to figure out what the delimiter is. The C in CSV is for "comma", but that's not what customers actually have all the time. Popular alternatives include semicolon, tab, and colon. You'll get very far with just these.
 
@@ -23,11 +23,11 @@ The algorithm we use to find the delimiter is:
 
 ## 2 - Find header
 
-We have a very simple heuristic for this: 
+We have a very simple heuristic for this:
 
 - Look only at the first 80 rows.
 - For each row calculate a "header-like" score:
-    - Each cell that is non-empty and does not start with plus, minos or a number gives one point.
+    - Each cell that is non-empty and does not start with plus, minus or a number gives one point.
 - If no row has a score above 0 then we didn't find a row.
 - The header is the line with the highest score, take the first one if multiple rows have the same score.
 
@@ -47,7 +47,7 @@ You might get away with being more aggressive than this, but you might also lose
 
 ## 4 - Unique-ify headers
 
-We have a lot of cases where we end up with multiple columns with the same name, especially "BLANK" (from the normalization step above), so we make sure we make all these unique by appending an underscore and number, so 
+We have a lot of cases where we end up with multiple columns with the same name, especially "BLANK" (from the normalization step above), so we make sure we make all these unique by appending an underscore and number, so
 
     BLANK, BLANK, BLANK
 
@@ -59,7 +59,7 @@ There is an obvious limitation to this approach in that if they reorder columns 
 
 ## 5 - Rule sets
 
-From this point forward you might need one set of rules per customer, or even multiple rule sets per customer depending on how the data looks. In our product we have heavily optimized code to match the header row against requirements in the rule set to know which rule sets are applicable for a specific dataset. We don't allow more than one rule set to match at a time, but that might be different for your application. 
+From this point forward you might need one set of rules per customer, or even multiple rule sets per customer depending on how the data looks. In our product we have heavily optimized code to match the header row against requirements in the rule set to know which rule sets are applicable for a specific dataset. We don't allow more than one rule set to match at a time, but that might be different for your application.
 
 This matching has to be very fast. The reason is that we have many active rule sets per customer and we need to give feedback quickly to our internal users regarding which rule sets will apply. We show an error if more than one matches, and a warning of no rule set matches.
 
