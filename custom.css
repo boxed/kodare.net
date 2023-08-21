@@ -283,6 +283,7 @@ a {
     -webkit-filter: invert(100%);
     filter: invert(100%);
     color: black;
+    user-select: none;
 }
 
 code {
