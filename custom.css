@@ -59,12 +59,12 @@ img {
 #header-thingie {
     background-position: center;
     background-size: 200%;
-    height: 90px;
+    height: 60px;
 }
 
 
 #footer_wrap {
-    color: gray;
+    color: grey;
 }
 
 h1, h2, h3, h4, body {
@@ -101,7 +101,7 @@ body {
 
 #post_time {
     font-size: 80%;
-    color: gray;
+    color: grey;
 }
 
 #post-nav {
