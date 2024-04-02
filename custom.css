@@ -294,7 +294,9 @@ code {
 /* diff */
 .highlight .gd {
     background-color: red;
+    color: black;
 }
 .highlight .gi {
     background-color: #00ee17;
+    color: black;
 }
