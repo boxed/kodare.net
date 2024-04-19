@@ -120,13 +120,28 @@ body {
     float: right;
 }
 
-#main_content_wrap {
+#main_content_wrap,
+#tabs {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    background: rgb(0, 0, 0, 0.8);
+    border-radius: 7px;
+}
+
+#tabs {
+    text-align: right;
+}
+
+.tab {
+    background: rgb(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     border-radius: 7px;
+    padding: 10px;
+}
+
+#main_content_wrap {
+    backdrop-filter: blur(5px);
+    background: rgb(0, 0, 0, 0.8);
 }
 
 .highlight, code {

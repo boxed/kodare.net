@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US" }}">
+<html lang="{{ site.lang | default: ' en-US' }}">
 
 <head>
     <meta charset='utf-8'>
@@ -35,7 +35,13 @@
 </div>
 
 <!-- MAIN CONTENT -->
+    <div id="tabs" class="outer">
+        <span class="tab"><a href="/">About</a></span>
+        <span class="tab"><a href="/blog.html">Blog</a></span>
+        <span class="tab"><a href="/apps.html">Apps</a></span>
+    </div>
 <div id="main_content_wrap" class="outer">
+
     <section id="main_content" class="inner">
         <h1>{{ page.title }}</h1>
 
