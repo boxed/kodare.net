@@ -23,8 +23,8 @@ Making a view like this was error-prone and slow, and there even was running jok
 - we fix sortable columns
 - they ask for filters
 - we add filters
-- they ask for a report component based on the table
-- we make the report component
+- they ask for CSV/Excel export
+- we make the CSV/Excel export
 
 Always the same requests, always the same order. There was a lot of work required to build each of these features, so we didn't do it all from the start. As the tables were rendered with html templates, there were also common errors like headers and columns not matching, because the access control code differed. You had to be very careful to change two places in the code and keep them in sync, a pretty clear DRY violation.
  
