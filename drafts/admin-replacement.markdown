@@ -7,7 +7,7 @@ date:	2024-09-02
 
 In "[So you want a new admin?](https://jacobian.org/2016/may/26/so-you-want-a-new-admin/)" Jacob Kaplan-Moss writes about the cost and manpower it took to design the Django Admin system. TLDR: The original version was built by a team of 5 people working tightly with users for over a year, then it has been polished for over a decade after that. He estimates $1 million dollars to design a new one.
 
-After having built an alternative admin, I can say that his order of magnitude estimation for effort is pretty spot on, even though we took a very different route to get to the same endpoint!
+After having built an [alternative admin](https://docs.iommi.rocks/en/latest/admin.html), I can say that his order of magnitude estimation for effort is pretty spot on, even though we took a very different route to get to the same endpoint!
 
 So how in the world did we end up writing an alternative admin system for Django?
  
@@ -44,7 +44,7 @@ Since the underlying abstractions of forms and tables were so polished and power
 
 649 lines vs 31169!
 
-During this journey we broke backwards compatibility really hard twice and renamed the library each time: tri.tables -> tri.table/tri.form/tri.query/tri.declarative -> iommi. The last step was the most radical where we went all out in fixing all the flaws we had discovered over the years (and there were a lot). 
+During this journey we broke backwards compatibility really hard twice and renamed the library each time: tri.tables -> tri.table/tri.form/tri.query/tri.declarative -> [iommi](https://docs.iommi.rocks). The last step was the most radical where we went all out in fixing all the flaws we had discovered over the years (and there were a lot). 
  
 It really did take an enormous effort over a long period of time to write a replacement Django admin, just like Jacob warned us.
  
