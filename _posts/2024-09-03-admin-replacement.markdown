@@ -1,7 +1,7 @@
 ---
 
 title:	"How to build an alternate Django admin in only 10 years"
-date:	2024-09-02
+date:	2024-09-03
 ---
 
 
