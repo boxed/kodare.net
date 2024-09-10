@@ -78,3 +78,5 @@ All the issues I list here are fixed in iommi forms.
 1. Having to manually wire through request, or request.user via the constructor and then alter fields to get the correct data is error-prone.
 
 1. Pre-filling field values based on GET params is surprisingly useful, and not something Django forms does. 
+
+Some things on this list are trivial, some are a really big deal. All are reasons to try iommi :P
