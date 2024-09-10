@@ -41,40 +41,40 @@ All the issues I list here are fixed in iommi forms.
 ### The complete list of gripes
 
 
-The models `verbose_name` sometimes ended up in the form automatically, sometimes not. I never figured out the problem, but it lead to a lot of duplicate string literals: once in the model and once in some form.
+1. The models `verbose_name` sometimes ended up in the form automatically, sometimes not. I never figured out the problem, but it lead to a lot of duplicate string literals: once in the model and once in some form.
 
-Rendering was a mess. With the new template based rendering in Django 5 it's supposedly better now, but it seems still quite crude compared to iommi. Customization often leads to copy-pasting the original template to a new file, hiding the important difference between the default and the original in the noise of the common. Custom rendering often lead to listing out the fields manually in templates, making it easy to have the template and the form out of sync. It's especially annoying if you want to insert just a little bit of html in the middle of the form, or add a single CSS class to an input or label.
+1. Rendering was a mess. With the new template based rendering in Django 5 it's supposedly better now, but it seems still quite crude compared to iommi. Customization often leads to copy-pasting the original template to a new file, hiding the important difference between the default and the original in the noise of the common. Custom rendering often lead to listing out the fields manually in templates, making it easy to have the template and the form out of sync. It's especially annoying if you want to insert just a little bit of html in the middle of the form, or add a single CSS class to an input or label.
 
-Conditional include/exclude of fields requires modifying the `fields` attribute of a form. Either by adding entries, or by removing them. This being done either in the constructor or after the object is created. 
+1. Conditional include/exclude of fields requires modifying the `fields` attribute of a form. Either by adding entries, or by removing them. This being done either in the constructor or after the object is created. 
 
-Conditional configuration of anything is quite messy, with a lot of non-localized code.
+1. Conditional configuration of anything is quite messy, with a lot of non-localized code.
 
-Implicit template names are bad. The pattern of implicitly generating template names leads to it being very hard to figure out if a template is used or not, which leads to a fear of deleting any template, which leads to dead templates lying around forever.
+1. Implicit template names are bad. The pattern of implicitly generating template names leads to it being very hard to figure out if a template is used or not, which leads to a fear of deleting any template, which leads to dead templates lying around forever.
 
-Silent failures when miss-spelling things, like `get_form`, `clean_*` etc. A silent failure for a `clean_*` when renaming a field could be a disaster if the clean function is a part of access control.
+1. Silent failures when miss-spelling things, like `get_form`, `clean_*` etc. A silent failure for a `clean_*` when renaming a field could be a disaster if the clean function is a part of access control.
 
-The widget configuration system means you have to write entire classes for trivial configuration, further moving the wanted config away from the field definition itself.
+1. The widget configuration system means you have to write entire classes for trivial configuration, further moving the wanted config away from the field definition itself.
 
-`Textarea` is a widget. If you put it inside your form it's silently ignored (my PR to fix this was rejected).
+1. `Textarea` is a widget. If you put it inside your form it's silently ignored (my PR to fix this was rejected).
 
-Foreign keys map to a widget that drops the entire related field into the html. This default creates time bombs throughout your code. Same issue with M2Ms. In iommi we use select2 in ajax mode by default.
+1. Foreign keys map to a widget that drops the entire related field into the html. This default creates time bombs throughout your code. Same issue with M2Ms. In iommi we use select2 in ajax mode by default.
  
-The `<form>` tag isn't rendered, which is annoying, but it also means file uploads contain an extra foot gun where beginners don't know about `enctype` and can't get anything to work because it fails silently.
+1. The `<form>` tag isn't rendered, which is annoying, but it also means file uploads contain an extra foot gun where beginners don't know about `enctype` and can't get anything to work because it fails silently.
 
-No CSRF rendered by default, see above. 
+1. No CSRF rendered by default, see above. 
 
-Passing `request.GET`/`request.POST` in the constructor is confusing for beginners, causes bugs when the view codes if statement for the request method and the code that passes the data to the form are out of sync. 
+1. Passing `request.GET`/`request.POST` in the constructor is confusing for beginners, causes bugs when the view codes if statement for the request method and the code that passes the data to the form are out of sync. 
 
-Programmatically creating a form via `type()` is horrible.
+1. Programmatically creating a form via `type()` is horrible.
 
-Edge case: Be able to tell the difference between initial load and a submitted form. This is surprisingly tricky as a form with just one checkbox can be submitted as zero GET params if the checkbox is not set, in some browsers. 
+1. Edge case: Be able to tell the difference between initial load and a submitted form. This is surprisingly tricky as a form with just one checkbox can be submitted as zero GET params if the checkbox is not set, in some browsers. 
 
-Multiple forms on a page is awkward. Prefixes have to be set, and if you forget it, it might work for a while and cause hard to detect issues much later when a simple field is added that happen to collide.
+1. Multiple forms on a page is awkward. Prefixes have to be set, and if you forget it, it might work for a while and cause hard to detect issues much later when a simple field is added that happen to collide.
 
-Be able to have multiple forms in one view and know which form is being POSTed too is left as an exercise for the reader. 
+1. Be able to have multiple forms in one view and know which form is being POSTed too is left as an exercise for the reader. 
 
-Nested forms are not a thing. They're also not a thing in HTML, so implementing them is rather awkward, but it's a useful feature.
+1. Nested forms are not a thing. They're also not a thing in HTML, so implementing them is rather awkward, but it's a useful feature.
 
-Having to manually wire through request, or request.user via the constructor and then alter fields to get the correct data is error-prone.
+1. Having to manually wire through request, or request.user via the constructor and then alter fields to get the correct data is error-prone.
 
-Pre-filling field values based on GET params is surprisingly useful, and not something Django forms does. 
+1. Pre-filling field values based on GET params is surprisingly useful, and not something Django forms does. 
