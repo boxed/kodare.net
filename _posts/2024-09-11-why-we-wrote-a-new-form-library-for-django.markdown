@@ -1,7 +1,7 @@
 ---
 
 title:	"Why we wrote a new form library for Django"
-date:	202?????
+date:	2024-09-11
 ---
 
 
