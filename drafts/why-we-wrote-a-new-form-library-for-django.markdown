@@ -14,18 +14,11 @@ The path to iommi forms had two paths that eventually converged:
 
 For complicated forms we tried writing a class that inherited from Django's `Form` that dealt with the limitations and issues we had. The complexity of this class grew quite fast to become a mess that we eventually only used in a few places. We realized pretty fast that this path was not sustainable.
  
-When [we built our `Table` system](https://kodare.net/2024/09/03/admin-replacement.html), we also built a filtering system, where we programmatically built forms for the user to select values to filter on. To use Django forms for this, one needs to create a class at runtime with the `type()` constructor, itself quite nasty, and we had to work around various other issues which meant this was a lot of code to do comparatively little.
+When [we built our `Table` system](https://kodare.net/2024/09/03/admin-replacement.html), we also added filtering, where we programmatically built forms. To do this in Django forms, one needs to create a class at runtime with the `type()` constructor, itself quite nasty, and we had to work around various other issues which meant this was a lot of code to do comparatively little.
  
 At this point we already had the dual-use `Table` class that could be used programmatically (`my_table = Table(...conf...)`) and declaratively (`class MyTable(Table): ...conf...`), so we knew this was not just possible, but very useful. One week in 2015 as I was fighting yet another bug caused by our use of Django forms, I finally got fed up. That weekend I wrote the first prototype of what is now the forms part of [iommi](https://docs.iommi.rocks/). 
  
-After the initial version was implemented into our table system, and it surpassed the old Django forms based implementation in features and stability, I turned my gaze towards the general forms issues we had throughout the product.
- 
-Similarly to the story of how we build our `Table` system, we had a large code base with tons of examples that could be used as specification and to make sure that we improved the code every time we replaced a usage of Django forms with our own forms. One by one we replaced the usages in our code. The rule we settled on was: if you need to make any change at all to a Django forms based view, throw out the old and rewrite it. We found that it was almost always slower to rewrite if we looked at the old code, as there were only two cases:
-
-1. it was a simple form so looking at the old code wasn't needed
-2. the old code was complex, and too hard to follow without wasting more time trying to understand it than it took to reimplement it from scratch anyway
-
-Either way, looking at the old code was not very helpful.
+After the initial version was implemented into our table system, and it surpassed the old Django forms based implementation in features and stability, I turned my gaze towards the general forms issues we had throughout the product, and slowly started to replace Django forms with the new forms system.
 
 A few years into this I knew we had succeeded when I overhead a colleague open up a view to work on a bug ticket and mutter "ugh, Django forms". 
 
