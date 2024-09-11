@@ -5,7 +5,7 @@ date:	202?????
 ---
 
 
-Django comes with a form library, and yet we wrote [a total replacement library](https://docs.iommi.rocks/en/latest/forms.html) as part of [iommi](https://docs.iommi.rocks/). This might seem silly, but we struggled for years to *not* make our own form library. At a certain point we had to admit the truth: that Django forms were fundamentally not usable for what we wanted to do. 
+Django comes with a form library, and yet we wrote [a total replacement library](https://docs.iommi.rocks/en/latest/forms.html) as part of [iommi](https://docs.iommi.rocks/) ([GitHub link](https://github.com/iommirocks/iommi)). This might seem silly, but we struggled for years to *not* make our own form library. At a certain point we had to admit the truth: that Django forms were fundamentally not usable for what we wanted to do. 
 
 The path to iommi forms had two paths that eventually converged:
 
