@@ -8,9 +8,11 @@ date:	2024-09-17
 
 Someone asked on the [Unofficial Django Discord](https://unofficial-django-discord.github.io/) about a performance problem with django-tables2 + django-filters. It's a pretty clear example of what [iommi](https://github.com/iommirocks/iommi) can give you.
 
+Here is the original code:
+
 ### Model
 ```python
-class Assembly(BaseModel):
+class Assembly(models.Model):
     status = models.CharField(max_length=20)
     id_number = models.IntegerField(unique=True)
     location = models.ForeignKey(Location, ...)
