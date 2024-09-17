@@ -8,7 +8,7 @@ date:	2024-09-17
 
 Someone asked on the [Unofficial Django Discord](https://unofficial-django-discord.github.io/) about a performance problem with django-tables2 + django-filters. It's a pretty clear example of what [iommi](https://github.com/iommirocks/iommi) can give you.
 
-Model:
+### Model
 ```python
 class Assembly(BaseModel):
     status = models.CharField(max_length=20)
@@ -16,7 +16,7 @@ class Assembly(BaseModel):
     location = models.ForeignKey(Location, ...)
 ```
 
-Table definition:
+### Table definition
 ```python
 class AssemblyTable(tables.Table):
     id_number = tables.columns.LinkColumn(
@@ -31,7 +31,7 @@ class AssemblyTable(tables.Table):
         ]
 ```
 
-Filter definition:
+### Filter definition
 ```python
 class AssemblyFilter(FilterSet):
     class Meta:
@@ -41,7 +41,7 @@ class AssemblyFilter(FilterSet):
         }
 ```
 
-Biew:
+### View
 ```python
 class AssemblyListView(
         LoginRequiredMixin, 
@@ -53,7 +53,7 @@ class AssemblyListView(
     template_name = "dashboard/assembly_list.html"
 ```
 
-Template:
+### Template
 ```django
 {% block content %}
   <div class="mb-2">
@@ -79,6 +79,8 @@ Template:
 
 The problem was that the code has an N+1 issue, which is fixed by overriding `get_queryset` on `AssemblyListView` and doing `select_related('location')`.
 
+
+### iommi version
 The corresponding code in iommi looks like this:
 
 ```python
