@@ -4,6 +4,7 @@ title:	"iommi tables vs django-tables2+django-filters"
 date:	2024-09-17
 ---
 
+{% raw %}
 
 Someone asked on the Unofficial Django Discord about a performance problem with django-tables2+django-filters. It's a pretty clear example of what iommi can give you.
 
@@ -98,3 +99,5 @@ Maybe the biggest difference is that there no need for a template.
 You might have seen such demos before, but when you've tried to use the library you have noticed that you have to rewrite everything from scratch if you want any customization, almost no matter how trivial. This is not the case for iommi. We have customization on every level, from the entire table, to the row, to the cell; and for forms, the entire form, the field, the input, the label, etc. You can customize by inserting or removing individual CSS classes, attributes, style definitions, and if that all fails you can fall back to rendering the cell/row/table/field/whatever with a custom template.
 
 But maybe more than that: we consider it a serious bug if a customization you need to do is not easy to do. I think this attitude is what really sets us apart in the long run.
+
+{% endraw %}
