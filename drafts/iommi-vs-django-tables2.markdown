@@ -1,6 +1,6 @@
 ---
 
-title:	"iommi tables vs django-tables2+django-filters"
+title:	"iommi vs django-tables2+django-filters"
 date:	2024-09-17
 ---
 
