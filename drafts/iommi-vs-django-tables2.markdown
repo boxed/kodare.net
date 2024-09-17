@@ -13,13 +13,14 @@ model:
 class Assembly(BaseModel):
     status = models.CharField(max_length=20)
     id_number = models.IntegerField(unique=True)
-    location = models.ForeignKey(Location, on_delete=models.PROTECT,  null=True)
+    location = models.ForeignKey(Location, ...)
 ```
 
 table definition:
 ```python
 class AssemblyTable(tables.Table):
-    id_number = tables.columns.LinkColumn("dashboard:assembly-update", args=[A("id")])
+    id_number = tables.columns.LinkColumn(
+        "dashboard:assembly-update", args=[A("id")])
 
     class Meta:
         model = Assembly
@@ -42,20 +43,25 @@ class AssemblyFilter(FilterSet):
 
 view:
 ```python
-class AssemblyListView(LoginRequiredMixin, SingleTableMixin, FilterView):
+class AssemblyListView(
+        LoginRequiredMixin, 
+        SingleTableMixin, 
+        FilterView):
     model = Assembly
     table_class = AssemblyTable
     filter_class = AssemblyFilter
     template_name = "dashboard/assembly_list.html"
 ```
 
-template for rendering the filter:
+template:
 ```django
 {% block content %}
   <div class="mb-2">
     <div class="d-flex text-center"></div>
     <div class="row">
-      <div class="col-lg-10 col-xs-12 p-2 pt-0">{% render_table table %}</div>
+      <div class="col-lg-10 col-xs-12 p-2 pt-0">
+        {% render_table table %}
+      </div>
       <div class="filters col-lg-2 col-xs-12">
         <div class="card text-bg-light">
           <div class="card-body p-2">
@@ -70,10 +76,8 @@ template for rendering the filter:
 {% endblock %}
 ```
 
-The template for displaying the table itself was not included in the question, but I would assume it contains `{% render_table object_list %}` at some point.
 
-
-The problem was that the code has an N+1 issue, which if fixed by overriding `get_queryset` on `AssemblyListView` and doing `select_related('location')`.
+The problem was that the code has an N+1 issue, which is fixed by overriding `get_queryset` on `AssemblyListView` and doing `select_related('location')`.
 
 The corresponding code in iommi looks like this:
 
@@ -86,7 +90,8 @@ assembly_table = Table(
         "location",
     ],
     columns__id_number=dict(
-         cell__url=lambda row, **_: reverse('dashboard:assembly-update', row.id),
+         cell__url=lambda row, **_: 
+            reverse('dashboard:assembly-update', row.id),
          filter__include=True,
     )
 )
