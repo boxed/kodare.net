@@ -6,9 +6,9 @@ date:	2024-09-17
 
 {% raw %}
 
-Someone asked on the Unofficial Django Discord about a performance problem with django-tables2+django-filters. It's a pretty clear example of what iommi can give you.
+Someone asked on the [Unofficial Django Discord](https://unofficial-django-discord.github.io/) about a performance problem with django-tables2 + django-filters. It's a pretty clear example of what [iommi](https://github.com/iommirocks/iommi) can give you.
 
-model:
+Model:
 ```python
 class Assembly(BaseModel):
     status = models.CharField(max_length=20)
@@ -16,7 +16,7 @@ class Assembly(BaseModel):
     location = models.ForeignKey(Location, ...)
 ```
 
-table definition:
+Table definition:
 ```python
 class AssemblyTable(tables.Table):
     id_number = tables.columns.LinkColumn(
@@ -31,7 +31,7 @@ class AssemblyTable(tables.Table):
         ]
 ```
 
-filter definition:
+Filter definition:
 ```python
 class AssemblyFilter(FilterSet):
     class Meta:
@@ -41,7 +41,7 @@ class AssemblyFilter(FilterSet):
         }
 ```
 
-view:
+Biew:
 ```python
 class AssemblyListView(
         LoginRequiredMixin, 
@@ -53,7 +53,7 @@ class AssemblyListView(
     template_name = "dashboard/assembly_list.html"
 ```
 
-template:
+Template:
 ```django
 {% block content %}
   <div class="mb-2">
