@@ -26,7 +26,7 @@ def some_view(request, customer):
 	...
 ```
 
-This was a big win for code size/DRY, but it also made it easier to write the correct code, and auditing the code for access control was much easier (in iommi this pattern is extracted into the path decoders themselves, removing the need for the decorator).
+This was a big win for code size/DRY, but it also made it easier to write the correct code, and auditing the code for access control was much easier (in [iommi](https://docs.iommi.rocks/) this pattern is extracted into the [path decoders](https://docs.iommi.rocks/en/latest/path.html) themselves, removing the need for the decorator).
 
     
 ## Trouble brewing 
