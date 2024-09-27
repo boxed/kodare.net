@@ -29,7 +29,7 @@ def some_view(request, customer):
 This was a big win for code size/DRY, but it also made it easier to write the correct code, and auditing the code for access control was much easier (in iommi this pattern is extracted into the path decoders themselves, removing the need for the decorator).
 
     
-Trouble brewing 
+## Trouble brewing 
 
 We went through the code base and replaced all the old usages with the new and even found a few places with incorrect access control before the penetration testers did. We were very happy with this.
 
@@ -37,7 +37,7 @@ But there was a problem. Some views were big. Very big. And their logic was a bi
 
 These views could maybe be cleaned up, but they had run in production for years, weren't changed very often, and were business critical, so it didn't make much sense to try to refactor and potentially break them. Reading the code it wasn't obvious that a refactor wouldn't end up with the same problem with hard to audit logic anyway. The code was complex because the business rules were complex. 
     
-A New Hope
+## A New Hope
 
 The requirement for a solution was:
 
