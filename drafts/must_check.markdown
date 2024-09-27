@@ -48,7 +48,7 @@ The requirement for a solution was:
 The system we came up with was a decorator `must_check`:
     
 ```py
-    @permissions.must_check('foo')
+@permissions.must_check('foo')
 def some_view(request):
 	...
 	check('foo', statement_to_check_access)
