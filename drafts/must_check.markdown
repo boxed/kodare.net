@@ -50,8 +50,11 @@ The system we came up with was a decorator `must_check`:
 ```py
 @permissions.must_check('foo')
 def some_view(request):
-	...
-	check('foo', statement_to_check_access)
+    ...
+    some_other_function(request.user)
+
+def some_other_function(user):
+    check('foo', user.is_special_user and user.is_bob)
 ```
 
 The fancy thing is that `check` can be called anywhere in the entire call tree from the view. The decorator `must_check` adds its argument (the name of the check) onto a request local dict with the value `False` if not present, and `check()` sets the value to `True`. The final detail is that after the view returns, the decorator will go through the dict and validate that all values are `True`, and if there is any `False` value it crashes.
