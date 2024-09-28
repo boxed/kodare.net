@@ -1,20 +1,22 @@
 ---
 
-title:	"RefinableObject — Object Orientation Refined"
+title:	"RefinableObject — Object Orientation Refined"
 subtitle: OOP with deep customization but optional inheritance
 date:	2018-06-25
 ---
+
+(Update 2024-09-28: This blog post is a bit outdated, but still shows some of the philosophy that is now a part of [iommi](https://docs.iommi.rocks).)
  
- I think Object Oriented Programming is over used but I have to admit it is unrivaled for certain tasks, the most significant to my line of work being GUIs. But OOP as normally practiced in languages like Python, Java, and C++ have some clear drawbacks even for this use case. One problem for GUIs is that you need to create lots of classes even for trivial things: when you have an object that contains another object you must often create two new classes just to customize the nested object. Often there is also an asymmetry between customizing methods (you must subclass) and member variables (pass a value in the constructor).
+ I think Object Oriented Programming is overused, but I have to admit it is unrivaled for certain tasks, the most significant to my line of work being GUIs. But OOP as normally practiced in languages like Python, Java, and C++ have some clear drawbacks even for this use case. One problem for GUIs is that you need to create lots of classes even for trivial things: when you have an object that contains another object you must often create two new classes just to customize the nested object. Often there is also an asymmetry between customizing methods (you must subclass) and member variables (pass a value in the constructor).
 
 We (Johan Lübcke and me) have developed a style and library to fix these issues: tri.declarative. This is the basis of our libraries tri.token, tri.form, tri.query, and tri.table.
 
 The basic philosophy is:
 
 1. Ability to customize methods and member variables through the constructor.
-2. Pass through to nested objects with double underscore as path separator.
-3. Inheritance creates defaults not hard coded values/behavior.
-4. Strong defaults with gradual customization opportunities.
+2. Easily pass through config to deeply nested objects.  
+3. Inheritance to define defaults. Not hard coded values/behavior.
+4. Strong defaults, with gradual customization opportunities.
 5. Package common or useful defaults into shortcuts.
 
 Let's look at an example:
@@ -25,6 +27,7 @@ from tri.declarative import *
 
 class Bar(RefinableObject):
     c = Refinable()
+
 
 class Foo(RefinableObject):
     a = Refinable()
@@ -41,6 +44,7 @@ class Foo(RefinableObject):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+
 Foo.quux = Shortcut(call_target=Foo, a__c=7, b=lambda: 'z')
 
 
@@ -52,7 +56,7 @@ print(Foo.quux().a.c)          # -> 7
 print(Foo.quux().b())          # -> 'z'
 ```
 
-This design enables tri.table to have exactly one Column class while comparable libraries like django_tables2 has 13 (with less flexibility and less built in functionality in our opinion).
+This design enables tri.table to have exactly one `Column` class while comparable libraries like django-tables2 has 13 (with less flexibility and less built in functionality in our opinion).
 
 Because we use this style in tri.table we are able to do things like:
 
@@ -69,4 +73,4 @@ This creates a table of all users where the columns are derived automatically fr
 The downsides to this system are
 
 * Lack of tooling. For example: PyCharm doesn't understand and can't suggest or check a lot of this stuff.
-* It's different. We think it's a good different but it takes a while to get used to.
+* It's different. We think it's a good different, but it takes a while to get used to.
