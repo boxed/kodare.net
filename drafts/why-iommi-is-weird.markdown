@@ -36,7 +36,7 @@ Our first library `tri.tables` was only used by the product we worked on, and in
 
 We had built up some big backwards incompatible changes we wanted to make in late 2015, which were too scary to do on the entire product at once, so we ended up forking `tri.tables` to `tri.table`. This meant we could introduce the new library one view at a time through the code base. This turned out to be a dress rehearsal for the big changes later. 
 
-## 4 libraries
+## 4 libraries :(
 
 At this stage we had four libraries: `tri.table`, `tri.query`, `tri.form` and `tri.declarative` (called `tri.*` from now on).
 
