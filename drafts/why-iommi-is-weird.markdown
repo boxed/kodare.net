@@ -6,7 +6,7 @@ title:	"Why iommi is so... weird"
  
 Something I hear a lot is that [iommi](https://docs.iommi.rocks) is weird (or ["magical and weird"](https://chaos.social/@apollo13/113209773105984233)). I would maybe use the word "different", but it's true! 
 
-So how did we end up here? There were many small steps over a decade, each fixing a problem we had. Each step was small, necessary, and sometimes not backwards compatible. Each step felt clear and inevitable. But looking back on where we stand today it's very obvious that we ended up very far from how Python libraries are normally built.
+So how did we end up here? There were many small steps, each fixing a problem we had. Each step was small, necessary, and sometimes not backwards compatible. Each step felt clear and inevitable. But looking back on where we stand today it's very obvious that we ended up very far from how Python libraries are normally built.
 
 ## We had some guiding lights when starting
 
