@@ -44,9 +44,9 @@ By late 2019 we had built up a list of big problems with `tri.*`. The biggest pr
 
 - Using `tri.*` was pretty nice inside the product we built it for, but quite different for other projects. This meant that docs written for `tri.*` didn't cleanly translate to our own production usage. It also meant using the libs for green field projects was hard.
 - Making `tri.*` fit into an existing project with an existing design system, menu, etc. was difficult, and when you did so, the code diverged from the examples in the documentation.
-- Dispatch of automatic AJAX endpoints was very cumbersome and error prone.
+- Dispatch of automatic AJAX endpoints was very cumbersome and error-prone.
 - Having four libraries to release and keep in sync was a huge hassle.
-- Composing forms, tables, and custom templates into a bigger page was cumbersome and error prone.
+- Composing forms, tables, and custom templates into a bigger page was cumbersome and error-prone.
 - Lots of built up deprecated cruft.
 - We were unhappy with many names for properties, arguments, and functions.
 - It was hard to find the full conf path for the thing you wanted to change if it was deeply nested.
@@ -73,7 +73,7 @@ In hindsight, a few of the goals of iommi are responsible for making iommi so di
 - No silent failures. 
 	- This meant we discarded subclassing + method override as a method for customization. This is already pretty weird!
 - Zero boilerplate customization. 
-	- This leads to the deep `__` separated config parameters in iommi, as you need to insert just a little bit of config deep in an object hierarchy (4 levels isn't uncommon!). In a traditional design with subclassing this would mean 3 new classes just so set a CSS class.
+	- This leads to the deep `__` separated config parameters in iommi, as you need to insert just a little bit of config deep in an object hierarchy ([4 levels isn't uncommon!](https://kodare.net/2024/09/30/iommi-vs-inheritance-explosion.html)). In a traditional design with subclassing this would mean 3 new classes just so set a CSS class.
 - Callables for advanced customization. 
 	- This is necessary for zero boilerplate customization.
 - Declarative/programmatic hybrid API. 
