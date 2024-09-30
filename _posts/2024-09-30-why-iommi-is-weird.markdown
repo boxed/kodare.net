@@ -25,7 +25,7 @@ So how did we end up here? There were many small steps, each fixing a problem we
 
 ## Some more guiding lights made themselves known along the way
 
-- [Everything has name](https://docs.iommi.rocks/en/latest/philosophy.html#everything-has-a-name). 
+- [Everything has a name](https://docs.iommi.rocks/en/latest/philosophy.html#everything-has-a-name). 
 - [Values for the simple case, callables for the advanced cases](https://docs.iommi.rocks/en/latest/philosophy.html#callables-for-advanced-usage-values-for-the-simple-cases)
 - [Declarative/programmatic hybrid style](https://docs.iommi.rocks/en/latest/philosophy.html#declarative-programmatic-hybrid-api)
 - [Prepackaging useful features, but still allow customization](https://docs.iommi.rocks/en/latest/philosophy.html#prepackaged-commonly-used-patterns-that-can-still-be-customized)
