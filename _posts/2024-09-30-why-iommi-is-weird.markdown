@@ -29,7 +29,7 @@ So how did we end up here? There were many small steps, each fixing a problem we
 - [Values for the simple case, callables for the advanced cases](https://docs.iommi.rocks/en/latest/philosophy.html#callables-for-advanced-usage-values-for-the-simple-cases)
 - [Declarative/programmatic hybrid style](https://docs.iommi.rocks/en/latest/philosophy.html#declarative-programmatic-hybrid-api)
 - [Prepackaging useful features, but still allow customization](https://docs.iommi.rocks/en/latest/philosophy.html#prepackaged-commonly-used-patterns-that-can-still-be-customized)
-- Ability to cleanly override the defaults of iommi globally for your specific product. This is called [Styles](https://docs.iommi.rocks/en/latest/styles.html) in iommi.
+- Ability to cleanly override the defaults globally for your specific product. This is called [Styles](https://docs.iommi.rocks/en/latest/styles.html) in iommi.
 
 
 Our first library `tri.tables` was only used by the product we worked on, and in hindsight this was a blessing as it meant we could break backwards compatibility as long as we didn't break the product. We didn't have to worry about other users of the library. 
