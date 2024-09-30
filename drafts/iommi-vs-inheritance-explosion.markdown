@@ -18,20 +18,20 @@ class PersonTable(tables.Table):
 
 
 class PersonNumberWidget(Widget):
-		def format_value(self, value):
-				return f'{value[:-4]}-{value[-4:]}'
+    def format_value(self, value):
+        return f'{value[:-4]}-{value[-4:]}'
 
 
 class PersonFilter(FilterSet):
     class Meta:
         model = Person
         fields = {
-        		"name": ["contains"], 
-        		"country": ["contains"],
-    		}
+            "name": ["contains"], 
+            "country": ["contains"],
+        }
     		
     person_number = CharFilter(
-    		widget=PersonNumberWidget(),
+        widget=PersonNumberWidget(),
     )   		
 
     def __init__(self, *args, **kwargs):
@@ -45,7 +45,6 @@ class FilteredPersonListView(SingleTableMixin, FilterView):
     template_name = "template.html"
 
     filterset_class = PersonFilter
-    
 ```
 
 This code create a table for the model `Person` and turns on filtering for the `name` and `country` fields. it also formats the person number with a dash before the last four digits as expected for Sweden. Three classes for a very simple view. 
@@ -54,12 +53,12 @@ In iommi the same functionality looks like this:
 
 ```py
 class PersonTable(Table):
-		class Meta:
-			auto__model = Person
-			columns = dict(
-					name__filter__include=True,
-					name__display_name='Name of the person',
-					country__filter__include=True,
-					person_number__cell__format=lambda value, **_: f'{value[:-4]}-{value[-4:]}'
-			)
+    class Meta:
+        auto__model = Person
+        columns = dict(
+            name__filter__include=True,
+            name__display_name='Name of the person',
+            country__filter__include=True,
+            person_number__cell__format=lambda value, **_: f'{value[:-4]}-{value[-4:]}'
+        )
 ```
