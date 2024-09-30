@@ -40,7 +40,7 @@ We had built up some big backwards incompatible changes we wanted to make in lat
 
 At this stage we had four libraries: `tri.table`, `tri.query`, `tri.form` and `tri.declarative` (called `tri.*` from now on).
 
-By late 2019 we had built up a list of big problems with `tri.*`. The biggest problems were:
+By late 2019 we had built up a list of problems with `tri.*`. The biggest problems were:
 
 - Using `tri.*` was pretty nice inside the product we built it for, but quite different for other projects. This meant that docs written for `tri.*` didn't cleanly translate to our own production usage. It also meant using the libs for green field projects was hard.
 - Making `tri.*` fit into an existing project with an existing design system, menu, etc. was difficult, and when you did so, the code diverged from the examples in the documentation.
