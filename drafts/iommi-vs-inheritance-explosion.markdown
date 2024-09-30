@@ -59,6 +59,7 @@ class PersonTable(Table):
             name__filter__include=True,
             name__display_name='Name of the person',
             country__filter__include=True,
-            person_number__cell__format=lambda value, **_: f'{value[:-4]}-{value[-4:]}'
+            person_number__cell__format=lambda value, **_: 
+                f'{value[:-4]}-{value[-4:]}'
         )
 ```
