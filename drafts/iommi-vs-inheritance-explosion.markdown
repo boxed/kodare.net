@@ -47,6 +47,8 @@ class FilteredPersonListView(SingleTableMixin, FilterView):
     filterset_class = PersonFilter
 ```
 
+(The code for `template.html` omitted for brevity.)
+
 This code create a table for the model `Person` and turns on filtering for the `name` and `country` fields. it also formats the person number with a dash before the last four digits as expected for Sweden. Three classes for a very simple view. 
 
 In iommi the same functionality looks like this:
