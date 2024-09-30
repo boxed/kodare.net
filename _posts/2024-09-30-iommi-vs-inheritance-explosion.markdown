@@ -1,5 +1,5 @@
 ---
-title: How iommi avoids inheritance explosion
+title: iommi vs inheritance explosion
 date: 2024-09-30
 ---
 
