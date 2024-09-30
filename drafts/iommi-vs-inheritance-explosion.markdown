@@ -65,3 +65,5 @@ class PersonTable(Table):
                 f'{value[:-4]}-{value[-4:]}'
         )
 ```
+
+This is accomplished via [Refinable objects](https://kodare.net/2018/06/25/refinableobject-object-orientation-refined.html), and [Transparent APIs](https://kodare.net/2020/09/14/transparent_apis.html).
