@@ -1,5 +1,6 @@
 ---
 title: How iommi avoids inheritance explosion
+date: 2024-09-30
 ---
 
 A common pattern in OOP when you need to customize some libraries functionality is that you get an inheritance explosion. Let's look at an [example from the django-tables2 documentation](https://django-tables2.readthedocs.io/en/latest/pages/filtering.html):
