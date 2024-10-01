@@ -303,6 +303,7 @@ a {
     filter: invert(100%);
     color: black;
     user-select: none;
+    cursor: pointer;
 }
 
 code {
