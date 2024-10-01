@@ -23,7 +23,7 @@ Many small things are more important than big strategic things, but the Django d
     - `DoesNotExist` doesn't give you the model name or what the query was.
     - `TemplateNotFound` could be much more helpful. It could list all possible correct values in alphabetical order, with one item per line.
     - Error messages could contain links to the docs if possible. Elm does this and it's very good! This would be a lot easier if there was a "latest" version of the docs you could link to. 
-    - Event.objects.filter('1234') has the terrible error message "Cannot resolve keyword 'i' into field. Choices are: ...". It iterates over what is passed, so it tried "1", "2", "3", "4"!
+    - `Foo.objects.filter('1234')` has the terrible error message "Cannot resolve keyword 'i' into field. Choices are: ...". It iterates over what is passed, so it tried "1", "2", "3", "4"!
     - `IntegrityError at / NOT NULL constraint failed: discussion_post.created_by_id`. Tell the user you need to pass `created_by` because it can't be null.
     - `OperationalError at / table discussion_post has no column named text`. Tell the user to run makemigrations/migrate.
 - Static file serving
