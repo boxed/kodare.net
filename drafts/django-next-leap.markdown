@@ -35,3 +35,5 @@ Many small things are more important than big strategic things, but the Django d
 These are all small things that are relatively easy to fix. A greater focus on small details like this has outsized effects on how nice it is to use a product. It's the difference between the pain of a thousand cuts from walking through thorns, and a helping hand guiding you on a smooth path.
 
  Small details matter. They matter even more for beginners, but they still matter for everyone.
+
+{% endraw %}
