@@ -29,7 +29,7 @@ Many small things are more important than big strategic things, but the Django d
 - Static file serving
     - When people ask about this, 90% of the time you can just tell them to install whitenoise. Django's docs makes perfect the enemy of good. Most projects are small hobby or school projects, we don't need to force everyone to get nginx configured properly.
 - Migration issues
-    - Migrations are opt in (still!). `startapp` should opt in by default.
+    - `makemigrations` could warn if you have apps with `models.py` but no `migrations/__init__.py`
     - It would be nice if Django checked that migrations are committed.
 
 These are all small things that are relatively easy to fix. A greater focus on small details like this has outsized effects on how nice it is to use a product. It's the difference between the pain of a thousand cuts from walking through thorns, and a helping hand guiding you on a smooth path.
