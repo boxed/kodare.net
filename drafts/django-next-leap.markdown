@@ -2,6 +2,7 @@
 
 title: The next great leap for Django 
 ---
+{% raw %}
 
 2025 will be the 20-year anniversary of Django. I've been using it since the 0.9 days, and professionally since 2011. It has improved a lot since the first release, with migrations probably the biggest improvement. 
 
