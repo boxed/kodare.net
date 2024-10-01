@@ -8,7 +8,7 @@ title: The next great leap for Django
 
 I believe we can make a leap as big as from 0.9 to 5.0 or even bigger, but with a very small effort. 
 
-Many small things are more important than big strategic things, but the Django development roadmap has focused on advanced ORM features and async which, while needed, is also a huge amount of work for comparatively little gain. There's lower hanging fruit. And there's a *lot* of it.
+Many small things can be more important than big strategic things. While the Django development roadmap has focused on advanced ORM features and async, lower hanging fruit has been left unaddressed. And there's a lot of it!
 
  Here's a list of things that are small fixes and that would make a massive difference:
 
@@ -32,7 +32,7 @@ Many small things are more important than big strategic things, but the Django d
     - `makemigrations` could warn if you have apps with `models.py` but no `migrations/__init__.py`
     - It would be nice if Django checked that migrations are committed.
 
-These are all small things that are relatively easy to fix. A greater focus on small details like this has outsized effects on how nice it is to use a product. It's the difference between the pain of a thousand cuts from walking through thorns, and a helping hand guiding you on a smooth path.
+A greater focus on small details like this has outsized effects on how nice it is to use a product. It's the difference between the pain of a thousand cuts from walking through thorns, and a helping hand guiding you on a smooth path.
 
  Small details matter. They matter even more for beginners, but they still matter for everyone.
 
