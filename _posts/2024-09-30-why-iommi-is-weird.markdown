@@ -1,6 +1,7 @@
 ---
-
 title:	"Why iommi is so... weird"
+date: 2024-09-30
+tags: [programming, python, django, iommi]
 ---
 
  

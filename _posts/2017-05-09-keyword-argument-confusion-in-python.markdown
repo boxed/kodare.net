@@ -1,7 +1,7 @@
 ---
-
 title:	"Keyword argument confusion in Python"
 date:	2017-05-09
+tags: [programming, python]
 ---
 
 (If you read this and feel more confused, that means you now know more, it IS confusing!)
@@ -84,4 +84,3 @@ It's very simple at the call site, but a lot more complex at the function defini
 ### Summary
 
 Python appears simple because most of these rules and distinctions are so well thought out that many programmers can go years in a professional career and believe defaults arguments and keyword arguments are the same, and never get bitten by this incorrect belief.
-

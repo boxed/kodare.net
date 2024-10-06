@@ -1,7 +1,7 @@
 ---
-
 title:	"A quick performance comparison of Python code formatters"
 date:	2019-01-13
+tags: [programming, python]
 ---
 
 We've been talking about code formatters for Python at work since we're using Elm and we've been super happy about how code formatting works with elm-format. I tried Black a bit to see how it looks and my initial impression is that I like it (except " for quotes, what's up with that?) but it felt slow. So obviously it's benchmark time!
@@ -26,4 +26,3 @@ Both yapf and autopep8 have some annoying behaviors:
 And the kicker is that Black has a `--fast` option that skips some internal checks that runs in 48 seconds on this test. That's pretty much check mate as far as I'm concerned.
 
 Update: I did some digging for another article and it turns out Black cheats a bit here: it runs in parallel. If I turn that off it takes 2.8m on the same benchmark. Still ok though I think.
-

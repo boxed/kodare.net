@@ -1,7 +1,7 @@
 ---
-
 title:	"iommi vs django-tables2+django-filters"
 date:	2024-09-19
+tags: [programming, python, django, iommi]
 ---
 
 {% raw %}

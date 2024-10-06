@@ -2,6 +2,7 @@
 title: Introducing iommi
 date: 2020-05-13
 render_with_liquid: false
+tags: [programming, python, django, iommi]
 ---
 
 I am very excited to reveal something me and my colleague Johan Lübcke have

@@ -1,7 +1,7 @@
 ---
-
 title:	"Moving a large and old codebase to Python3"
 date:	2018-02-09
+tags: [programming, python]
 ---
 
   One and a half years ago we decided that it was time to get on Python 3. We've talked about it for a long time but now it was time! The journey is now complete, we have switched the last parts of production to Python 3.
@@ -127,4 +127,3 @@ The load machines exposed configurations for customer data that was incompatible
 ### Conclusion
 
 Ultimately we feel that we really had no choice in the matter: Python 2 maintenance will stop at some point, and our dependencies are going py3 only, most notably Django. But we did want to do this transition anyway because we are often bitten by bytes/unicode issues and Python 3 just fixes lots of small annoyances in Python 2. The switch has already found some real bugs/misconfigurations that we've had in production for years. We also look forward to using f-strings and ordered dicts everywhere.
-

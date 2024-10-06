@@ -1,5 +1,4 @@
 ---
-
 title:	"Sam Harris [was] wrong about encryption"
 date:	2017-05-02
 ---
@@ -23,4 +22,3 @@ This is the facts of how the math works out. I think these alterations to the an
 There are of course other problems with the thinking behind Sam Harris' stance like the fact that the genie can't be put back in the bottle but I think the above is quite enough to convince you to at least think hard about encryption and not be swayed by arguments to emotions for victims of crimes.
 
 If we break encryption, we will all be victims, albeit to robbery, blackmail and embarrassment and not murder. But victims we will be. Count on it.
-

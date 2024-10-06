@@ -1,7 +1,7 @@
 ---
-
 title:	"Intermittent tests: aligned primary keys"
 date:	2018-08-28
+tags: [programming, python, testing, pytest, flaky-tests]
 ---
 
   We've had a problem for years with tests that work locally but that breaks in CI and in some cases even breaks intermittently in CI. [I've written about how we solved some of these](https://medium.com/@boxed/use-the-biggest-hammer-8425e4c71882), but this time I want to talk about aligned primary keys.

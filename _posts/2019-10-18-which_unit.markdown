@@ -1,7 +1,7 @@
 ---
-
 title:	"Unit tests are nice... but WHICH unit?"
 date:	2019-10-18
+tags: [programming, python, testing, pytest, mutation-testing]
 ---
 
 I've recently begun to be bothered by a pattern I haven't really thought about before: unit tests are just a pile of stuff to the side of your code and aren't connected to the *unit* they are supposed to test (at least in any unit testing system I've seen, examples to the contrary are welcome!). 

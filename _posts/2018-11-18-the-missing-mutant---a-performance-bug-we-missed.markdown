@@ -1,7 +1,7 @@
 ---
-
 title:	"The missing mutant — a performance bug we missed"
 date:	2018-11-18
+tags: [programming, python, testing, mutation-testing]
 ---
 
 We recently performed a profiling run of our batch processing pipeline and we discovered that the `__hash__` method of the `Frozen` class (a part of tri.struct) was taking quite a lot of time. This was surprising in multiple ways:
@@ -32,4 +32,3 @@ The fix is pretty simple: use `dict.__getattribute__` instead of `self[` (and ca
 The more important and interesting question is: why didn't mutation testing find this? Well, turns out there just was no mutation from `a[b]` to `a[None]`. But now there is! Mutmut 1.0 released today contains this new mutation. Rerunning the mutation tests on the previous tri.struct code finds this mutant and when we fix the bug and add a test for it the mutant is killed.
 
 *Update: after a lot of problems I have finally managed to run this bug via the other two python mutation testers Cosmic Ray and mutpy. None of them finds this mutant as of 2018–11–23.*
-

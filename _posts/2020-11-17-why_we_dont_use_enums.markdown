@@ -2,6 +2,7 @@
 title: Why we don't use python native enums
 date: 2020-11-17
 render_with_liquid: false
+tags: [programming, python]
 ---
 {% raw %}
 

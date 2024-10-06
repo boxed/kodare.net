@@ -1,10 +1,10 @@
 ---
-
 title:	"What I want in Python"
 date:	2017-02-07
+tags: [programming, python]
 ---
 
-  This is sort of a follow up to "[Python is still my first language, but…](https://medium.com/@boxed/why-python-is-still-my-first-choice-9780b4f4b2c?source=linkShare-8ad86cc82e5f-1486473582)"
+  This is sort of a follow-up to "[Python is still my first language, but…](https://medium.com/@boxed/why-python-is-still-my-first-choice-9780b4f4b2c?source=linkShare-8ad86cc82e5f-1486473582)"
 
 Some of these are easy, some are hard, some might require a transition almost as bad as 2->3 :P
 

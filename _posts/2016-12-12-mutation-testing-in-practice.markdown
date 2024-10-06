@@ -1,7 +1,7 @@
 ---
-
 title:	"Mutation testing in practice"
 date:	2016-12-12
+tags: [programming, python, testing, mutation-testing]
 ---
 
 I've been told that the coverage numbers on your test suite don't really mean much and that the solution to this is mutation testing (maybe also property based testing). I started, as one does by definition, not understanding what it was, then I was a skeptic and after much debate I was finally converted into "ok, I need to check it out"-status. Not a believer, but I could see the point and I could see how it could find problems in theory.
@@ -96,4 +96,3 @@ We use `break` in `sort_after()` because when we find what we're looking for we 
 ### Conclusion
 
 All in all: quite successful. We didn't find any real bugs but we are now much more confident in our test suite. It's quite cool to have a tool that can make sure your test suite is fairly complete.
-

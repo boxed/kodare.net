@@ -1,3 +1,7 @@
+:root {
+    --link-color: #45a4f2
+}
+
 
 body {
     font-size: 14px;
@@ -97,6 +101,22 @@ body {
 .inner {
     max-width: 700px;
     padding: 40px 10px;
+}
+
+.tags {
+    list-style: none;
+}
+
+.tag {
+    display: inline-block;
+    border: 1px solid var(--link-color);
+    padding: 4px 10px;
+    border-radius: 14px;
+    margin: 4px;
+}
+
+.tag .count {
+    opacity: 50%;
 }
 
 #post_time {
@@ -295,7 +315,7 @@ body, h1, h2, h3, h4, h5, p {
 }
 
 a {
-    color: #45a4f2;
+    color: var(--link-color);
 }
 
 #claps {

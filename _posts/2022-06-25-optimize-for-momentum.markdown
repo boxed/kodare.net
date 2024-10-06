@@ -1,7 +1,7 @@
 ---
-
 title:	"Optimize for momentum"
 date:	2022-06-24
+tags: [programming]
 ---
 
 I got this question:

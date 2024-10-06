@@ -1,5 +1,3 @@
-<div id="archive">
-<h2>Blog</h2>
 
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign tags_list = site_tags | split:',' | sort_natural %}
@@ -11,19 +9,15 @@
   {% endunless %}{% endfor %}
 </ul>
 
-<ul style="list-style: none; padding-left: 0">
-  {% for post in site.posts %}
-    {% unless post.draft %}
-      <li>
-        {{ post.date | date: "%Y-%m-%d" }} - <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endunless %}
-  {% endfor %}
-</ul>
-</div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('claps').remove();
-});
-</script>
+{% for tag_name in tags_list %}
+# {{ tag_name }}
+<ul style="list-style: none; padding-left: 0">
+<a id="{{ tag_name }}"></a>
+    {% for post in site.tags[tag_name] %}
+{% unless post.draft %}
+<li>{{ post.date | date: "%Y-%m-%d" }} - <a href="{{ post.url | prepend: baseurl }}">{{ post.title }}</a></li>
+{% endunless %}
+    {% endfor %}
+</ul>
+{% endfor %}

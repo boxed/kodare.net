@@ -1,7 +1,7 @@
 ---
-
 title:	"Mutation vs Property Based testing"
 date:	2019-04-10
+tags: [programming, python, testing, mutation-testing]
 ---
 
 I came across [this article by Hillel Wayne](https://www.hillelwayne.com/post/contract-examples/) about using Property Based testing to find a bug in a mode function (finding the most common element). The function to test is this:
@@ -178,4 +178,3 @@ I hope you'll try mutation testing on your libraries. For most projects it's as 
 > mutmut run
 
 Mutmut figures out where your code and tests are automatically and just runs.
-

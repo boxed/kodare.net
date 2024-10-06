@@ -1,10 +1,10 @@
 ---
-
 title:	"Followup to \"My Disillusionment with Clojure and Lisps\""
 date:	2016-12-21
+tags: [programming, clojure]
 ---
 
-  I've had long and heated discussions on reddit and some more constructive here on medium after posting my last article, and I've come to mellow my stance. I've had people point out of points of pure fact I got wrong, new developments and features I didn't know about.
+ I've had long and heated discussions on reddit and some more constructive on medium after posting my last article, and I've come to mellow my stance. I've had people point out of points of pure fact I got wrong, new developments and features I didn't know about.
 
 A lot of my critique does not apply to Common Lisp so the original article should just have been specifically about Clojure.
 
@@ -62,4 +62,3 @@ I still feel that the standard lib contains too many of these, effectively creat
 ### Conclusion
 
 I need to check out Cursive again, or ask colleagues that use Clojure to show it to me. I am more positive towards Clojure now than before publishing the article. I'll definitely try to reduce my exposure to reddit comments a bit :P
-

@@ -1,6 +1,7 @@
 ---
-
-title: The next great leap for Django 
+title: "The next great leap for Django"
+date: 2024-09-30
+tags: [programming, python, django, iommi]
 ---
 {% raw %}
 

@@ -1,6 +1,7 @@
 ---
 title: Programming is frustrating 
 date: 2021-07-11
+tags: [programming]
 ---
 
 My wife once said that programming must be terrible because you're always confused and frustrated. I laughed a bit but then I thought about it. 

@@ -1,7 +1,7 @@
 ---
-
 title:	"Salvaging abandoned projects"
 date:	2018-06-25
+tags: [programming]
 ---
 
   I think we've all seen abandoned projects that have multiple good pull requests. Sometimes there is an active fork but it can be extremely hard to find, even if you spend the time to go looking. I believe this is a problem that can be fixed, or at least improved upon significantly.
@@ -28,4 +28,3 @@ GitHub could have a way for active forks to be linked in a banner at the top of 
 We need to find some good definition of "abandoned", but I think we can start very conservatively and then include more projects slowly.
 
 There is a lot of opportunity for strengthening open source if abandoned projects can be salvaged. I think this is feasible and very worthwhile.
-

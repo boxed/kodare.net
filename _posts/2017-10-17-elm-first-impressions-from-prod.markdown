@@ -1,7 +1,7 @@
 ---
-
 title:	"Elm first impressions from prod"
 date:	2017-10-17
+tags: [programming, elm]
 ---
 
 (If you're coming from /r/elm to read this, please mail me directly. I was banned there so can't reply)
@@ -52,4 +52,3 @@ This is a short list, but every point in it is a huge deal.
 So far I am optimistic. I feel a lot more confident about the Elm code than I've ever felt about ClojureScript code. Especially when writing front end code this is very important to us, because we spend most our time on the back end so we need a language where it's possible to make changes without mistakes even when we haven't used that language for weeks or even months. Having the compiler smack us on the fingers instead of having crashes in the customer browser is very nice. "If it compiles, it works" is pretty close to the truth.
 
 If you want to use Elm at work, I strongly suggest to set up some kind of code generator from day one. It will save you time and prevent errors, especially when it comes to json decoders/encoders. It will also make it easier to make sure your front end code is in sync with your back end.
-

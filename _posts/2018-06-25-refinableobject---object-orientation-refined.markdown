@@ -1,8 +1,8 @@
 ---
-
 title:	"RefinableObject — Object Orientation Refined"
 subtitle: OOP with deep customization but optional inheritance
 date:	2018-06-25
+tags: [programming, python]
 ---
 
 (Update 2024-09-28: This blog post is a bit outdated, but still shows some of the philosophy that is now a part of [iommi](https://docs.iommi.rocks).)

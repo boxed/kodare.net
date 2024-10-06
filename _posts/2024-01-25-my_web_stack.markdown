@@ -1,7 +1,7 @@
 ---
-
 title:	"My web dev stack 2024"
 date:	2024-01-25
+tags: [programming, python, django, iommi]
 ---
 
 I work as the only developer at [Dryft](https://dryft.se), a consumer facing construction company startup here in Sweden. We are trying to build a consumer brand you can trust when you need something done with your house, and being a great place to work.  The product I build is primarily an internal tool for estimating the size of jobs, pricing those jobs, and finally presenting that as an offer to customers. In addition to this part there are automations of third party integrations, various minor internal tools, and tools to keep track of scheduling the work.  Being the only developer I keep the stack lean and automated as much as possible. These are the highlights:

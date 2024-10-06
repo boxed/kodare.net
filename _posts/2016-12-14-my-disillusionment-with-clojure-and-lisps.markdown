@@ -1,7 +1,7 @@
 ---
-
 title:	"My disillusionment with Clojure and Lisps"
 date:	2016-12-14
+tags: [programming, clojure]
 ---
 
   **Update**: I've been corrected in many points related to this article.[ Read my follow up](https://medium.com/@boxed/followup-to-my-disillusionment-with-clojure-and-lisps-49d8b0ec94c1?source=linkShare-8ad86cc82e5f-1482354544).
@@ -62,4 +62,3 @@ I've even designed a fix for the lack of keyword arguments in Clojure called [de
 ### Conclusion
 
 Lisps are a good playground to fairly easily implement super experimental language features, But coding in a language where all libraries contain a big bag of experimental language features is not so great.
-

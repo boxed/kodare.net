@@ -1,7 +1,7 @@
 ---
-
 title:	"Code generation is terrible and great"
 date:	2017-08-03
+tags: [programming, elm]
 ---
 
   Are you generating code for the language you are writing in? Then the language you're using is terrible. By definition it's under powered because you need to write code to write code instead of just expressing what you need directly.
@@ -87,4 +87,3 @@ Never be afraid your list and your enum are out of sync again!
 ### Join me!
 
 [Come to github and help](https://github.com/boxed/elm-cog)! Feature requests, bugs, pull requests, stories of pain points you've had in Elm that might be solved by elm-cog, it's all welcome!
-

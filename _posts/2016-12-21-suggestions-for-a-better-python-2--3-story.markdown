@@ -1,7 +1,7 @@
 ---
-
 title:	"Suggestions for a better Python 2->3 story"
 date:	2016-12-21
+tags: [programming, python]
 ---
 
   There's been a lot of gnashing of teeth over the transition to Python 3. It's just not as easy as one would like. Here's my wish list for how this could be better. There would need to be:
@@ -32,4 +32,3 @@ Six currently doesn't cover mock and csv for example. This has bitten us at work
 ### Conclusion
 
 I believe the core Python team could do a lot more for the ease of transition with relatively few changes. This is a good thing and shows the amount of work that has gone into this. For small libs it's already easy to make the change to running on both 2 and 3, it's the big code bases that have the most to gain from better transition tools.
-

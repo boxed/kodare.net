@@ -1,14 +1,14 @@
 ---
-
 title:	"Python is still my first choice, but…"
 date:	2016-12-22
+tags: [programming, python]
 ---
 
   Hold on to your hats, this is going to be all over the place.
 
 ### Background
 
-I've been doing Python professionally for soon 6 years now. Before that I did C++ professionally for 9 years. My wife thinks I've gone from a super Python fan boy to someone who complains about it a fair bit, so here's some of the things that have made me long for other languages, and some things I really wish were fixed in Python.
+I've been doing Python professionally for soon 6 years now. Before that I did C++ professionally for 9 years. My wife thinks I've gone from a super Python fanboy to someone who complains about it a fair bit, so here's some of the things that have made me long for other languages, and some things I really wish were fixed in Python.
 
 First some things I miss from other languages when doing Python:
 
@@ -50,4 +50,3 @@ Any or all of the above (except the size of the third party ecosystem) is enough
 ### Conclusion
 
 For the time being the only thing other languages can compete on for me are doing things differently or targeting places where Python is weak, since they can't catch up on third party libraries any time soon. I will continue to try new languages but from past experience I'll probably keep coming back to Python pretty quickly.
-

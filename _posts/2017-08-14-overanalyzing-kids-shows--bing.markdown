@@ -1,5 +1,4 @@
 ---
-
 title:	"Overanalyzing kids shows: Bing"
 date:	2017-08-14
 ---
@@ -37,4 +36,3 @@ This is an image of a condor chick being raised at the San Diego Zoo. One biolog
 (The machines have made a weird choice to introduce humans that basically look like rabbits, elephants and pandas though. Or maybe it's uplifted versions of those species, but that's probably harder to do.)
 
 So there you have it. Hopefully you can now watch this show with your kids with renewed interest!
-

@@ -2,9 +2,10 @@
 title: Django silent failures
 date: 2020-09-07
 render_with_liquid: false
+tags: [programming, python, django, iommi]
 ---
 {% raw %}
-I'm a big fan of Django but it has too many silent failure modes. This is very bad for beginners, and it's not good for veterans either. I make these types of mistakes on an almost daily basis. 
+I'm a big fan of Django, but it has too many silent failure modes. This is very bad for beginners, and it's not good for veterans either. I make these types of mistakes on an almost daily basis. 
 
 First:
 

@@ -1,7 +1,7 @@
 ---
-
 title:	"Vastly faster Python integration tests"
 date:	2017-10-24
+tags: [programming, python, testing, pytest]
 ---
 
   I work at an old code base at TriOptima. It's ~15 years old and over 200 thousand lines of Python code. For various reasons most tests have to be integration tests. We've made many optimizations like:
@@ -51,4 +51,3 @@ We've built this step into a simple script called test_changes that boils down t
 The point of the cache is to enable us to switch branches much faster, since these downloads can be a bit on the big side. In our case it's over 30 megs.
 
 This test_changes script is the same for the CI environment as locally which makes running tests really great. So instead of having to run all tests locally we just run the script and if you don't have local changes testmon checksums your source files and then it'll say it skipped all tests. Making a change to some code will now retrigger just relevant tests. This is the dream of testmon, but now it's also possible for huge code bases!
-

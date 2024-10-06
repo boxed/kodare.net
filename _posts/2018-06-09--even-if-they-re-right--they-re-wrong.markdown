@@ -1,5 +1,4 @@
 ---
-
 title:	"\"Even if they're right, they're wrong\""
 date:	2018-06-09
 ---
@@ -40,4 +39,3 @@ As a programmer I've often used this kind of thinking to great effect. If a bug 
 Next time you hear what you think is bad advice, try to see how deep the rabbit hole goes. How flawed is the reasoning? If it's only one level deep, i.e. it makes sense given the proposed data, maybe look into the data and check that it's really incorrect. You might learn something!
 
 But if it's logic is flawed to the core, point that out. Maybe someone on the fence will hear the crazy for the first time and change their mind.
-

@@ -1,7 +1,7 @@
 ---
-
 title:	"A case for a short form for argument labels"
 date:	2017-07-07
+tags: [programming, python]
 ---
 
   This article is based on statistics I've collected on Swift and my anecdotal experience with Python. I haven't collected statistics on Python because it's a lot more messy to do so than with Swift.
@@ -57,4 +57,3 @@ I was expecting libs to have more matching labels and arguments due to higher ab
 I really like the solution OCaml has: labeled arguments look like "~label: value" but there's a short form "~label_and_value". That syntax won't work for Python and Swift obviously but it's nice in that it shows that it's still labeled argument while removing redundancy. I'd like to see something like that in Swift and Python. Maybe `foo(:bar)` (as a short form for `foo(bar:bar)`) for Swift and `foo(=bar)` (as a short form for `foo(bar=bar)`) for Python.
 
 This seems rather feasible because both my suggested syntaxes are invalid or call site errors in Swift and Python today so they wouldn't break existing code.
-

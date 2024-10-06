@@ -1,6 +1,7 @@
 ---
 title: Django, React, and CORS
 date: 2021-04-04 
+tags: [programming, python, django]
 ---
 
 > I started my Django app on port 8000 and my React app on port 3000. Now I have problems with CORS errors. Help!
