@@ -18,12 +18,6 @@ document.addEventListener('readystatechange', (event) => {
             $('.auto_focus').trigger("focus");
         }
 
-        if (document.querySelector('.secondary_menu')) {
-            document.querySelector('body').classList.add('has_secondary_menu');
-        } else if (document.querySelector('.dryft-menu')) {
-            document.querySelector('body').classList.add('has_primary_menu');
-        }
-
         window.addEventListener("beforeunload", function (e) {
             sessionStorage.setItem('scroll_pos', window.scrollY);
             sessionStorage.setItem('scroll_url', window.location.href);
