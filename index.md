@@ -18,7 +18,7 @@ Currently working at <a href="https://dryft.se/">Dryft</a>, where we are making 
 <ul class="tags">
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
-    <li class="tag"><a href="#{{ this_word}}"><span class="tag-name">{{ this_word | replace: "-", " " }}</span> <span class="count">x {{ site.tags[this_word].size }}</span></a></li>
+    <li class="tag"><a href="/tags.html#{{ this_word}}"><span class="tag-name">{{ this_word | replace: "-", " " }}</span> <span class="count">x {{ site.tags[this_word].size }}</span></a></li>
   {% endunless %}{% endfor %}
 </ul>
 
