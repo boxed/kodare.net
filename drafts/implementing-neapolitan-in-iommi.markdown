@@ -16,6 +16,7 @@ Here's the full implementation of that goal in [iommi](https://docs.iommi.rocks)
     create=EMPTY,
     edit=EMPTY,
     delete=EMPTY,
+    detail=EMPTY,
 )
 def crud(*, model, table, create, edit, delete):
     table = setdefaults_path(
@@ -28,6 +29,11 @@ def crud(*, model, table, create, edit, delete):
         columns__delete=Column.delete(
             cell__url=lambda row, **_: f'{row.pk}/delete/',
         ),
+    )
+    detail = setdefaults_path(
+        detail,
+        auto__model=model,
+        editable=False,
     )
     create = setdefaults_path(
         create,
@@ -47,6 +53,7 @@ def crud(*, model, table, create, edit, delete):
     return include([
         path('', Table(**table).as_view()),
         path('create/', Form.create(**create).as_view()),
+        path('<pk>/', Form(**detail).as_view()),
         path('<pk>/edit/', Form.edit(**edit).as_view()),
         path('<pk>/delete/', Form.delete(**delete).as_view()),
     ])
