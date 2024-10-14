@@ -8,7 +8,7 @@ Carlton Gibson has released a package called Neapolitan to make it easier to do 
 
 Neapolitan's `views.py` is 513 lines, plus `template_tags/neapolitan.py` 71 lines, a management command to code gen templates 111 lines, and 24+16+13+21+40+9=123 lines of templates, for a total of 818 lines.
 
-Here's the full implementation of that goal in iommi:
+Here's the full implementation of that goal in [iommi](https://docs.iommi.rocks):
 
 ```py
 @dispatch(
