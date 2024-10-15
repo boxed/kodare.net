@@ -86,10 +86,10 @@ urlpatterns = [
 
 If you need to customize anything, I believe you need to run the management command to duplicate the template files to your own project and then edit those by hand.
 
-With iommi, using `crud` from above:
+With iommi, using `crud_views` from above:
 
 ```py
-path('', crud(model=Bookmark))
+path('', crud_views(model=Bookmark))
 ```
 
 Since it's iommi, we can customize deeply with [zero boilerplate customization](https://docs.iommi.rocks/en/latest/philosophy.html#single-point-customization-with-no-boilerplate). An example is to change the `<label>` text for the `url` field on the create form:   
@@ -97,7 +97,7 @@ Since it's iommi, we can customize deeply with [zero boilerplate customization](
 ```py
 path(
     '', 
-    crud(
+    crud_views(
         model=Bookmark,
         create__fields__url__label__display_name='URL goes here',
     )
