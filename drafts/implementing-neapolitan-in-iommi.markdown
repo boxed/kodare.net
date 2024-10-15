@@ -18,7 +18,7 @@ Here's the full implementation of that goal in [iommi](https://docs.iommi.rocks)
     delete=EMPTY,
     detail=EMPTY,
 )
-def crud(*, model, table, create, edit, delete):
+def crud_views(*, model, table, create, edit, delete, detail):
     table = setdefaults_path(
         table,
         auto__model=model,
@@ -34,6 +34,8 @@ def crud(*, model, table, create, edit, delete):
         detail,
         auto__model=model,
         editable=False,
+        instance=lambda params, **_: model.objects.get(pk=params.pk),
+        title=lambda form, **_: (form.model or form.instance)._meta.verbose_name,
     )
     create = setdefaults_path(
         create,
@@ -101,3 +103,5 @@ path(
 ```
 
 No template needed.
+
+`crud_views` is now a part of iommi 7.6.0.
