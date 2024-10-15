@@ -32,6 +32,7 @@ theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
 
+# /feed/by_tag/django.xml etc
 feed:
   tags: true
 
