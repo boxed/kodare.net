@@ -120,8 +120,18 @@ body {
 }
 
 #post_time {
+}
+
+#post_meta {
     font-size: 80%;
-    color: grey;
+    opacity: 70%;
+    display: flex;
+    gap: 1rem;
+}
+
+#post_tags {
+    display: flex;
+    gap: 1rem;
 }
 
 #post-nav {
