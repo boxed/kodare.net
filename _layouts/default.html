@@ -55,7 +55,7 @@
             </span>
 
             <span class="post_tags">
-              {% for tag in page.tags %}{% unless forloop.last %}
+              {% for tag in page.tags %}
                 <a href="/tags.html#{{ tag }}">{{ tag | replace: "-", " " }}</a>
               {% endunless %}{% endfor %}
             </span>
