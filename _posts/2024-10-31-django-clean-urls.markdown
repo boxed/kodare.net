@@ -16,17 +16,17 @@ I made the switch to one big file to see how I liked it, and I am very happy I d
 After doing this a while I noticed that this pattern came up frequently:
 
 ```python
-path('projects/<project_pk/', ProjectPage().as_view()),
-path('projects/<project_pk/duplicate/', duplicate_project),
-path('projects/<project_pk/ev/', ev_index),
-path('projects/<project_pk/ev/edit/', ev_edit),
+path('projects/<project_pk>/', ProjectPage().as_view()),
+path('projects/<project_pk>/duplicate/', duplicate_project),
+path('projects/<project_pk>/ev/', ev_index),
+path('projects/<project_pk>/ev/edit/', ev_edit),
 ...
 ```
 
 [Işık](https://github.com/isik-kaplan) reminded me that `include()` in Django can clean that up:
 
 ```python
-path('projects/<project_pk/', include([
+path('projects/<project_pk>/', include([
     path('', ProjectPage().as_view()),
     path('duplicate/', duplicate_project),
     path('ev/', ev_index),
@@ -55,7 +55,7 @@ def path(path, view_or_list, kwargs=None):
 Now the same path mapping can look like this:
 
 ```python
-path('projects/<project_pk/', [
+path('projects/<project_pk>/', [
     path('', ProjectPage),
     path('duplicate/', duplicate_project),
     path('ev/', [
