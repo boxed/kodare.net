@@ -22,7 +22,7 @@ path('projects/<project_pk/ev/edit/', ev_edit),
 ...
 ```
 
-After a while I remembered that `include()` in Django can clean that up:
+[Işık](https://github.com/isik-kaplan) reminded me that `include()` in Django can clean that up:
 
 ```python
 path('projects/<project_pk/', include([
