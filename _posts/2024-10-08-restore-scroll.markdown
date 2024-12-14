@@ -13,9 +13,12 @@ document.addEventListener('readystatechange', (event) => {
     if (document.readyState === 'complete') {
         let prev_focused = sessionStorage.getItem('focused_element');
         if (prev_focused) {
-            $(`#${prev_focused}`).trigger("focus");
+            document.getElementById(`${prev_focused}`).focus();
         } else {
-            $('.auto_focus').trigger("focus");
+            let auto_focus = document.getElementsByClassName('.auto_focus');
+            if (auto_focus.length) {
+                auto_focus[0].focus();
+            }
         }
 
         window.addEventListener("beforeunload", function (e) {
