@@ -1,6 +1,6 @@
 ---
 title: "The next great leap for Django"
-date: 2024-09-30
+date: 2024-10-01
 tags: [programming, python, django, iommi]
 author: Anders Hovmöller
 ---

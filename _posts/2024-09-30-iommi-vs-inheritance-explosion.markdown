@@ -1,6 +1,7 @@
 ---
 title: "iommi vs inheritance explosion"
 date: 2024-09-30
+last_modified_at: 2024-09-30T00:00:01
 tags: [programming, python, django, iommi]
 author: Anders Hovmöller
 ---
