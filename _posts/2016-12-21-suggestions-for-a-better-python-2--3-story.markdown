@@ -2,6 +2,7 @@
 title:	"Suggestions for a better Python 2->3 story"
 date:	2016-12-21
 tags: [programming, python]
+author: Anders Hovmöller
 ---
 
   There's been a lot of gnashing of teeth over the transition to Python 3. It's just not as easy as one would like. Here's my wish list for how this could be better. There would need to be:

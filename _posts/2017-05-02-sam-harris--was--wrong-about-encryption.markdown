@@ -1,6 +1,7 @@
 ---
 title:	"Sam Harris [was] wrong about encryption"
 date:	2017-05-02
+author: Anders Hovmöller
 ---
 
   **Update**: in the later episode #30 Sam changes his mind based on arguments very similar to these. That's great to hear! Hopefully this article can enlighten someone who doesn't have the time (or hearing!) to listen to that podcast episode.

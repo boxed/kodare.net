@@ -2,6 +2,7 @@
 title: Django clean urls.py
 date: 2024-10-31
 tags: [programming, python, django]
+author: Anders Hovmöller
 ---
 
 

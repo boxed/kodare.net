@@ -2,6 +2,7 @@
 title:	"Test ordering"
 date:	2020-03-02
 tags: [programming, python, testing, pytest, iommi]
+author: Anders Hovmöller
 ---
 
 I've been working for a few weeks on iommi, a union and expansion of the libraries tri.form, tri.table and tri.query. The test suite is quite comprehensive as it is the tests from all those libraries, plus more for new functionality and we've spent time improving the test suite too. 

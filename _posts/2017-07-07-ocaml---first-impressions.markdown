@@ -2,6 +2,7 @@
 title:	"OCaml — first impressions"
 date:	2017-07-07
 tags: [programming, ocaml]
+author: Anders Hovmöller
 ---
 
   I'm doing research to try to find my "next language" after Python. I'll publish an article on that eventually, but for now here are some of my reactions to OCaml:

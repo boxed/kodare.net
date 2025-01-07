@@ -2,6 +2,7 @@
 title:	"A small dive into, and rejection of, Elm"
 date:	2016-11-07
 tags: [programming, elm]
+author: Anders Hovmöller
 ---
 
 I am always dissatisfied with the state of front end development. I did a fairly deep dive into ClojureScript and found it nice initially but ultimately lacking in some key areas. I've also done my stint in JQuery and Angular land (and tried for a few hours trying to get Ember to even work, but decided that it was enough that it was so nasty in the beginning). Those are clearly much worse than ClojureScript + reagent.

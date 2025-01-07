@@ -2,6 +2,7 @@
 title:	"How to build an alternate Django admin in only 10 years"
 date:	2024-09-03
 tags: [programming, python, django, iommi]
+author: Anders Hovmöller
 ---
 
 

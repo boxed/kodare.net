@@ -2,6 +2,7 @@
 title:	"Use the biggest hammer!"
 date:	2018-02-05
 tags: [programming, python, testing, pytest, flaky-tests]
+author: Anders Hovmöller
 ---
 
   Our pytest database fixture used to just mean "all databases" (mysql, cassandra, vertica) but with our switch to Python3 we needed to be able to skip all tests requiring Cassandra for several months as we made changes for a new driver. We started doing this split manually but it was very error prone and slow going.

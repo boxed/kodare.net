@@ -2,6 +2,7 @@
 title:	"Measure WTFs/m before taking a job"
 date:	2019-06-21
 tags: [programming]
+author: Anders Hovmöller
 ---
 
 If you haven't seen the classic comic (originally by [Thom Holwerda](http://www.osnews.com/story/19266/WTFs_m)), here it is:

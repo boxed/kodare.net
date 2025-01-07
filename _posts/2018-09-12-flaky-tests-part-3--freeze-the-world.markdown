@@ -2,6 +2,7 @@
 title:	"Flaky tests part 3: freeze the world"
 date:	2018-09-12
 tags: [programming, python, testing, pytest, flaky-tests]
+author: Anders Hovmöller
 ---
 
  I didn't set out to write a blog series on flaky tests, but [here](/2018/02/05/use-the-biggest-hammer.html) we [are](/2018/08/28/intermittent-tests-aligned-primary-keys.html). Sometimes the topic chooses you.

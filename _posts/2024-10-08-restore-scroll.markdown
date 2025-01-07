@@ -2,6 +2,7 @@
 title: 80% of a fancy SPA in 21 lines of code
 date: 2024-10-08
 tags: [programming]
+author: Anders Hovmöller
 ---
 
 The most annoying thing with traditional server rendered HTML is that saving forms scrolls to the top. This brings the user out of flow when there are validation errors. The most common solution is to go full Single Page Application, but that loses the correct reload-for-POST behavior of the browser. There is a much easier way. 

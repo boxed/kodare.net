@@ -2,6 +2,7 @@
 title:	"Optimize for momentum"
 date:	2022-06-24
 tags: [programming]
+author: Anders Hovmöller
 ---
 
 I got this question:

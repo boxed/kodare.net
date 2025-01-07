@@ -2,6 +2,7 @@
 title:	"Vastly faster Python integration tests"
 date:	2017-10-24
 tags: [programming, python, testing, pytest]
+author: Anders Hovmöller
 ---
 
   I work at an old code base at TriOptima. It's ~15 years old and over 200 thousand lines of Python code. For various reasons most tests have to be integration tests. We've made many optimizations like:

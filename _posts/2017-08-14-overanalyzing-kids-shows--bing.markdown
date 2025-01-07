@@ -1,6 +1,7 @@
 ---
 title:	"Overanalyzing kids shows: Bing"
 date:	2017-08-14
+author: Anders Hovmöller
 ---
 
 As a father I've watched some kids shows and generally they are based on worlds that make little sense. But there is one show that has an internal logic and attention to detail that is very compelling and that is Bing.

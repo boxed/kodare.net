@@ -2,6 +2,7 @@
 title: Safe number parsing
 date: 2021-04-04 
 tags: [programming, python, testing, mutation-testing]
+author: Anders Hovmöller
 ---
 
 `12.34` is *not* `1234`. I don't care if your thousand separator is `.`

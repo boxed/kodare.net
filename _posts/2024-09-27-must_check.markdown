@@ -2,6 +2,7 @@
 title:	"Permissions in Django: must_check"
 date:	2024-09-27
 tags: [programming, python, django, iommi]
+author: Anders Hovmöller
 ---
 
 I worked on a code base with custom access control that was also quite critical to get right. Penetration testers sometimes found issues in the access control logic, which was unfortunately not very surprising as doing the right thing was more work than doing the wrong thing.  Even worse, some parts of the code base were very complex so figuring out which code path would do the access control was difficult itself.

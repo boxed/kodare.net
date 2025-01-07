@@ -2,6 +2,7 @@
 title:	"Flaky tests, part 4"
 date:	2019-04-23
 tags: [programming, python, testing, pytest, flaky-tests]
+author: Anders Hovmöller
 ---
 
   We've had a flaky test for several weeks that always runs fine locally, but it sometimes failed in CI. Today I found the bug. The test should have been

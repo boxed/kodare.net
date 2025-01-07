@@ -3,12 +3,14 @@ title: Why we don't use python native enums
 date: 2020-11-17
 render_with_liquid: false
 tags: [programming, python]
+author: Anders Hovmöller
 ---
-{% raw %}
 
 ## Problem 1: no semantics
 
 The fundamental problem with enums is that they don't have a semantic meaning for the left and right side. Let's look at an example:
+
+{% raw %}
 
 
 ```python

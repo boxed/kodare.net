@@ -2,6 +2,7 @@
 title:	"The missing mutant — a performance bug we missed"
 date:	2018-11-18
 tags: [programming, python, testing, mutation-testing]
+author: Anders Hovmöller
 ---
 
 We recently performed a profiling run of our batch processing pipeline and we discovered that the `__hash__` method of the `Frozen` class (a part of tri.struct) was taking quite a lot of time. This was surprising in multiple ways:

@@ -2,6 +2,7 @@
 title:	"Open Source could be BETTER"
 date:	2023-11-17
 tags: [programming]
+author: Anders Hovmöller
 ---
 
  

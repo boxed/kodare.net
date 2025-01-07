@@ -2,6 +2,7 @@
 title: How to ask for help
 date: 2021-05-19 
 tags: [programming]
+author: Anders Hovmöller
 ---
 
 - Ask something specific

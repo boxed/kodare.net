@@ -3,6 +3,7 @@ title: Python is slow - it doesn't have to be
 date: 2020-05-19 
 render_with_liquid: false
 tags: [programming, python]
+author: Anders Hovmöller
 ---
 
 This is a bit of a rant, be warned.

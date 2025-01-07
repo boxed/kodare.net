@@ -2,6 +2,7 @@
 title:	"Sanity system"
 date:	2024-04-30
 tags: [programming, python, django]
+author: Anders Hovmöller
 ---
 
 At TriOptima we built a system we called the sanity system, where we would put data checks. When I started the green field project at [Dryft](httsp://dryft.se) this system was one of the first things I added (in addition to the Sentry-[Devbar](https://github.com/boxed/DevBar) integration) .

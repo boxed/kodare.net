@@ -2,6 +2,7 @@
 title:	"A nice testing environment"
 date:	2019-11-20
 tags: [programming, testing]
+author: Anders Hovmöller
 ---
 
 At work we have a testing environment that is pretty nice. I'll describe it to hopefully spark some ideas for how you can improve your system. The basic requirements we've had for many years is:

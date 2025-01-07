@@ -2,6 +2,7 @@
 title:	"Good Workflows 🏈"
 date:	2019-06-21
 tags: [programming]
+author: Anders Hovmöller
 ---
 
 We use BitBucket Server at work for code reviews and JIRA for issue tracking. They are ok, but the workflow is a bit... icky. For example, in BitBucket after you've completed a code review you can either select "needs work" or "approved". But "needs work" seems a bit harsh when you only had a question, so people don't use it. But this means the ticket is still in the "someone needs to review this" bucket, which creates extra work when others look at it and see that there's a comment... over and over and over. The more developers you have the worse this becomes. It's basically a polling loop running for each developer multiplied by open pull requests. Running polling loops in human brains isn't good for productivity or happiness!

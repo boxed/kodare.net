@@ -3,6 +3,7 @@ title: Introducing iommi, part 2
 date: 2020-05-14 
 render_with_liquid: false
 tags: [programming, python, django, iommi]
+author: Anders Hovmöller
 ---
 
 Continuing from [part 1](/2020/05/13/draft_introducing_iommi_1.html):

@@ -3,6 +3,7 @@ title: Naming things
 date: 2020-07-26
 render_with_liquid: false
 tags: [programming]
+author: Anders Hovmöller
 ---
 
 We've been doing a lot of mob programming at work the last year or so and I've seen that I have a different attitude to naming things than others on my team. When I see that a name can be improved I always think this is priority number one. My colleagues often say "later". 

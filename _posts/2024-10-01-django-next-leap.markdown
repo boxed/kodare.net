@@ -2,9 +2,8 @@
 title: "The next great leap for Django"
 date: 2024-09-30
 tags: [programming, python, django, iommi]
+author: Anders Hovmöller
 ---
-{% raw %}
-
 2025 will be the 20-year anniversary of Django. I've been using it since the 0.9 days, and professionally since 2011. It has improved a lot since the first release, with migrations probably the biggest improvement. 
 
 I believe we can make a leap as big as from 0.9 to 5.0 or even bigger, but with a very small effort. 
@@ -13,6 +12,7 @@ Many small things can be more important than big strategic things. While the Dja
 
  Here's a list of things that are small fixes and that would make a massive difference:
 
+{% raw %}
 - Silent errors 
     - Template variable lookup gives you empty string when it fails. This has down stream effects like `{% url %}` failing in strange ways because it can't resolve the empty string to a view. (A change here would need to be opt in for backwards compatibility reasons.)
     - `Textarea`/`RadioSelect`/etc. widgets are ignored when put on a `Form`. 
@@ -32,9 +32,8 @@ Many small things can be more important than big strategic things. While the Dja
 - Migration issues
     - `makemigrations` could warn if you have apps with `models.py` but no `migrations/__init__.py`
     - It would be nice if Django checked that migrations are committed.
+{% endraw %}
 
 A greater focus on small details like this has outsized effects on how nice it is to use a product. It's the difference between the pain of a thousand cuts from walking through thorns, and a helping hand guiding you on a smooth path.
 
  Small details matter. They matter even more for beginners, but they still matter for everyone.
-
-{% endraw %}

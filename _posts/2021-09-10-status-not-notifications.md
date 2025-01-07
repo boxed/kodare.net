@@ -2,6 +2,7 @@
 title: Status, not notifications 
 date: 2021-09-10
 tags: []
+author: Anders Hovmöller
 ---
 
 If you have email or IM notifications and think you've got a good setup, then this article is for you.

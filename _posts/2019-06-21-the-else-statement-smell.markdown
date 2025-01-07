@@ -2,6 +2,7 @@
 title:	"The Else Statement Smell"
 date:	2019-06-21
 tags: [programming]
+author: Anders Hovmöller
 ---
 
   There is a pattern we've started talking about at work recently that have to do with the else block and by extension the if block. It can be written in different ways but you can easily spot it in two ways:

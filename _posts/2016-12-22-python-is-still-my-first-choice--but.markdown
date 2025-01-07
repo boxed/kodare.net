@@ -2,6 +2,7 @@
 title:	"Python is still my first choice, but…"
 date:	2016-12-22
 tags: [programming, python]
+author: Anders Hovmöller
 ---
 
   Hold on to your hats, this is going to be all over the place.

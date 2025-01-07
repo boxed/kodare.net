@@ -3,11 +3,12 @@ title: Transparent APIs
 date: 2020-09-14
 render_with_liquid: false
 tags: [programming, python, django, iommi]
+author: Anders Hovmöller
 ---
-{% raw %}
-
 
 Transparent APIs is a pattern/philosophy me and my colleague Johan Lübcke have developed. It's especially nice for building GUIs but is also generally useful in some other cases.
+
+{% raw %}
 
 The example I'll use is a simple program that reads some RSS feeds:
 

@@ -2,6 +2,7 @@
 title:	"Django comefrom considered harmful"
 date:	2017-05-17
 tags: [programming, python, django]
+author: Anders Hovmöller
 ---
 
 Forms in Django have a feature which is essentially [comefrom](https://en.wikipedia.org/wiki/COMEFROM). It might not be obvious until you have gotten bitten a few times though. Let's take a very simple example:

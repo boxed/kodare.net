@@ -1,6 +1,8 @@
 ---
 title:	"\"Even if they're right, they're wrong\""
 date:	2018-06-09
+tags: [logic]
+author: Anders Hovmöller
 ---
 
 I use this expression a lot. I think I got it from Penn & Teller's show Bullshit! specifically the episode on anti-vaccine activists. It's a fun mental tool that is very useful and I've found most people don't have. The basic tool goes something like:

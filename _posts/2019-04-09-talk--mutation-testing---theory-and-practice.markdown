@@ -2,6 +2,7 @@
 title:	"Talk: Mutation Testing – Theory and Practice"
 date:	2019-04-09
 tags: [programming, python, testing, mutation-testing]
+author: Anders Hovmöller
 ---
 
   I did a talk about mutation testing that is now [up on youtube](https://www.youtube.com/watch?v=yI8Yje1XDkk). It's pretty short at ~20 minutes excluding the live demo.

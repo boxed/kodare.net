@@ -2,6 +2,7 @@
 title:	"My disillusionment with Clojure and Lisps"
 date:	2016-12-14
 tags: [programming, clojure]
+author: Anders Hovmöller
 ---
 
   **Update**: I've been corrected in many points related to this article.[ Read my follow up](https://medium.com/@boxed/followup-to-my-disillusionment-with-clojure-and-lisps-49d8b0ec94c1?source=linkShare-8ad86cc82e5f-1482354544).

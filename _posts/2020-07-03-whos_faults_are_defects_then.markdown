@@ -3,6 +3,7 @@ title: Who's fault are defects then?
 date: 2020-07-03
 render_with_liquid: false
 tags: [programming, python, testing]
+author: Anders Hovmöller
 ---
 
 

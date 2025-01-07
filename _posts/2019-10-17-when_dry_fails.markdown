@@ -2,6 +2,7 @@
 title:	"When DRY fails"
 date:	2019-10-17
 tags: [programming]
+author: Anders Hovmöller
 ---
 
 Don't Repeat Yourself, or DRY, is one of the core principles of programming. It's part of what makes software powerful: it's avoiding duplication of effort when writing the code, but it also makes sure that when a bug is found it's fixed everywhere. It also applies to data: if you need to change something, you want to be sure you've changed it, and not just one copy (this is sometimes called "single source of truth"). It's generally agreed to be A Good Thing (it can be misused, but let's leave that for now).

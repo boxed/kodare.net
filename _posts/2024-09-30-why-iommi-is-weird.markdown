@@ -2,8 +2,8 @@
 title:	"Why iommi is so... weird"
 date: 2024-09-30
 tags: [programming, python, django, iommi]
+author: Anders Hovmöller
 ---
-
  
 Something I hear a lot is that [iommi](https://docs.iommi.rocks) is weird (or ["magical and weird"](https://chaos.social/@apollo13/113209773105984233)). I would maybe use the word "different", but it's true! 
 

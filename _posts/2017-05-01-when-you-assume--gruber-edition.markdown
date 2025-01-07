@@ -1,6 +1,7 @@
 ---
 title:	"When you assume, Gruber edition"
 date:	2017-05-01
+author: Anders Hovmöller
 ---
 
   Gruber wrote a [short little dismissal ](https://daringfireball.net/linked/2017/04/29/musk-boring)of The Boring Company. It is a rare glimpse into the snap decision and assumptions that go into normal thinking. Let's go over it (removing the name calling and swearing):

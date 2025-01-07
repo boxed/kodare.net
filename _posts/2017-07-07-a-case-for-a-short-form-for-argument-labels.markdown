@@ -2,6 +2,7 @@
 title:	"A case for a short form for argument labels"
 date:	2017-07-07
 tags: [programming, python]
+author: Anders Hovmöller
 ---
 
   This article is based on statistics I've collected on Swift and my anecdotal experience with Python. I haven't collected statistics on Python because it's a lot more messy to do so than with Swift.

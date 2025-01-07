@@ -2,6 +2,7 @@
 title: Implementing Neapolitan in iommi
 date: 2024-10-15
 tags: [programming, python, django, iommi]
+author: Anders Hovmöller
 ---
 
 Carlton Gibson has released a package called Neapolitan to make it easier to do CRUD stuff in your app. The short description: 

@@ -2,6 +2,7 @@
 title:	"Keyword argument confusion in Python"
 date:	2017-05-09
 tags: [programming, python]
+author: Anders Hovmöller
 ---
 
 (If you read this and feel more confused, that means you now know more, it IS confusing!)

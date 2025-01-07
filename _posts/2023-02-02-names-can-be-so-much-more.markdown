@@ -2,6 +2,7 @@
 title:	"Names can be so much more"
 date:	2023-02-02
 tags: [programming]
+author: Anders Hovmöller
 ---
 
 We programmers say names (of variables, functions, classes, etc.) are extremely important. The debate over how much code should be self-documenting is largely a debate about how good names can be. I think this all misses a bigger problem: names are for humans only, but they don't have to be.

@@ -2,6 +2,7 @@
 title:	"Mutmut: a Python mutation testing system"
 date:	2016-12-01
 tags: [programming, python, testing, mutation-testing]
+author: Anders Hovmöller
 ---
 
 Skip to "How hard can it be?" if you don't care about the background.

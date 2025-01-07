@@ -2,6 +2,7 @@
 title:	"A quick performance comparison of Python parsers"
 date:	2019-01-16
 tags: [programming, python]
+author: Anders Hovmöller
 ---
 
 After my last [performance measurement of Python code formatters](https://medium.com/@boxed/a-quick-performance-comparison-of-python-code-formatters-3a89478da8b8) I got curious about the parsing part. I've been using [parso](https://github.com/davidhalter/parso) as my parser/AST library for my mutation tester [mutmut](https://mutmut.readthedocs.io) so I was curious about how it stacks up performance wise. The test scenario is the same as in the last article: a 240kloc dry lines proprietary code base.

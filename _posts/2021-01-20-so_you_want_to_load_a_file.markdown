@@ -2,6 +2,7 @@
 title: So you want to load a file?
 date: 2021-01-20
 tags: [programming]
+author: Anders Hovmöller
 ---
 
 A guide for reading Excel, CSV, XML and JSON in a batch process.

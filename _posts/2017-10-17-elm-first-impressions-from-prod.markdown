@@ -2,6 +2,7 @@
 title:	"Elm first impressions from prod"
 date:	2017-10-17
 tags: [programming, elm]
+author: Anders Hovmöller
 ---
 
 (If you're coming from /r/elm to read this, please mail me directly. I was banned there so can't reply)

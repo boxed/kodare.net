@@ -2,11 +2,12 @@
 title:	"iommi vs django-tables2+django-filters"
 date:	2024-09-19
 tags: [programming, python, django, iommi]
+author: Anders Hovmöller
 ---
 
-{% raw %}
-
 Someone asked on the [Unofficial Django Discord](https://unofficial-django-discord.github.io/) about a performance problem with django-tables2 + django-filters. It's a pretty clear example of what [iommi](https://github.com/iommirocks/iommi) can give you.
+
+{% raw %}
 
 Here is the original code:
 

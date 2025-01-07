@@ -2,6 +2,7 @@
 title: Running a million empty tests
 date: 2024-10-31 
 tags: [programming, python]
+author: Anders Hovmöller
 ---
 
 This question popped up on the Django Discord:

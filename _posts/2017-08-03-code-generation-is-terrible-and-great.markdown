@@ -2,6 +2,7 @@
 title:	"Code generation is terrible and great"
 date:	2017-08-03
 tags: [programming, elm]
+author: Anders Hovmöller
 ---
 
   Are you generating code for the language you are writing in? Then the language you're using is terrible. By definition it's under powered because you need to write code to write code instead of just expressing what you need directly.

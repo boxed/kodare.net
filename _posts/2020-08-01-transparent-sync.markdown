@@ -3,6 +3,7 @@ title: Transparent sync
 date: 2020-08-01
 render_with_liquid: false
 tags: []
+author: Anders Hovmöller
 ---
 
 Syncing in apps almost never work well, or to be specific: it works great until it doesn't anymore and then it's terrible. The problem is that the systems think it's their job to hide all implementation details, to make it "just work". They think you shouldn't need to worry about it as a user. But to create this illusion, the programs have to hide information. Information we users need to make informed decisions when the system doesn't work perfectly.

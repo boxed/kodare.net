@@ -2,6 +2,7 @@
 title:	"A quick performance comparison of Python code formatters"
 date:	2019-01-13
 tags: [programming, python]
+author: Anders Hovmöller
 ---
 
 We've been talking about code formatters for Python at work since we're using Elm and we've been super happy about how code formatting works with elm-format. I tried Black a bit to see how it looks and my initial impression is that I like it (except " for quotes, what's up with that?) but it felt slow. So obviously it's benchmark time!

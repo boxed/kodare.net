@@ -2,6 +2,7 @@
 title:	"Mutation vs Property Based testing"
 date:	2019-04-10
 tags: [programming, python, testing, mutation-testing]
+author: Anders Hovmöller
 ---
 
 I came across [this article by Hillel Wayne](https://www.hillelwayne.com/post/contract-examples/) about using Property Based testing to find a bug in a mode function (finding the most common element). The function to test is this:

@@ -2,6 +2,7 @@
 title:	"Moving a large and old codebase to Python3"
 date:	2018-02-09
 tags: [programming, python]
+author: Anders Hovmöller
 ---
 
   One and a half years ago we decided that it was time to get on Python 3. We've talked about it for a long time but now it was time! The journey is now complete, we have switched the last parts of production to Python 3.
