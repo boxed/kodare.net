@@ -197,6 +197,7 @@ code {
     border: 1px solid #80808080;
     color: black;
     padding: 2px;
+    white-space: nowrap;
 }
 
 pre code {
