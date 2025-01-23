@@ -5,6 +5,12 @@ tags: [programming, python, django, iommi]
 author: Anders Hovmöller
 ---
 
+<style>
+.language-plaintext {
+    white-space: nowrap;
+}
+</style>
+
 When I joined TriOptima back in 2010, a common pattern emerged where names of things were slightly off because of stray whitespaces. Sometimes we had duplicates like `"foo"`, `"foo "` and `" foo"` in the database. Sometimes we couldn't find stuff in logs because you searched for `"foo was deleted"`, when actually you had to search for `"foo  was deleted"` (notice the double space!). Sorting was "broken" because `" foo"` and `"foobar"` are not next to each other. And more issues that I can't remember...
 
 It was *everywhere*, causing problems across the entire code base. Each individual issue was easily fixed by cleaning up the data, but it added up to an annoying support burden. My fix at the time was to make a function that took a [Django](https://djangoproject.com) `Form` instance and returned a new instance with space stripping on all fields. Something like:
