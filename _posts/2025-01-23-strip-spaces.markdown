@@ -7,7 +7,7 @@ author: Anders Hovmöller
 
 <style>
 .language-plaintext {
-    white-space: nowrap;
+    white-space: pre;
 }
 </style>
 
