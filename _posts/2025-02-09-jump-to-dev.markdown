@@ -16,7 +16,10 @@ def domain_strip_middleware(get_response):
         if not settings.DEBUG:
             return get_response(request)
 
-        m = re.match(r'/https?://(?P<domain>[^/]*)(?P<path>/.*)', request.get_full_path())
+        m = re.match(
+            r'/https?://(?P<domain>[^/]*)(?P<path>/.*)', 
+            request.get_full_path()
+        )
         if m:
             return HttpResponseRedirect(m.groupdict()['path'])
 
