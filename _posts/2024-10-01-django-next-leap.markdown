@@ -1,7 +1,7 @@
 ---
 title: "The next great leap for Django"
 date: 2024-10-01
-tags: [programming, python, django, iommi]
+tags: [programming, python, django]
 author: Anders Hovmöller
 ---
 2025 will be the 20-year anniversary of Django. I've been using it since the 0.9 days, and professionally since 2011. It has improved a lot since the first release, with migrations probably the biggest improvement. 
