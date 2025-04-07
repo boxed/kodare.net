@@ -22,7 +22,7 @@ class NebulaForm(Form):
     )
 ```
 
-To set a single CSS class on a single label, you have to create an entire class. Let's look at the same thing in iommi: 
+To set a single CSS class on a single label, you have to create an entire class. Let's look at the same thing in [iommi](https://github.com/iommirocks/iommi): 
 
 ```py
 class NebulaForm(Form):
