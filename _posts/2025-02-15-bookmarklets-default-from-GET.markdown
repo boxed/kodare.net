@@ -1,7 +1,7 @@
 ---
 title: Bookmarklets, defaults-from-GET, and iommi
 date: 2025-02-15
-tags: [programming, python, django]
+tags: [programming, python, django, iommi]
 author: Anders Hovmöller
 ---
 
