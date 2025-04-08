@@ -1,6 +1,6 @@
 ---
 title: BoundField vs iommi
-date: 2025-02-15
+date: 2025-04-07
 tags: [programming, python, django, iommi]
 author: Anders Hovmöller
 ---
