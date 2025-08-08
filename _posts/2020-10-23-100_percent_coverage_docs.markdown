@@ -5,6 +5,9 @@ render_with_liquid: false
 tags: [programming, python, documentation, iommi]
 author: Anders Hovmöller
 ---
+
+Update: [Read the updated blog entry for how we do this now](/2025/08/08/documentation-that-is-never-wrong.html)
+
 The last few months I've been writing a lot of documentation for [iommi](https://docs.iommi.rocks). This is a library that is a big compatibility break and cleanup of three previous libraries (tri.form, tri.query and tri.table), so a big part of fixing the docs have consisted in updating really old code examples to correspond to the new APIs.
 
 {% raw %}
