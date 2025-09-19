@@ -65,7 +65,7 @@ All the issues I list here are fixed in iommi forms.
 
 1. Multiple forms on a page is awkward. Prefixes have to be set, and if you forget it, it might work for a while and cause hard to detect issues much later when a simple field is added that happen to collide.
 
-1. Be able to have multiple forms in one view and know which form is being POSTed too is left as an exercise for the reader. 
+1. Be able to have multiple forms in one view and know which form is being POSTed to is left as an exercise for the reader. 
 
 1. Nested forms are not a thing. They're also not a thing in HTML, so implementing them is rather awkward, but it's a useful feature.
 
