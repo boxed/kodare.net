@@ -1,5 +1,13 @@
 <h1>Apps</h1>
 
+<h2>Calvetica</h2>
+
+<p>
+The fastest calendar for iPhone and iPad. Beautiful interface with continuous scrolling month and week views, fast event creation, custom alerts with snooze, and complex repeating event support.
+</p>
+
+<a href="https://apps.apple.com/us/app/calvetica-calendar/id385862462?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="/img/calvetica.jpg" alt="Calvetica" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
+
 <h2>Bit</h2>
 
 <p>
@@ -31,6 +39,14 @@ Input your expected incomes, expenses, and savings target. Money groove will tel
 </p>
 
 <a href="https://apps.apple.com/us/app/money-groove/id6482973875?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e8/a5/31/e8a5311e-2682-81f5-5ad7-d94b646edee4/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/540x540bb.jpg" alt="Money groove" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
+
+<h2>Venja</h2>
+
+<p>
+Keep track of chores, habits, and maintenance for your house, car, etc. Based on a scheduler for things you need to do, from every day to every few years.
+</p>
+
+<a href="https://apps.apple.com/us/app/venja/id6747004428?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="/img/venja.jpg" alt="Venja" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
 
 <h2>Yin timer</h2>
 
