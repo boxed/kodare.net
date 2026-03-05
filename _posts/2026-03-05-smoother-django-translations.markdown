@@ -4,12 +4,9 @@ date: 2026-03-05
 tags: [programming, python, django, iommi, okrand]
 author: Anders Hovmöller
 ---
-# Smoother translations in Django
-
-
 I've been working for roughly 5 years now in an app that is localized to Swedish, so I have built up some opinions on how to manage translation of a Django project. Here's my list of things I do currently:
 
-# Always use `gettext_lazy`
+## Always use `gettext_lazy`
 
 I've been bitten many times by accidentally using `gettext` when I should have used `gettext_lazy`, resulting in strings that were stuck in English or Swedish randomly because a user with a specific language caused that piece of code to be imported.
  
