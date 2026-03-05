@@ -49,10 +49,10 @@ I use the iommi `MainMenu` system which looks something like this:
 
 ```py
 menu = MainMenu(
-	items=dict(
-		albums=M(view=albums_view),
-		artists=M(view=artists_view),
-	),
+    items=dict(
+        albums=M(view=albums_view),
+        artists=M(view=artists_view),
+    ),
 )
 ```
 
