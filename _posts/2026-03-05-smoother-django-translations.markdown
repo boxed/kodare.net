@@ -17,7 +17,7 @@ A simple naive hand-rolled static analysis test that forbids usages of plain `ge
 
 ## Django models
 
-The Okrand setting `django_model_upgrade` which dynamically sets `verbose_name` for all fields correctly with the normal default, and on the model sets up `verbose_name` and `verbose_name_plural`. Then when you run the Okrand collect command you will get strings to translate without polluting your source with silly stuff like
+The [Okrand](https://github.com/boxed/okrand) setting `django_model_upgrade` which dynamically sets `verbose_name` for all fields correctly with the normal default, and on the model sets up `verbose_name` and `verbose_name_plural`. Then when you run the Okrand collect command you will get strings to translate without polluting your source with silly stuff like
 
 ```py
 class Foo(Model):
@@ -40,12 +40,12 @@ You can still write them out explicitly if you need them to differ from the defa
 
 ## Elm
 
-There's a built-in regex pattern for ML-style languages in Okrand that makes it quite easy to collect strings from Elm code. 
+There's a built-in regex pattern for ML-style languages in Okrand that makes it quite easy to collect strings from [Elm](https://elm-lang.org/) code. 
 
 
 ## Menu translations
 
-I use the iommi `MainMenu` system which looks something like this:
+I use the [iommi](https://iommi.rocks/) `MainMenu` system which looks something like this:
 
 ```py
 menu = MainMenu(
